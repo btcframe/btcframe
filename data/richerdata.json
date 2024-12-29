@@ -1,0 +1,24 @@
+[
+    {
+        "timestamp": 1698691200000,
+        "data": {
+            "number1": 22099455,
+            "number2": 10669764,
+            "number3": 3584500,
+            "number4": 658600,
+            "number5": 115750,
+            "number6": 11080
+        }
+    },
+    {
+        "timestamp": 1698777600000,
+        "data": {
+            "number1": 22099455,
+            "number2": 10669764,
+            "number3": 3584500,
+            "number4": 658600,
+            "number5": 115750,
+            "number6": 11080
+        }
+    }
+]

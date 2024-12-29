@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Share&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.card {
+    background-color: #202023;
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #202023;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    margin: 0 0 10px 0;
+    font-size: 31px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.card p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #ffae42;
+}
+
+.icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    color: #ffae42;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer {
+    text-align: center;
+    padding: 5px 20px;
+    background-color: #202023;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.footer a {
+    color: #ffae42;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.social-icons {
+    margin-top: 10px;
+    padding-bottom: 10px; /* Add padding at the bottom */
+    padding-left: 10px; /* Add a little padding to the left side */
+}
+
+.social-icons a {
+    margin: 0 3px;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    margin: 0 3px;
+    color: #ffae42;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-links .separator {
+    color: #ffae42;
+}
+
+.footer p {
+    font-size: 13px; /* Smaller font size for the footer text */
+}
+
+#current-year {
+    font-size: 13px; /* Smaller font size for the current year */
+}
+
+@media (max-width: 600px) {
+    body {
+        justify-content: flex-start;
+    }
+    .card-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px; /* Add margin from top */
+    }
+    .card {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .icon {
+        font-size: 60px;
+    }
+    .card h2 {
+        font-size: 22px;
+    }
+    .card p {
+        font-size: 16px;
+    }
+    .logo {
+        width: 150px; /* Adjust the width as needed for smaller screens */
+    }
+}

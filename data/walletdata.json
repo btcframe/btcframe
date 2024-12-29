@@ -1,0 +1,62 @@
+[
+    {
+        "timestamp": 1698432000000,
+        "data": {
+            "100k+": 4,
+            "humpback": 90,
+            "whale": 1950,
+            "shark": 14000,
+            "fish": 135000,
+            "crab": 850000,
+            "shrimp": 3550000
+        }
+    },
+    {
+        "timestamp": 1698518400000,
+        "data": {
+            "100k+": 5,
+            "humpback": 92,
+            "whale": 1960,
+            "shark": 14100,
+            "fish": 135500,
+            "crab": 855000,
+            "shrimp": 3555000
+        }
+    },
+    {
+        "timestamp": 1698604800000,
+        "data": {
+            "100k+": 5,
+            "humpback": 93,
+            "whale": 1970,
+            "shark": 14150,
+            "fish": 136000,
+            "crab": 857500,
+            "shrimp": 3560000
+        }
+    },
+    {
+        "timestamp": 1698691200000,
+        "data": {
+            "100k+": 6,
+            "humpback": 95,
+            "whale": 1980,
+            "shark": 14200,
+            "fish": 136500,
+            "crab": 860000,
+            "shrimp": 3565000
+        }
+    },
+    {
+        "timestamp": 1698777600000,
+        "data": {
+            "100k+": 6,
+            "humpback": 96,
+            "whale": 1990,
+            "shark": 14250,
+            "fish": 137000,
+            "crab": 862500,
+            "shrimp": 3570000
+        }
+    }
+]
