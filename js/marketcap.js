@@ -71,7 +71,7 @@ async function renderMarketCapChart() {
       labels: allDates,
       datasets: [
         {
-          label: "Bitcoin Market Cap (Trillions)",
+          label: "Bitcoin",
           data: btcValues,
           fill: true,
           backgroundColor: "rgba(255, 165, 0, 0.2)",
@@ -79,7 +79,7 @@ async function renderMarketCapChart() {
           lineTension: 0.4
         },
         {
-          label: "Gold Market Cap (Trillions)",
+          label: "Gold",
           data: goldValues,
           fill: true,
           backgroundColor: "rgba(224, 212, 182, 0.2)",
