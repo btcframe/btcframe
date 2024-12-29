@@ -1,0 +1,180 @@
+:root {
+  --dark-a: #102226;
+  --dark-b: #1d2f33;
+  --dark-c: #2a3c40;
+  --dark-d: #374a4f;
+  --dark-e: #45585d;
+
+  --dark-good: greenyellow;
+  --dark-ok: yellow;
+  --dark-bad: red;
+  --dark-unsure: hotpink;
+
+  /* --light-a: white;
+  --light-b: #cbe1e5;
+  --light-c: #bfd1d5;
+  --light-d: #7bbdcd; */
+  --light-a: white;
+  /* --light-b: #cae2dd;
+  --light-c: #bad1cc;
+  --light-d: #a9c0bc;
+  --light-e: #99b0ab; */
+  --light-b: #e5fef9;
+  --light-c: #b2feef;
+  --light-d: #8debd8;
+  --light-e: #6cd7c2;
+  --light-f: #4abea6;
+
+  --light-good: limegreen;
+  --light-ok: orange;
+  --light-bad: red;
+  --light-unsure: salmon;
+
+  --bold-a: #f7941d;
+  --bold-b: #00ffcc;
+  --bold-c: greenyellow;
+  --grey: #aaaaaa;
+
+  --palette-a: var(--dark-a);
+  --palette-b: var(--dark-b);
+  --palette-c: var(--dark-c);
+  --palette-d: var(--dark-d);
+  --palette-e: var(--dark-e);
+  --palette-x: var(--light-a);
+  --palette-good: var(--dark-good);
+  --palette-ok: var(--dark-ok);
+  --palette-bad: var(--dark-bad);
+  --palette-unsure: var(--dark-unsure);
+
+  --twitter-blue: #1da1f2;
+  --monospace-purple: darkviolet;
+
+  --loading-color: var(--palette-x);
+}
+
+.light-mode {
+  --palette-a: var(--light-b);
+  --palette-b: var(--light-c);
+  --palette-c: var(--light-d);
+  --palette-d: var(--light-e);
+  --palette-e: var(--light-f);
+  --palette-x: var(--dark-a);
+  --palette-good: var(--light-good);
+  --palette-ok: var(--light-ok);
+  --palette-bad: var(--light-bad);
+  --palette-unsure: var(--light-unsure);
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 125%;
+  }
+}
+
+body {
+  color: #333;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: var(--palette-x);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+label {
+  display: block;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-padding: 0.4em 0;
+  padding: 0.4em;
+  margin: 0 0 0.5em 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+input:disabled {
+  color: #ccc;
+}
+
+button {
+  color: #333;
+  outline: none;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0.5em;
+  margin: 0;
+  cursor: pointer;
+}
+
+button:active {
+  background: inherit;
+}
+
+button:disabled {
+  color: #999;
+}
+
+button:focus {
+  border-color: #666;
+}
+
+button.action-button {
+  background: var(--bold-a);
+  color: white;
+  padding: 0.5em 2em;
+  margin: 1em 2em 0.5em;
+  font-size: 1.1em;
+  font-weight: 600;
+  box-shadow: inset 0px 0px 5px var(--dark-b);
+  text-shadow: 0px 0px 5px var(--dark-b);
+}
+button.action-button:hover {
+  box-shadow: inset 0px 0px 2px var(--dark-b);
+}
+button.action-button:active {
+  box-shadow: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: 1s linear 0s infinite running spin;
+  display: inline-block;
+}
+
+.svelte-1onyhi4 {
+  display: none;
+}
