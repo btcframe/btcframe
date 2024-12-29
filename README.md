@@ -30,7 +30,7 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 5. [Data Providers](#data-providers)
 6. [Screenshots](#screenshots)
 7. [Contributing](#contributing)
-8. [License](#license)
+8. [MIT License](#mit-license)
 
 ---
 
