@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name="description" content="BTC Frame is an open-source live #Bitcoin dashboard, also available as a smart frame device.">
+    <meta name="keywords" content="BTC Frame, Bitcoin, Bitcoin Dashboard, Live Dashboard, Smart Frame, Bitcoin Frame, Dashboard, Bitcoin Collectibles, Bitcoin Digital Display, Real-time Bitcoin Display">
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <!-- facebook open graph tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://btcframe.com/" />
+    <meta property="og:title" content="BTC Frame - Live Bitcoin Dashboard" />
+    <meta property="og:description" content="BTC Frame is an open-source live #Bitcoin dashboard, also available as a smart frame device." />
+    <meta property="og:image" content="https://btcframe.com/img/unfurl-a.png" />
+    <!-- twitter card tags additive with the og: tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" value="btcframe.com" />
+    <meta name="twitter:title" value="BTC Frame - Live Bitcoin Dashboard" />
+    <meta name="twitter:description" value="BTC Frame is an open-source live #Bitcoin dashboard, also available as a smart frame device." />
+    <meta name="twitter:image" content="https://btcframe.com/img/unfurl-a.png" />
+    <meta name="twitter:url" value="https://btcframe.com/" />
+
+    <title>BTC Frame: Live Bitcoin Dashboard</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f7941d">
+    <meta name="apple-mobile-web-app-title" content="BTC Frame">
+    <meta name="application-name" content="BTC Frame">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link href="css/site.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7SB6MDJXV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-Z7SB6MDJXV');
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const yearSpan = document.getElementById("current-year");
+            yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+</head>
+<body>
+    <img src="logo.png" alt="BTC Frame Logo" class="logo">
+    <div class="card-container">
+        <div class="card">
+            <a href="dashboard.html">
+                <div class="icon"><i class="fa-thin fa-gauge-circle-bolt"></i></div>
+                <h2>View Bitcoin Dashboard</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="presale.html">
+                <div class="icon"><i class="fa-thin fa-cart-shopping"></i></div>
+                <h2>Purchase Smart Frame</h2>
+                <p>(Coming Soon)</p>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="social-icons">
+            <a href="https://x.com/btcframe" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://njump.me/npub1gkkahxwca30rf2td22u9p3jnmlh79dylgmm2et0kykftle6tdcysj4zden" target="_blank"><i class="fa-solid fa-n"></i></a>
+            <a href="https://github.com/btcframe" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="terms-of-use.html">Terms of Use</a>
+            <span class="separator">|</span>
+            <a href="disclaimers.html">Disclaimers & Credits</a>
+            <span class="separator">|</span>
+            <a href="mailto:info@btcframe.com">Contact</a>
+        </div>
+        <p>© <span id="current-year"></span> BTC Frame: Live Bitcoin Dashboard</p>
+    </div>
+</body>
+</html>
