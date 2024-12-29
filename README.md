@@ -171,42 +171,36 @@ BTC Frame relies on various external APIs and data providers:
 ## Screenshots
 
 ### Dashboard Overview
-![Dashboard](https://btcframe.com/screenshot.png)
+![Main Dashboard](/screenshots/main-dashboard.png)
+
+### Live Bitcoin Price
+![Live Bitcoin Price](/screenshots/live-bitcoin-price.png)
+
+### SATs Per Dollar
+![SATs Per Dollar](/screenshots/sats-per-dollar.png)
+
+### Bitcoin Live Chart
+![Bitcoin Live Chart](/screenshots/bitcoin-live-chart.png)
+
+### Mempool Visualizer
+![Mempool Visualizer](/screenshots/mempool-visualizer.png)
+
+### Fear and Greed Index
+![Fear and Greed Index](/screenshots/fear-greed.png)
+
+### Next Halving Progress
+![Next Halving Progress](/screenshots/next-halving.png)
+
+### Bitcoin Clock
+![Bitcoin Clock](/screenshots/bitcoin-clock.png)
+
+### Current Hashrate
+![Current Hashrate](/screenshots/current-hashrate.png)
 
 ### Node Map
-![Node Map](https://btcframe.com/node-map.png)
+![Node Map](/screenshots/bitcoin-nodes.png)
+
+### Wallet Distribution
+![Wallet Distribution](/screenshots/wallet-distribution.png)
 
 ---
-
-## Contributing
-
-We welcome contributions from the community! To contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-name`).
-3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push to your branch (`git push origin feature-name`).
-5. Submit a pull request.
-
-Please ensure your code adheres to our [contribution guidelines](CONTRIBUTING.md).
-
----
-
-## License
-
-BTC Frame is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
----
-
-## Disclaimer
-
-1. **Data Providers & Open Source Software:** BTC Frame uses external APIs and open-source tools. We do not guarantee the accuracy or availability of data provided by these services.
-2. **No Financial Advice:** BTC Frame is for informational purposes only and does not constitute financial advice.
-3. **DIY Nature:** Users are responsible for assembling and configuring the frame.
-
-By using BTC Frame, you agree to these terms and conditions.
-
----
-
-Happy DIY Bitcoin tracking!
-
