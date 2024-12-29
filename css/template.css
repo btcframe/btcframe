@@ -1149,24 +1149,23 @@ div.activity {
     font-weight: bold;
 }
 
-/* Positioning the Labels and Values at the Center of Each Layer */
 #content1 {
-    top: calc(91.6667% - 5px); /* Layer 1 center */
+    top: calc(91.6667% - 5px);
 }
 #content2 {
-    top: calc(75% - 5px); /* Layer 2 center */
+    top: calc(75% - 5px);
 }
 #content3 {
-    top: calc(58.3333% - 5px); /* Layer 3 center */
+    top: calc(58.3333% - 5px);
 }
 #content4 {
-    top: calc(41.6667% - 5px); /* Layer 4 center */
+    top: calc(41.6667% - 5px);
 }
 #content5 {
-    top: calc(25% - 5px); /* Layer 5 center */
+    top: calc(25% - 5px);
 }
 #content6 {
-    top: calc(8.3333% - 5px); /* Layer 6 center */
+    top: calc(8.3333% - 5px);
 }
 
 .layer-label {
@@ -1180,6 +1179,6 @@ div.activity {
 
 .layer-value {
     font-size: 24px;
-    margin-top: 3px; /* Added space between label and value */
+    margin-top: 3px;
     display: block;
 }
