@@ -236,6 +236,11 @@ Thank you for helping BTC Frame grow and evolve! Together, we can build an incre
 ### Current Hashrate
 ![Current Hashrate](/screenshots/current-hashrate.png)
 
+### Node Map
+![Node Map](/screenshots/bitcoin-nodes.png)
+
+### Wallet Distribution
+![Wallet Distribution](/screenshots/wallet-distribution.png)
 
 ---
 
@@ -260,12 +265,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
-### Node Map
-![Node Map](/screenshots/bitcoin-nodes.png)
-
-### Wallet Distribution
-![Wallet Distribution](/screenshots/wallet-distribution.png)
-
----
