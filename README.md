@@ -158,12 +158,12 @@ BTC Frame includes 11 interactive dashboards, each displaying unique Bitcoin met
 
 BTC Frame relies on various external APIs and data providers:
 
-- [Bitnodes](https://bitnodes.io/) for public Bitcoin node data.
 - [CoinGecko API](https://www.coingecko.com/en/api) for Bitcoin prices and market data.
 - [mempool.space API](https://mempool.space/) for block height and hash rate.
 - [BitInfoCharts](https://bitinfocharts.com/) for wallet distribution data.
 - [Alternative.me](https://alternative.me/) for the Fear and Greed Index.
 - [Flapper](https://github.com/flapper) for real-time value displays.
+- [Bitnodes](https://bitnodes.io/) for public Bitcoin node data.
 - [thooClock](https://github.com/thooClock) for the animated Bitcoin clock.
 
 ---
