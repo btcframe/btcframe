@@ -1,6 +1,6 @@
 # BTC Frame
 
-BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related metrics in real-time.
+BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related metrics in real-time. Feel free to 
 
 ---
 
@@ -167,6 +167,45 @@ BTC Frame relies on various external APIs and data providers:
 - [thooClock](https://github.com/thooClock) for the animated Bitcoin clock.
 
 ---
+
+## Contributing
+
+BTC Frame is a community-driven project, and we welcome developers of all skill levels to contribute. Your ideas and improvements can help make this project even better!
+
+### How You Can Contribute
+1. **Report Issues:**  
+   Found a bug or have a feature request? Open an [issue](https://github.com/btcframe/btc-frame/issues) and share your feedback.
+
+2. **Submit Pull Requests:**  
+   - Fork the repository.  
+   - Create a feature branch:  
+     ```bash
+     git checkout -b feature-name
+     ```
+   - Commit your changes with clear messages:  
+     ```bash
+     git commit -m "Description of the change"
+     ```
+   - Push your changes to your fork:  
+     ```bash
+     git push origin feature-name
+     ```
+   - Open a pull request against the `main` branch of the repository.
+
+3. **Improve Documentation:**  
+   Found missing or unclear information? Feel free to enhance the documentation.
+
+4. **Suggest Enhancements:**  
+   Have ideas for new dashboards, metrics, or visualizations? We'd love to hear your suggestions.
+
+### Guidelines
+- Ensure your contributions follow the project's coding standards.
+- Write clear and concise commit messages.
+- Include tests where applicable.
+- Be respectful and collaborative in your discussions.
+
+Thank you for helping BTC Frame grow and evolve! Together, we can build an incredible Bitcoin dashboard for everyone. 🚀
+
 
 ## Screenshots
 
