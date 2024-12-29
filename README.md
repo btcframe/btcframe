@@ -1,6 +1,6 @@
 # BTC Frame
 
-Welcome to **BTC Frame**, your DIY Bitcoin smart frame that displays real-time information, keeping you updated with live market trends and various Bitcoin-related data at a glance.
+BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related metrics in real-time.
 
 ---
 
