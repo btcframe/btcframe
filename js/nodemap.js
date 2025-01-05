@@ -148,17 +148,41 @@ window.addEventListener("hashchange", function () {
   handlePageVisibility();
 });
 
+// *** CHANGED SECTION BELOW ***
+// Add localStorage-based caching (4 hours) to fetchNodeCount()
+const NODE_COUNT_CACHE_KEY = "nodeCountCache";
+const NODE_COUNT_TIMESTAMP_KEY = "nodeCountTimestamp";
+
 async function fetchNodeCount() {
+  // Check if we have a cached nodeCount
+  const cachedCount = localStorage.getItem(NODE_COUNT_CACHE_KEY);
+  const cachedCountTimestamp = localStorage.getItem(NODE_COUNT_TIMESTAMP_KEY);
+
+  // If cache is valid (< 4 hours), use it
+  if (cachedCount && cachedCountTimestamp && Date.now() - cachedCountTimestamp < 14400000) {
+    console.log("Using cached node count");
+    return parseInt(cachedCount, 10);
+  }
+
+  // Otherwise, fetch fresh data
   try {
+    console.log("Fetching new node count from API");
     const response = await fetch("https://bitnodes.io/api/v1/snapshots/latest/");
     const data = await response.json();
     const nodeCount = Object.keys(data.nodes).length;
+
+    // Update localStorage
+    localStorage.setItem(NODE_COUNT_CACHE_KEY, nodeCount.toString());
+    localStorage.setItem(NODE_COUNT_TIMESTAMP_KEY, Date.now().toString());
+
     return nodeCount;
   } catch (error) {
     console.error("Error fetching node count:", error);
-    return 0;
+    // Fallback to cached count if available
+    return cachedCount ? parseInt(cachedCount, 10) : 0;
   }
 }
+// *** END OF CHANGED SECTION ***
 
 function formatNumber(number) {
   return number.toLocaleString();

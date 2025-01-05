@@ -19,8 +19,39 @@ var loadingElement;
             loadingElement.style.display = 'block';
         }
 
-        var proxyUrl = 'https://api.allorigins.win/raw?url=';
+        var proxyUrl = 'https://pet-magpie-humbly.ngrok-free.app/proxy?url=';
         var targetUrl = 'https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html';
+
+        // Cache expiration time (4 hours in milliseconds)
+        const CACHE_EXPIRATION_TIME = 4 * 60 * 60 * 1000; // 4 hours
+
+        // Function to check cache and load it if valid
+        function checkCache() {
+            const cachedData = localStorage.getItem('bitcoinData');
+            const cachedTimestamp = localStorage.getItem('bitcoinDataTimestamp');
+
+            if (cachedData && cachedTimestamp) {
+                const currentTime = new Date().getTime();
+                if (currentTime - cachedTimestamp < CACHE_EXPIRATION_TIME) {
+                    // If cached data is less than 4 hours old, use it
+                    console.log('Using cached data');
+                    return JSON.parse(cachedData);
+                } else {
+                    // If cache is expired, clear it
+                    console.log('Cache expired, fetching new data');
+                    localStorage.removeItem('bitcoinData');
+                    localStorage.removeItem('bitcoinDataTimestamp');
+                }
+            }
+            return null;
+        }
+
+        // Function to store data in cache
+        function storeInCache(data) {
+            const currentTime = new Date().getTime();
+            localStorage.setItem('bitcoinData', JSON.stringify(data));
+            localStorage.setItem('bitcoinDataTimestamp', currentTime);
+        }
 
         // Skip unnecessary ranges
         function shouldSkipRange(minBalance, maxBalance) {
@@ -50,6 +81,9 @@ var loadingElement;
             var url = proxyUrl + encodeURIComponent(targetUrl);
             var request = new XMLHttpRequest();
             request.open('GET', url, true);
+
+            // Add the ngrok-skip-browser-warning header to bypass the confirmation page
+            request.setRequestHeader('ngrok-skip-browser-warning', '69420');
 
             request.onreadystatechange = function () {
                 if (request.readyState === 4) {
@@ -91,6 +125,9 @@ var loadingElement;
                                     btcPercent: cells[5].textContent.trim()
                                 });
                             });
+
+                            // Store fetched data in cache
+                            storeInCache(currentData);
 
                             updateUI(currentData);
 
@@ -162,6 +199,20 @@ var loadingElement;
             tableBody.appendChild(fragment);
         }
 
-        fetchData();
+        // Check if cached data is available and valid (less than 4 hours old)
+        var cachedData = checkCache();
+
+        if (cachedData) {
+            // If cache is valid, use it
+            updateUI(cachedData);
+            loadingElement.style.display = 'none';
+            var bitcoinTable = document.getElementById('bitcoin-distribution-table');
+            if (bitcoinTable) {
+                bitcoinTable.style.display = 'table';
+            }
+        } else {
+            // If no valid cache, fetch data
+            fetchData();
+        }
     });
 })();
