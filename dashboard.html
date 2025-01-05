@@ -1,625 +1,1153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="BTC Frame is an exclusive, limited edition Bitcoin smart frame, meticulously handcrafted for Bitcoin enthusiasts. With only 500 units available, this unique collector's item combines cutting-edge technology with artisanal craftsmanship."
-    />
-    <meta
-      name="keywords"
-      content="BTC Frame, Bitcoin, Smart Frame, Bitcoin Frame, Bitcoin Dashboard, Bitcoin Collectibles, Bitcoin Digital Display, Real-time Bitcoin Display"
-    />
-    <!-- facebook open graph tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://btcframe.com/" />
-    <meta property="og:title" content="BTC Frame - Bitcoin Dashboard" />
-    <meta
-      property="og:description"
-      content="An open-source Bitcoin smart frame."
-    />
-    <meta property="og:image" content="https://btcframe.com/screenshot.png" />
-    <meta name="twitter:card" content="screenshot.png" />
-    <meta name="twitter:domain" value="btcframe.com" />
-    <meta name="twitter:title" value="BTC Frame" />
-    <meta
-      name="twitter:description"
-      value="An open-source Bitcoin smart frame."
-    />
-    <meta name="twitter:image" content="https://btcframe.com/screenshot.png" />
-    <meta name="twitter:url" value="https://btcframe.com/" />
-    <!-- end  -->
-    <title>BTC Frame - Bitcoin Dashboard</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="BTC Frame" />
-    <meta name="application-name" content="BTC Frame" />
-    <link rel="icon" href="favicon.png" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link rel="stylesheet" media="screen" href="css/main.css" />
-    <link rel="stylesheet" href="build/global.css" />
-    <link rel="stylesheet" href="build/bundle.2.3.4.css" />
-    <link href="css/template.css" type="text/css" rel="stylesheet" />
-    <link href="css/flapper.css" type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="transform/dist/jquery.transform-0.9.3.min.js"></script>
-    <script src="src/jquery.flapper.js"></script>
-    <script src="src/flapdemo.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"
-      integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      language="javascript"
-      type="text/javascript"
-      src="js/jquery.thooClock.js"
-    ></script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-Z7SB6MDJXV"
-    ></script>
 
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-Z7SB6MDJXV");
-    </script>
-    <script>
-      // Function to detect mobile or tablet devices
-      function isMobileOrTablet() {
-        return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="BTC Frame is an exclusive, limited edition Bitcoin smart frame, meticulously handcrafted for Bitcoin enthusiasts. With only 500 units available, this unique collector's item combines cutting-edge technology with artisanal craftsmanship." />
+  <meta name="keywords" content="BTC Frame, Bitcoin, Smart Frame, Bitcoin Frame, Bitcoin Dashboard, Bitcoin Collectibles, Bitcoin Digital Display, Real-time Bitcoin Display" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://btcframe.com/" />
+  <meta property="og:title" content="BTC Frame - Bitcoin Dashboard" />
+  <meta property="og:description" content="An open-source Bitcoin smart frame." />
+  <meta property="og:image" content="https://btcframe.com/screenshot.png" />
+  <meta name="twitter:card" content="screenshot.png" />
+  <meta name="twitter:domain" content="btcframe.com" />
+  <meta name="twitter:title" content="BTC Frame" />
+  <meta name="twitter:description" value="An open-source Bitcoin smart frame." />
+  <meta name="twitter:image" content="https://btcframe.com/screenshot.png" />
+  <meta name="twitter:url" value="https://btcframe.com/" />
+  <title>BTC Frame - Bitcoin Dashboard</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="BTC Frame" />
+  <meta name="application-name" content="BTC Frame" />
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" media="screen" href="css/main.css" />
+  <link rel="stylesheet" href="build/global.css" />
+  <link rel="stylesheet" href="build/bundle.2.3.4.css" />
+  <link href="css/template.css" type="text/css" rel="stylesheet" />
+  <link href="css/flapper.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="transform/dist/jquery.transform-0.9.3.min.js"></script>
+  <script src="src/jquery.flapper.js"></script>
+  <script src="src/flapdemo.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+  <script src="js/jquery.thooClock.js"></script>
 
-      // Redirect to mobile.html if on mobile or tablet
-      if (isMobileOrTablet()) {
-        window.location.href = "mobile.html";
-      }
-    </script>
-  </head>
-  <body>
-    <a href="https://btcframe.com">
-      <img src="bitcoin.png" class="logo" alt="BTC Frame Logo" />
-    </a>
-    <div class="header-icons">
-      <div class="live-button">
-        <div class="live-dot"></div>
-        LIVE
-      </div>
-      <div class="date-time" id="date-time"></div>
-      <button id="fullscreen-btn" onclick="toggleFullscreen()">
-        <i class="fas fa-expand"></i>
-      </button>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7SB6MDJXV"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-Z7SB6MDJXV");
+  </script>
+  <script>
+    // Function to detect mobile or tablet devices
+    function isMobileOrTablet() {
+      return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    // Redirect to mobile.html if on mobile or tablet
+    if (isMobileOrTablet()) {
+      window.location.href = "mobile.html";
+    }
+  </script>
+</head>
+
+<body>
+  <a href="https://btcframe.com">
+    <img src="bitcoin.png" class="logo" alt="BTC Frame Logo" />
+  </a>
+  <div class="header-icons">
+    <div class="live-button">
+      <div class="live-dot"></div>
+      LIVE
     </div>
-    <div class="play-pause-container">
-      <button id="play-pause-btn" onclick="togglePlayPause()">
-        <i class="fas fa-pause"></i>
-      </button>
-      <span id="btcframe-text">btcframe.com</span>
-    </div>
-    <button id="prev-btn" onclick="showPrevPage()">
-      <i class="fas fa-arrow-left"></i>
+    <div class="date-time" id="date-time"></div>
+    <button id="fullscreen-btn" onclick="toggleFullscreen()">
+      <i class="fas fa-expand"></i>
     </button>
-    <button id="next-btn" onclick="showNextPage()">
-      <i class="fas fa-arrow-right"></i>
+  </div>
+  <div class="play-pause-container">
+    <button id="play-pause-btn" onclick="togglePlayPause()">
+      <i class="fas fa-pause"></i>
     </button>
+    <span id="btcframe-text">btcframe.com</span>
+  </div>
+  <button id="prev-btn" onclick="showPrevPage()">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+  <button id="next-btn" onclick="showNextPage()">
+    <i class="fas fa-arrow-right"></i>
+  </button>
 
-    <!-- Page 1 -->
-    <div class="page active" id="page1">
-      <div id="dashboard">
-        <div class="card equal-height">
-          <h2 id="btc-usd">$0.00</h2>
-          <p>BTCUSD</p>
-        </div>
-        <div class="card equal-height">
-          <h2 id="sats-per-dollar">0</h2>
-          <p>SATS PER DOLLAR</p>
-        </div>
-        <div class="card equal-height">
-          <h2 id="avg-tx-fee">0</h2>
-          <p>AVG TX FEE (sat/vB)</p>
-        </div>
-        <div class="card equal-height">
-          <h2 id="block-height">0</h2>
-          <p>BLOCK HEIGHT</p>
-        </div>
-        <div class="card equal-height">
-          <h2 id="hash-rate">0</h2>
-          <p>CURRENT HASH RATE</p>
-        </div>
-        <div class="card equal-height">
-          <h2 id="difficulty">0</h2>
-          <p>NETWORK DIFFICULTY</p>
-        </div>
-        <div class="card equal-height">
-          <h2 id="circulating-supply">0<span>∞/21m</span></h2>
-          <p>CIRCULATING SUPPLY</p>
-        </div>
-        <div class="card equal-height">
-          <h2 id="market-cap">$0.00</h2>
-          <p>MARKET CAP</p>
-        </div>
-        <div class="difficulty-card equal-height">
-          <div class="adjustments">
-            <div class="adjustments-left">
-              <div class="adjustment adjustment-next">
-                <div class="left-align">
-                  <span id="next-adjustment-value">0.00% ▲</span>
-                  <span style="color: white">Next</span>
-                </div>
-              </div>
-              <div class="adjustment adjustment-prev">
-                <div class="left-align">
-                  <span id="prev-adjustment-value">0.00% ▼</span>
-                  <span style="color: white">Prev</span>
-                </div>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar">
-                <span id="progress-percent">00.00%</span>
+  <!-- Page 1 -->
+  <div class="page active" id="page1">
+    <div id="dashboard">
+      <div class="card equal-height">
+        <h2 id="btc-usd">$0.00</h2>
+        <p>BTCUSD</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="sats-per-dollar">0</h2>
+        <p>SATS PER DOLLAR</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="avg-tx-fee">0</h2>
+        <p>AVG TX FEE (sat/vB)</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="block-height">0</h2>
+        <p>BLOCK HEIGHT</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="hash-rate">0</h2>
+        <p>CURRENT HASH RATE</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="difficulty">0</h2>
+        <p>NETWORK DIFFICULTY</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="circulating-supply">0<span>∞/21m</span></h2>
+        <p>CIRCULATING SUPPLY</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="market-cap">$0.00</h2>
+        <p>MARKET CAP</p>
+      </div>
+      <div class="difficulty-card equal-height">
+        <div class="adjustments">
+          <div class="adjustments-left">
+            <div class="adjustment adjustment-next">
+              <div class="left-align">
+                <span id="next-adjustment-value">0.00% ▲</span>
+                <span style="color: white">Next</span>
               </div>
             </div>
+            <div class="adjustment adjustment-prev">
+              <div class="left-align">
+                <span id="prev-adjustment-value">0.00% ▼</span>
+                <span style="color: white">Prev</span>
+              </div>
+            </div>
           </div>
-          <div class="card equal-height">
-            <p>DIFFICULTY ADJ.</p>
-            <div class="remaining-blocks" id="remaining-blocks">
-              0,000 blocks remaining
+          <div class="progress">
+            <div class="progress-bar">
+              <span id="progress-percent">00.00%</span>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Page 2 -->
-    <div class="page" id="page2">
-      <div class="card">
-        <div class="price-container">
-          <div class="flashing-dot" id="price-dot"></div>
-          <div id="current-price">$0.00</div>
-          <div class="price-change" id="price-change">0.00%</div>
-        </div>
-        <canvas id="myChart" width="1600" height="650"></canvas>
-      </div>
-    </div>
-
-    <!-- Page 3 -->
-    <div class="page" id="page3">
-      <div class="card">
-        <div class="displays">
-          <div class="activity">
-            <div
-              class="flapper-flashing-dot"
-              id="price-dot-usd"
-              style="background-color: green"
-            ></div>
-          </div>
-          <input class="display XXL" id="display-1" />
-          <div class="activity">
-            <div
-              class="flapper-flashing-dot"
-              id="price-dot-eur"
-              style="background-color: green"
-            ></div>
-          </div>
-          <input class="display XXL" id="display-2" />
-          <div class="activity">
-            <div
-              class="flapper-flashing-dot"
-              id="price-dot-gbp"
-              style="background-color: green"
-            ></div>
-          </div>
-          <input class="display XXL" id="display-3" />
-          <div class="activity">
-            <div
-              class="flapper-flashing-dot"
-              id="price-dot-cad"
-              style="background-color: green"
-            ></div>
-          </div>
-          <input class="display XXL" id="display-4" />
-          <div class="activity">
-            <div
-              class="flapper-flashing-dot"
-              id="price-dot-chf"
-              style="background-color: green"
-            ></div>
-          </div>
-          <input class="display XXL" id="display-5" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Page 4 -->
-    <div class="page" id="page4">
-      <div class="card">
-        <div class="halving-progress-circle">
-          <div class="marker marker-0 vertical"></div>
-          <div class="marker marker-25 horizontal"></div>
-          <div class="marker marker-50 vertical"></div>
-          <div class="marker marker-75 horizontal"></div>
-          <div class="inner-circle">
-            <div class="progress-container">
-              <span class="progress-text" id="halving-percentage-text">0%</span>
-            </div>
-            <p class="remaining-text">REMAINING BLOCKS</p>
-            <div id="blocks-remaining" class="split-flap">
-              <span class="digit" data-kind="digit">0</span>
-              <span class="digit" data-kind="digit">0</span>
-              <span class="digit" data-kind="digit">0</span>
-              <span class="digit" data-kind="digit">0</span>
-              <span class="digit" data-kind="digit">0</span>
-              <span class="digit" data-kind="digit">0</span>
-            </div>
-            <p class="next-halving-text">NEXT HALVING</p>
-            <p id="dynamic-date" class="dynamic-date">~</p>
+        <div class="card equal-height">
+          <p>DIFFICULTY ADJ.</p>
+          <div class="remaining-blocks" id="remaining-blocks">
+            0,000 blocks remaining
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Page 5 -->
-    <div class="page" id="page5">
-      <div class="card">
-        <div class="price-container">
-          <div class="flashing-dot" id="hashrate-dot"></div>
-          <div id="current-hashrate">0 EH/s</div>
-          <div class="price-change" id="hashrate-change">0.00%</div>
+  <!-- Page 2 -->
+  <div class="page" id="page2">
+    <div class="card">
+      <div class="price-container">
+        <div class="flashing-dot" id="price-dot"></div>
+        <div id="current-price">$0.00</div>
+        <div class="price-change" id="price-change">0.00%</div>
+      </div>
+      <canvas id="myChart" width="1600" height="650"></canvas>
+    </div>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page" id="page3">
+    <div class="card">
+      <div class="displays">
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-usd" style="background-color: green"></div>
         </div>
-        <canvas id="hashrateChart" width="1600" height="650"></canvas>
+        <input class="display XXL" id="display-1" />
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-eur" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-2" />
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-gbp" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-3" />
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-cad" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-4" />
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-chf" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-5" />
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-aud" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-6" />
       </div>
     </div>
+  </div>
 
-    <!-- Page 6 -->
-    <div class="page" id="page6">
-      <div id="svelte-app"></div>
+  <!-- Page 4 -->
+  <div class="page" id="page4">
+    <div class="card">
+      <div class="halving-progress-circle">
+        <div class="marker marker-0 vertical"></div>
+        <div class="marker marker-25 horizontal"></div>
+        <div class="marker marker-50 vertical"></div>
+        <div class="marker marker-75 horizontal"></div>
+        <div class="inner-circle">
+          <div class="progress-container">
+            <span class="progress-text" id="halving-percentage-text">0%</span>
+          </div>
+          <p class="remaining-text">REMAINING BLOCKS</p>
+          <div id="blocks-remaining" class="split-flap">
+            <span class="digit" data-kind="digit">0</span>
+            <span class="digit" data-kind="digit">0</span>
+            <span class="digit" data-kind="digit">0</span>
+            <span class="digit" data-kind="digit">0</span>
+            <span class="digit" data-kind="digit">0</span>
+            <span class="digit" data-kind="digit">0</span>
+          </div>
+          <p class="next-halving-text">NEXT HALVING</p>
+          <p id="dynamic-date" class="dynamic-date">~</p>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script src="./build/bundle.2.3.4.js"></script>
-    <script src="./build/env.js"></script>
-    <script>
-      // Initialize your Svelte app in the 'page6' div
-      new SvelteApp({
-        target: document.getElementById("svelte-app"),
+  <!-- Page 5 -->
+  <div class="page" id="page5">
+    <div class="card">
+      <div class="price-container">
+        <div class="flashing-dot" id="hashrate-dot"></div>
+        <div id="current-hashrate">0 EH/s</div>
+        <div class="price-change" id="hashrate-change">0.00%</div>
+      </div>
+      <canvas id="hashrateChart" width="1600" height="650"></canvas>
+    </div>
+  </div>
+
+  <!-- Page 6 -->
+  <div class="page" id="page6">
+    <div id="svelte-app"></div>
+  </div>
+
+  <script src="./build/bundle.2.3.4.js"></script>
+  <script src="./build/env.js"></script>
+  <script>
+    // Initialize your Svelte app in the 'page6' div
+    new SvelteApp({
+      target: document.getElementById("svelte-app"),
+    });
+  </script>
+
+  <!-- Page 7 -->
+  <div class="page" id="page7">
+    <div class="card">
+      <div class="container">
+        <div id="myclock"></div>
+      </div>
+    </div>
+  </div>
+
+  <script language="javascript">
+    $(document).ready(function () {
+      //clock plugin constructor
+      $("#myclock").thooClock({
+        size: $(document).height() / 1.4,
+        dialColor: "#000000",
+        dialBackgroundColor: "white",
+        sweepingMinutes: true,
+        sweepingSeconds: true,
+        showNumerals: true,
+        brandText: "BITCOIN",
+        brandText2: "Tick Tock Next Block",
+        onEverySecond: function () {
+          //callback that should be fired every second
+        },
       });
-    </script>
+    });
+  </script>
 
-    <!-- Page 7 -->
-    <div class="page" id="page7">
+  <!-- Page 8 -->
+  <div class="page" id="page8">
+    <div class="card">
+      <div id="map-container">
+        <div id="map"></div>
+      </div>
+      <div id="reachable-nodes" class="reachable-nodes">
+        Public Bitcoin Nodes: <span id="node-count">0</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="js/nodemap.js"></script>
+
+  <!-- Page 9 -->
+  <div class="page" id="page9">
+    <div class="card">
+      <div class="satsusd-price-container">
+        <div class="satsusd-flashing-dot" id="satsusd-dot"></div>
+        <div id="satsusd-value-container">
+          <div id="satsusd-value">0</div>
+          <div class="satsusd-price-change" id="satsusd-change">0.00%</div>
+        </div>
+      </div>
+      <div id="sats-per-dollar" class="reachable-nodes">
+        SATS PER DOLLAR
+      </div>
+      <div class="satsusd-container">
+        <!-- Add the large square blocks here dynamically using JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 10 -->
+  <div class="page" id="page10">
+    <div class="card fear-greed-page">
+      <!-- Title -->
+      <div class="price-container">Fear & Greed</div>
+
+      <figure class="highcharts-figure">
+        <div id="fearGreedGauge"></div>
+      </figure>
+
+      <div class="historical-data-container">
+        <ul class="historical-data">
+          <li>
+            <span class="label">Yesterday</span>
+            <span class="value-wrapper"><span id="yesterday-value" class="value">--</span></span>
+          </li>
+          <li>
+            <span class="label">7 Days Ago</span>
+            <span class="value-wrapper"><span id="seven-days-value" class="value">--</span></span>
+          </li>
+          <li>
+            <span class="label">30 Days Ago</span>
+            <span class="value-wrapper"><span id="thirty-days-value" class="value">--</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="js/feargreed.js"></script>
+
+  <!-- Page 11 -->
+  <div class="page" id="page11">
       <div class="card">
-        <div class="container">
-          <div id="myclock"></div>
-        </div>
+          <p class="wallet-distribution-text">Address Distribution</p><br />
+          <div id="loading">Loading data, please wait...</div>
+          <table id="bitcoin-distribution-table" border="1" style="display: none;">
+              <thead>
+                  <tr>
+                      <th>HODLR Type</th>
+                      <th>BTC Balance</th>
+                      <th># of Addresses</th>
+                      <th>Total BTC</th>
+                      <th>BTC %</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
       </div>
+  </div>
+
+  <script src="js/wallet-distribution.js"></script>
+
+  <!-- Page 12 -->
+  <div class="page" id="page12">
+    <div class="card">
+      <p class="marketcap-text">Bitcoin vs. Gold Market Cap</p><br />
+      <canvas id="marketCapChart" width="1600" height="650"></canvas>
     </div>
+  </div>
 
-    <script language="javascript">
-      $(document).ready(function () {
-        //clock plugin constructor
-        $("#myclock").thooClock({
-          size: $(document).height() / 1.4,
-          dialColor: "#000000",
-          dialBackgroundColor: "white",
-          sweepingMinutes: true,
-          sweepingSeconds: true,
-          showNumerals: true,
-          brandText: "BITCOIN",
-          brandText2: "Tick Tock Next Block",
-          onEverySecond: function () {
-            //callback that should be fired every second
-          },
-        });
-      });
-    </script>
+  <script src="js/marketcap.js"></script>
 
-    <!-- Page 8 -->
-    <div class="page" id="page8">
-      <div class="card">
-        <div id="map-container">
-          <div id="map"></div>
-        </div>
-        <div id="reachable-nodes" class="reachable-nodes">
-          Public Bitcoin Nodes: <span id="node-count">0</span>
-        </div>
-      </div>
+  <!-- Page 13 -->
+  <div class="page" id="page13">
+    <div class="card">
+      <p class="marketcap-text">Total Global Assets</p><br /><br />
+      <div id="treemapContainer" class="treemap"></div>
     </div>
+  </div>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="js/nodemap.js"></script>
-
-    <!-- Page 9 -->
-    <div class="page" id="page9">
-      <div class="card">
-        <div class="satsusd-price-container">
-          <div class="satsusd-flashing-dot" id="satsusd-dot"></div>
-          <div id="satsusd-value-container">
-            <div id="satsusd-value">0</div>
-            <div class="satsusd-price-change" id="satsusd-change">0.00%</div>
-          </div>
-        </div>
-        <div id="sats-per-dollar" class="reachable-nodes">
-          SATS PER DOLLAR
-        </div>
-        <div class="satsusd-container">
-          <!-- Add the large square blocks here dynamically using JavaScript -->
-        </div>
-      </div>
-    </div>
-
-    <!-- Page 10 -->
-    <div class="page" id="page10">
-      <div class="card fear-greed-page">
-        <!-- Title -->
-        <div class="price-container">Fear & Greed</div>
-
-        <figure class="highcharts-figure">
-          <div id="fearGreedGauge"></div>
-        </figure>
-
-        <div class="historical-data-container">
-          <ul class="historical-data">
-            <li>
-              <span class="label">Yesterday</span>
-              <span class="value-wrapper"><span id="yesterday-value" class="value">--</span></span>
-            </li>
-            <li>
-              <span class="label">7 Days Ago</span>
-              <span class="value-wrapper"><span id="seven-days-value" class="value">--</span></span>
-            </li>
-            <li>
-              <span class="label">30 Days Ago</span>
-              <span class="value-wrapper"><span id="thirty-days-value" class="value">--</span></span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="js/feargreed.js"></script>
-
-    <!-- Page 11 -->
-    <div class="page" id="page11">
-        <div class="card">
-            <p class="wallet-distribution-text">WALLET DISTRIBUTION</p><br />
-            <div id="loading">Loading data, please wait...</div>
-            <table id="bitcoin-distribution-table" border="1" style="display: none;">
-                <thead>
-                    <tr>
-                        <th>Wallet Type</th>
-                        <th>BTC Balance</th>
-                        <th># of Addresses</th>
-                        <th>Total BTC</th>
-                        <th>BTC %</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-    </div>
-
-    <script src="js/wallet-distribution.js"></script>
-
-    <!-- Page 12 -->
-    <div class="page" id="page12">
-      <div class="card">
-        <p class="marketcap-text">Bitcoin vs. Gold Market Cap</p><br />
-        <canvas id="marketCapChart" width="1600" height="650"></canvas>
-      </div>
-    </div>
-    <script src="js/marketcap.js"></script>
-
-    <script>
-      function formatDateToMMDDYYYY(date) {
-        const day = ("0" + date.getDate()).slice(-2);
-        const month = ("0" + (date.getMonth() + 1)).slice(-2);
-        const year = date.getFullYear();
-        const hours = ("0" + date.getHours()).slice(-2);
-        const minutes = ("0" + date.getMinutes()).slice(-2);
-        const seconds = ("0" + date.getSeconds()).slice(-2);
-        return `${month}/${day}/${year} ${hours}:${minutes}:${seconds}`;
+  <script>
+    function checkAndRenderTreemap() {
+      if (window.location.href.includes("page13")) {
+        setTimeout(async () => {
+          await renderTreemap();
+        }, 1000);
       }
+    }
 
-      let isFlapperInitialized = false;
-      let globalCurrentPrice = 0;
-      let globalChange = 0;
-      let globalCurrentHashrate = 0; // Added global hashrate variable
-      let globalChartDate = new Date()
-        .toISOString()
-        .split("T")[0]
-        .substring(5)
-        .replace("-", "."); // Added global date variable
-      const CACHE_KEY = "btcFrameCache";
-      const CACHE_EXPIRY = 449000; // 449 seconds in milliseconds
+    // Initial load
+    document.addEventListener("DOMContentLoaded", checkAndRenderTreemap);
 
-      async function fetchData() {
-        try {
-          const cachedData = JSON.parse(localStorage.getItem(CACHE_KEY));
-          const now = new Date().getTime();
+    // Listen for URL changes (SPA or dynamic routing)
+    window.addEventListener("popstate", checkAndRenderTreemap);
+    window.addEventListener("hashchange", checkAndRenderTreemap);
 
-          if (cachedData && now - cachedData.timestamp < CACHE_EXPIRY) {
-            updateUI(cachedData.data);
-            return;
-          }
+    // Detect pushState and replaceState for frameworks that do not trigger popstate
+    (function () {
+      const originalPushState = history.pushState;
+      const originalReplaceState = history.replaceState;
 
-          let btcResponse = await fetch(
-            "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur,gbp,cad,chf&include_24hr_change=true"
-          );
-          let btcData = await btcResponse.json();
-          globalCurrentPrice = btcData.bitcoin.usd;
-          globalChange = btcData.bitcoin.usd_24h_change.toFixed(2); // Update globalChange here
+      history.pushState = function (...args) {
+        originalPushState.apply(this, args);
+        checkAndRenderTreemap();
+      };
 
-          let blockResponse = await fetch(
-            "https://mempool.space/api/blocks/tip/height"
-          );
-          let blockData = await blockResponse.text();
+      history.replaceState = function (...args) {
+        originalReplaceState.apply(this, args);
+        checkAndRenderTreemap();
+      };
+    })();
+  </script>
 
-          let feeResponse = await fetch(
-            "https://mempool.space/api/v1/fees/recommended"
-          );
-          let feeData = await feeResponse.json();
 
-          let hashResponse = await fetch(
-            "https://mempool.space/api/v1/mining/hashrate/3d"
-          );
-          let hashData = await hashResponse.json();
+  <script src="js/worldassets.js"></script>
 
-          let difficultyResponse = await fetch(
-            "https://mempool.space/api/v1/difficulty-adjustment"
-          );
-          let difficultyData = await difficultyResponse.json();
+  <script>
+    function formatDateToMMDDYYYY(date) {
+      const day = ("0" + date.getDate()).slice(-2);
+      const month = ("0" + (date.getMonth() + 1)).slice(-2);
+      const year = date.getFullYear();
+      const hours = ("0" + date.getHours()).slice(-2);
+      const minutes = ("0" + date.getMinutes()).slice(-2);
+      const seconds = ("0" + date.getSeconds()).slice(-2);
+      return `${month}/${day}/${year} ${hours}:${minutes}:${seconds}`;
+    }
 
-          let supplyMarketCapResponse = await fetch(
-            "https://api.coingecko.com/api/v3/coins/bitcoin"
-          );
-          let supplyMarketCapData = await supplyMarketCapResponse.json();
+    let isFlapperInitialized = false;
+    let globalCurrentPrice = 0;
+    let globalChange = 0;
+    let globalCurrentHashrate = 0;
+    let globalChartDate = new Date()
+      .toISOString()
+      .split("T")[0]
+      .substring(5)
+      .replace("-", ".");
+    const CACHE_KEY = "btcFrameCache";
+    const CACHE_EXPIRY = 720000; // 12 minutes in milliseconds
 
-          const data = {
-            btcData,
-            blockData,
-            feeData,
-            hashData,
-            difficultyData,
-            supplyMarketCapData,
-          };
+    async function fetchData() {
+      try {
+        const cachedData = JSON.parse(localStorage.getItem(CACHE_KEY));
+        const now = new Date().getTime();
 
-          localStorage.setItem(
-            CACHE_KEY,
-            JSON.stringify({ data, timestamp: now })
-          );
-          updateUI(data);
-        } catch (error) {
-          if (localStorage.getItem(CACHE_KEY)) {
-            const cachedData = JSON.parse(localStorage.getItem(CACHE_KEY));
-            updateUI(cachedData.data);
-          }
+        if (cachedData && now - cachedData.timestamp < CACHE_EXPIRY) {
+          updateUI(cachedData.data);
+          return;
         }
-      }
 
-      function updateUI(data) {
-        const {
+        let btcResponse = await fetch(
+          "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur,gbp,cad,chf,aud&include_24hr_change=true"
+        );
+        let btcData = await btcResponse.json();
+        globalCurrentPrice = btcData.bitcoin.usd;
+        globalChange = btcData.bitcoin.usd_24h_change.toFixed(2);
+
+        let blockResponse = await fetch(
+          "https://mempool.space/api/blocks/tip/height"
+        );
+        let blockData = await blockResponse.text();
+
+        let feeResponse = await fetch(
+          "https://mempool.space/api/v1/fees/recommended"
+        );
+        let feeData = await feeResponse.json();
+
+        let hashResponse = await fetch(
+          "https://mempool.space/api/v1/mining/hashrate/3d"
+        );
+        let hashData = await hashResponse.json();
+
+        let difficultyResponse = await fetch(
+          "https://mempool.space/api/v1/difficulty-adjustment"
+        );
+        let difficultyData = await difficultyResponse.json();
+
+        let supplyMarketCapResponse = await fetch(
+          "https://api.coingecko.com/api/v3/coins/bitcoin"
+        );
+        let supplyMarketCapData = await supplyMarketCapResponse.json();
+
+        const data = {
           btcData,
           blockData,
           feeData,
           hashData,
           difficultyData,
           supplyMarketCapData,
-        } = data;
+        };
 
-        globalCurrentPrice = Math.floor(btcData.bitcoin.usd); // Use floor to remove decimal points
-        let priceChange = btcData.bitcoin.usd_24h_change.toFixed(2); // Update globalChange here
-        let priceChangeColor = priceChange > 0 ? "green" : priceChange < 0 ? "red" : "gray";
-        let priceChangeSign = priceChange > 0 ? "+" : "";
-        let arrowDirection = priceChange > 0 ? "▲" : priceChange < 0 ? "▼" : "■";
-
-        // Update all instances of BTC price
-        document.getElementById("btc-usd").innerText = `$${globalCurrentPrice.toLocaleString()}`;
-        document.getElementById("current-price").innerText = `$${globalCurrentPrice.toLocaleString()}`; // No decimal points
-        document.getElementById("display-1").value = `${globalCurrentPrice.toLocaleString()} USD`; // No $ symbol
-
-        document.getElementById("price-change").innerHTML = `<font color="${priceChangeColor}">${priceChangeSign}${priceChange}% <span class="arrow">${arrowDirection}</span></font>`;
-        document.getElementById("price-dot").style.backgroundColor = priceChangeColor;
-
-        // Update the flashing dot color on Page 9
-        document.getElementById("satsusd-dot").style.backgroundColor = priceChangeColor;
-
-        updateDotColor("usd", btcData.bitcoin.usd_24h_change);
-        updateDotColor("eur", btcData.bitcoin.eur_24h_change);
-        updateDotColor("gbp", btcData.bitcoin.gbp_24h_change);
-        updateDotColor("cad", btcData.bitcoin.cad_24h_change);
-        updateDotColor("chf", btcData.bitcoin.chf_24h_change);
-
-        document.getElementById("display-2").value = `${btcData.bitcoin.eur.toLocaleString()} EUR`;
-        document.getElementById("display-3").value = `${btcData.bitcoin.gbp.toLocaleString()} GBP`;
-        document.getElementById("display-4").value = `${btcData.bitcoin.cad.toLocaleString()} CAD`;
-        document.getElementById("display-5").value = `${btcData.bitcoin.chf.toLocaleString()} CHF`;
-
-        document.getElementById("block-height").innerText = blockData;
-
-        document.getElementById("avg-tx-fee").innerText = feeData.fastestFee;
-
-        let currentHashrate = hashData.currentHashrate;
-        globalCurrentHashrate = (currentHashrate / 1e18).toFixed(2); // Store hashrate in global variable
-        document.getElementById("hash-rate").innerText = `${globalCurrentHashrate} EH/s`;
-        document.getElementById("current-hashrate").innerText = `${globalCurrentHashrate} EH/s`; // Update Page 5 hashrate
-        document.getElementById("difficulty").innerText = `${(hashData.currentDifficulty / 1e12).toFixed(2)} T`;
-
-        document.getElementById("sats-per-dollar").innerText = (100000000 / globalCurrentPrice).toFixed(0);
-
-        const progressCircle = document.querySelector(".progress-bar");
-        const progressPercent = difficultyData.progressPercent.toFixed(2);
-        progressCircle.style.background = `conic-gradient(#f39c12 0% ${progressPercent}%, #444 ${progressPercent}% 100%)`;
-        progressCircle.querySelector("span").textContent = `${progressPercent}%`;
-
-        document.getElementById("remaining-blocks").innerText = `${difficultyData.remainingBlocks.toLocaleString()} blocks remaining`;
-
-        const nextAdjustment = Math.abs(difficultyData.difficultyChange).toFixed(2);
-        const prevAdjustment = Math.abs(difficultyData.previousRetarget).toFixed(2);
-        const nextAdjustmentArrow = difficultyData.difficultyChange > 0 ? "▲" : "▼";
-        const prevAdjustmentArrow = difficultyData.previousRetarget > 0 ? "▲" : "▼";
-
-        const nextAdjustmentSign = difficultyData.difficultyChange > 0 ? "+" : "\u2212";
-        const prevAdjustmentSign = difficultyData.previousRetarget > 0 ? "+" : "\u2212";
-
-        document.getElementById("next-adjustment-value").innerText = `${nextAdjustmentSign}${nextAdjustment}% ${nextAdjustmentArrow}`;
-        document.getElementById("next-adjustment-value").style.color = difficultyData.difficultyChange < 0 ? "red" : "green";
-
-        document.getElementById("prev-adjustment-value").innerText = `${prevAdjustmentSign}${prevAdjustment}% ${prevAdjustmentArrow}`;
-        document.getElementById("prev-adjustment-value").style.color = difficultyData.previousRetarget < 0 ? "red" : "green";
-
-        let circulatingSupply = supplyMarketCapData.market_data.circulating_supply;
-        let marketCap = supplyMarketCapData.market_data.market_cap.usd;
-
-        document.getElementById("circulating-supply").innerHTML = `${circulatingSupply.toLocaleString()}<span>∞/21m</span>`;
-        document.getElementById("market-cap").innerText = `$${(marketCap / 1e12).toFixed(2)}T`;
-
-        const currentBlockHeight = parseInt(blockData, 10);
-        const blocksPerHalving = 210000;
-        const blocksRemaining = blocksPerHalving - (currentBlockHeight % blocksPerHalving);
-        const percentage = ((currentBlockHeight % blocksPerHalving) / blocksPerHalving) * 100;
-
-        document.querySelector(".halving-progress-circle").style.background = `conic-gradient(#ffae42 0% ${percentage}%, #444 ${percentage}% 100%)`;
-        document.getElementById("halving-percentage-text").innerText = `${percentage.toFixed(2)}%`;
-
-        const blocksRemainingStr = blocksRemaining.toLocaleString();
-        const blocksRemainingElem = document.getElementById("blocks-remaining");
-        blocksRemainingElem.innerHTML = "";
-        blocksRemainingStr.split("").forEach((char) => {
-          const span = document.createElement("span");
-          span.classList.add("digit");
-          span.dataset.kind = "digit";
-          span.textContent = char;
-          blocksRemainingElem.appendChild(span);
-        });
-
-        const averageBlockTimeMinutes = 10;
-        const remainingTimeMinutes = blocksRemaining * averageBlockTimeMinutes;
-        const estimatedHalvingDate = new Date(Date.now() + remainingTimeMinutes * 60000);
-
-        document.getElementById("dynamic-date").innerText = `~${formatDateToMMDDYYYY(estimatedHalvingDate)}`;
-
-        // Update chart data with globalCurrentPrice for Page 2
-        if (myChart.data.labels[myChart.data.labels.length - 1] !== globalChartDate) {
-          myChart.data.labels.push(globalChartDate);
-          myChart.data.datasets[0].data.push(globalCurrentPrice);
-          myChart.data.labels.shift();
-          myChart.data.datasets[0].data.shift();
-        } else {
-          myChart.data.datasets[0].data[myChart.data.datasets[0].data.length - 1] = globalCurrentPrice;
+        localStorage.setItem(
+          CACHE_KEY,
+          JSON.stringify({ data, timestamp: now })
+        );
+        updateUI(data);
+      } catch (error) {
+        if (localStorage.getItem(CACHE_KEY)) {
+          const cachedData = JSON.parse(localStorage.getItem(CACHE_KEY));
+          updateUI(cachedData.data);
         }
-        myChart.update();
+      }
+    }
 
-        // Update chart data with globalCurrentHashrate for Page 5
+    function updateUI(data) {
+      const {
+        btcData,
+        blockData,
+        feeData,
+        hashData,
+        difficultyData,
+        supplyMarketCapData,
+      } = data;
+
+      globalCurrentPrice = Math.floor(btcData.bitcoin.usd);
+      let priceChange = btcData.bitcoin.usd_24h_change.toFixed(2);
+      let priceChangeColor = priceChange > 0 ? "green" : priceChange < 0 ? "red" : "gray";
+      let priceChangeSign = priceChange > 0 ? "+" : "";
+      let arrowDirection = priceChange > 0 ? "▲" : priceChange < 0 ? "▼" : "■";
+
+      // Update all instances of BTC price
+      document.getElementById("btc-usd").innerText = `$${globalCurrentPrice.toLocaleString()}`;
+      document.getElementById("current-price").innerText = `$${globalCurrentPrice.toLocaleString()}`;
+      document.getElementById("display-1").value = `${globalCurrentPrice.toLocaleString()} USD`;
+
+      document.getElementById("price-change").innerHTML = `<font color="${priceChangeColor}">${priceChangeSign}${priceChange}% <span class="arrow">${arrowDirection}</span></font>`;
+      document.getElementById("price-dot").style.backgroundColor = priceChangeColor;
+
+      document.getElementById("satsusd-dot").style.backgroundColor = priceChangeColor;
+
+      updateDotColor("usd", btcData.bitcoin.usd_24h_change);
+      updateDotColor("eur", btcData.bitcoin.eur_24h_change);
+      updateDotColor("gbp", btcData.bitcoin.gbp_24h_change);
+      updateDotColor("cad", btcData.bitcoin.cad_24h_change);
+      updateDotColor("chf", btcData.bitcoin.chf_24h_change);
+      updateDotColor("aud", btcData.bitcoin.aud_24h_change);
+
+      document.getElementById("display-2").value = `${btcData.bitcoin.eur.toLocaleString()} EUR`;
+      document.getElementById("display-3").value = `${btcData.bitcoin.gbp.toLocaleString()} GBP`;
+      document.getElementById("display-4").value = `${btcData.bitcoin.cad.toLocaleString()} CAD`;
+      document.getElementById("display-5").value = `${btcData.bitcoin.chf.toLocaleString()} CHF`;
+      document.getElementById("display-6").value = `${btcData.bitcoin.aud.toLocaleString()} AUD`;
+
+      document.getElementById("block-height").innerText = blockData;
+
+      document.getElementById("avg-tx-fee").innerText = feeData.fastestFee;
+
+      let currentHashrate = hashData.currentHashrate;
+      globalCurrentHashrate = (currentHashrate / 1e18).toFixed(2);
+      document.getElementById("hash-rate").innerText = `${globalCurrentHashrate} EH/s`;
+      document.getElementById("current-hashrate").innerText = `${globalCurrentHashrate} EH/s`;
+      document.getElementById("difficulty").innerText = `${(hashData.currentDifficulty / 1e12).toFixed(2)} T`;
+
+      document.getElementById("sats-per-dollar").innerText = (100000000 / globalCurrentPrice).toFixed(0);
+
+      const progressCircle = document.querySelector(".progress-bar");
+      const progressPercent = difficultyData.progressPercent.toFixed(2);
+      progressCircle.style.background = `conic-gradient(#f39c12 0% ${progressPercent}%, #444 ${progressPercent}% 100%)`;
+      progressCircle.querySelector("span").textContent = `${progressPercent}%`;
+
+      document.getElementById("remaining-blocks").innerText = `${difficultyData.remainingBlocks.toLocaleString()} blocks remaining`;
+
+      const nextAdjustment = Math.abs(difficultyData.difficultyChange).toFixed(2);
+      const prevAdjustment = Math.abs(difficultyData.previousRetarget).toFixed(2);
+      const nextAdjustmentArrow = difficultyData.difficultyChange > 0 ? "▲" : "▼";
+      const prevAdjustmentArrow = difficultyData.previousRetarget > 0 ? "▲" : "▼";
+
+      const nextAdjustmentSign = difficultyData.difficultyChange > 0 ? "+" : "\u2212";
+      const prevAdjustmentSign = difficultyData.previousRetarget > 0 ? "+" : "\u2212";
+
+      document.getElementById("next-adjustment-value").innerText = `${nextAdjustmentSign}${nextAdjustment}% ${nextAdjustmentArrow}`;
+      document.getElementById("next-adjustment-value").style.color = difficultyData.difficultyChange < 0 ? "red" : "green";
+
+      document.getElementById("prev-adjustment-value").innerText = `${prevAdjustmentSign}${prevAdjustment}% ${prevAdjustmentArrow}`;
+      document.getElementById("prev-adjustment-value").style.color = difficultyData.previousRetarget < 0 ? "red" : "green";
+
+      let circulatingSupply = supplyMarketCapData.market_data.circulating_supply;
+      let marketCap = supplyMarketCapData.market_data.market_cap.usd;
+
+      document.getElementById("circulating-supply").innerHTML = `${circulatingSupply.toLocaleString()}<span>∞/21m</span>`;
+      document.getElementById("market-cap").innerText = `$${(marketCap / 1e12).toFixed(2)}T`;
+
+      const currentBlockHeight = parseInt(blockData, 10);
+      const blocksPerHalving = 210000;
+      const blocksRemaining = blocksPerHalving - (currentBlockHeight % blocksPerHalving);
+      const percentage = ((currentBlockHeight % blocksPerHalving) / blocksPerHalving) * 100;
+
+      document.querySelector(".halving-progress-circle").style.background = `conic-gradient(#ffae42 0% ${percentage}%, #444 ${percentage}% 100%)`;
+      document.getElementById("halving-percentage-text").innerText = `${percentage.toFixed(2)}%`;
+
+      const blocksRemainingStr = blocksRemaining.toLocaleString();
+      const blocksRemainingElem = document.getElementById("blocks-remaining");
+      blocksRemainingElem.innerHTML = "";
+      blocksRemainingStr.split("").forEach((char) => {
+        const span = document.createElement("span");
+        span.classList.add("digit");
+        span.dataset.kind = "digit";
+        span.textContent = char;
+        blocksRemainingElem.appendChild(span);
+      });
+
+      const averageBlockTimeMinutes = 10;
+      const remainingTimeMinutes = blocksRemaining * averageBlockTimeMinutes;
+      const estimatedHalvingDate = new Date(Date.now() + remainingTimeMinutes * 60000);
+
+      document.getElementById("dynamic-date").innerText = `~${formatDateToMMDDYYYY(estimatedHalvingDate)}`;
+
+      // Update chart data with globalCurrentPrice for Page 2
+      if (myChart.data.labels[myChart.data.labels.length - 1] !== globalChartDate) {
+        myChart.data.labels.push(globalChartDate);
+        myChart.data.datasets[0].data.push(globalCurrentPrice);
+        myChart.data.labels.shift();
+        myChart.data.datasets[0].data.shift();
+      } else {
+        myChart.data.datasets[0].data[myChart.data.datasets[0].data.length - 1] = globalCurrentPrice;
+      }
+      myChart.update();
+
+      // Update chart data with globalCurrentHashrate for Page 5
+      if (hashrateChart.data.labels[hashrateChart.data.labels.length - 1] !== globalChartDate) {
+        hashrateChart.data.labels.push(globalChartDate);
+        hashrateChart.data.datasets[0].data.push(globalCurrentHashrate);
+        hashrateChart.data.labels.shift();
+        hashrateChart.data.datasets[0].data.shift();
+      } else {
+        hashrateChart.data.datasets[0].data[hashrateChart.data.datasets[0].data.length - 1] = globalCurrentHashrate;
+      }
+      hashrateChart.update();
+
+      // Update SATSUSD UI for Page 9
+      updateSatsusdUI((100000000 / globalCurrentPrice).toFixed(0), priceChange);
+    }
+
+    function updatePrice() {
+      fetch(
+        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          globalCurrentPrice = Math.floor(data.bitcoin.usd); // Ensure globalCurrentPrice is updated
+          if (myChart.data.labels[myChart.data.labels.length - 1] !== globalChartDate) {
+            myChart.data.labels.push(globalChartDate);
+            myChart.data.datasets[0].data.push(globalCurrentPrice);
+            myChart.data.labels.shift();
+            myChart.data.datasets[0].data.shift();
+          } else {
+            myChart.data.datasets[0].data[myChart.data.datasets[0].data.length - 1] = globalCurrentPrice;
+          }
+          myChart.update();
+        });
+    }
+
+    function updateDotColor(currency, change) {
+      let color = change > 0 ? "green" : change < 0 ? "red" : "gray";
+      document.getElementById(`price-dot-${currency}`).style.backgroundColor = color;
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+
+    let isPlaying = true;
+    let timerInterval;
+    let countdown = 60; // Rotate pages every 60 seconds
+
+    function togglePlayPause() {
+      const button = document.getElementById("play-pause-btn");
+      if (isPlaying) {
+        clearInterval(timerInterval);
+        button.innerHTML = '<i class="fas fa-play"></i>';
+      } else {
+        startTimer();
+        button.innerHTML = '<i class="fas fa-pause"></i>';
+      }
+      isPlaying = !isPlaying;
+    }
+
+    function startTimer() {
+      countdown = 60;
+      const totalTime = countdown;
+
+      timerInterval = setInterval(() => {
+        countdown--;
+
+        const progress = ((totalTime - countdown) / totalTime) * 100;
+
+        document.getElementById("play-pause-btn").style.background = `conic-gradient(
+            #ffae42 ${progress}%, 
+            #444 ${progress}%, 
+            #444 100%)`;
+
+        if (countdown === 0) {
+          showNextPage();
+          countdown = totalTime;
+        }
+      }, 1000);
+    }
+
+    startTimer();
+    fetchData();
+    setInterval(fetchData, CACHE_EXPIRY);
+
+    // Page rotation logic
+    let currentPage = 0;
+    const pages = document.querySelectorAll(".page");
+    const pageCount = pages.length;
+
+    function showNextPage() {
+      clearInterval(timerInterval);
+      pages[currentPage].classList.remove("active");
+      document.querySelector(".svelte-1onyhi4").classList.remove("active");
+      currentPage = (currentPage + 1) % pageCount;
+      pages[currentPage].classList.add("active");
+      window.location.hash = `page${currentPage + 1}`;
+
+      // Initialize flapper when page 3 is displayed
+      if (currentPage === 2) {
+        if (!isFlapperInitialized) {
+          initializeFlappers();
+          isFlapperInitialized = true;
+        }
+        fetchFlapperData();
+      }
+
+      if (currentPage === 5) {
+        setTimeout(() => {
+          document.querySelector(".svelte-1onyhi4").classList.add("active");
+        }, 150);
+      }
+
+      if (isPlaying) {
+        startTimer();
+      }
+    }
+
+    function showPrevPage() {
+      clearInterval(timerInterval);
+      pages[currentPage].classList.remove("active");
+      document.querySelector(".svelte-1onyhi4").classList.remove("active");
+      currentPage = (currentPage - 1 + pageCount) % pageCount;
+      pages[currentPage].classList.add("active");
+      window.location.hash = `page${currentPage + 1}`;
+
+      // Initialize flapper when page 3 is displayed
+      if (currentPage === 2) {
+        if (!isFlapperInitialized) {
+          initializeFlappers();
+          isFlapperInitialized = true;
+        }
+        fetchFlapperData();
+      }
+
+      if (currentPage === 5) {
+        document.querySelector(".svelte-1onyhi4").classList.add("active");
+      }
+
+      if (isPlaying) {
+        startTimer();
+      }
+    }
+
+    function initializeFlappers() {
+      $(".flapper").remove(); // Remove any existing flapper elements
+      $(".display").flapper({ width: 11, align: "right" });
+    }
+
+    async function fetchFlapperData() {
+      try {
+        const response = await fetch(
+          "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur,gbp,cad,chf,aud"
+        );
+        const data = await response.json();
+
+        const btcUSD = Math.floor(data.bitcoin.usd).toLocaleString();
+        const btcEUR = Math.floor(data.bitcoin.eur).toLocaleString();
+        const btcGBP = Math.floor(data.bitcoin.gbp).toLocaleString();
+        const btcCAD = Math.floor(data.bitcoin.cad).toLocaleString();
+        const btcCHF = Math.floor(data.bitcoin.chf).toLocaleString();
+        const btcAUD = Math.floor(data.bitcoin.aud).toLocaleString();
+
+        // Ensure consistent USD price
+        $("#display-1")
+          .val(`${globalCurrentPrice.toLocaleString()} USD`)
+          .change(); // No $ symbol
+        $("#display-2").val(`${btcEUR} EUR`).change();
+        $("#display-3").val(`${btcGBP} GBP`).change();
+        $("#display-4").val(`${btcCAD} CAD`).change();
+        $("#display-5").val(`${btcCHF} CHF`).change();
+        $("#display-6").val(`${btcAUD} AUD`).change();
+      } catch (error) { }
+    }
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+      const hash = window.location.hash;
+      if (hash) {
+        const pageNumber = parseInt(hash.replace("#page", ""), 10) - 1;
+
+        if (pageNumber >= 0 && pageNumber < pageCount) {
+          pages[currentPage].classList.remove("active");
+
+          currentPage = pageNumber;
+          pages[currentPage].classList.add("active");
+        }
+        if (pageNumber === 5) {
+          document.querySelector(".svelte-1onyhi4").classList.add("active");
+        } else {
+          document.querySelector(".svelte-1onyhi4").classList.remove("active");
+        }
+      }
+
+      initializeCharts();
+      initializeFlappers();
+
+      fetchHistoricPrices().then((prices) => {
+        updatePriceChart(prices);
+      });
+
+      fetchHistoricHashrates().then((hashrates) => {
+        updateHashrateChart(hashrates);
+      });
+
+      updatePrice();
+      updateHashrate();
+      setInterval(updatePrice, CACHE_EXPIRY);
+      setInterval(updateHashrate, CACHE_EXPIRY);
+    });
+
+    function initializeCharts() {
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var gradientStroke = ctx.createLinearGradient(0, 0, 2000, 0);
+      gradientStroke.addColorStop(0, "rgba(255, 165, 0, .3)");
+      gradientStroke.addColorStop(0.5, "rgba(255, 140, 0, .5)");
+      gradientStroke.addColorStop(1, "rgba(255, 69, 0, .6)");
+
+      window.myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [
+            {
+              label: "Price USD",
+              data: [],
+              lineTension: 0,
+              borderColor: "rgba(255, 140, 0, 1)",
+              backgroundColor: gradientStroke,
+              borderWidth: 1,
+              pointRadius: 3,
+              pointHitRadius: 5,
+            },
+          ],
+        },
+        options: {
+          legend: {
+            display: false,
+          },
+          tooltips: {
+            callbacks: {
+              title: function (tooltipItems, data) {
+                return "📅 " + data.labels[tooltipItems[0].index];
+              },
+              label: function (tooltipItem, data) {
+                return (
+                  "$" +
+                  parseFloat(tooltipItem.yLabel).toLocaleString("en-US", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })
+                );
+              },
+            },
+          },
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: false,
+                  callback: function (value, index, values) {
+                    return "$" + (value / 1000).toFixed(0) + "k";
+                  },
+                  fontColor: "rgba(255, 255, 255, 0.7)",
+                },
+                gridLines: {
+                  color: "rgba(255, 255, 255, 0.1)",
+                },
+              },
+            ],
+            xAxes: [
+              {
+                ticks: {
+                  autoSkip: false,
+                  callback: function (value, index, values) {
+                    return index % 4 === 0 ? value : null;
+                  },
+                  maxRotation: 40,
+                  minRotation: 40,
+                  fontColor: "rgba(255, 255, 255, 0.7)",
+                },
+                gridLines: {
+                  color: "rgba(255, 255, 255, 0.1)",
+                },
+              },
+            ],
+          },
+        },
+      });
+
+      var ctxHashrate = document.getElementById("hashrateChart").getContext("2d");
+      var gradientStrokeHashrate = ctxHashrate.createLinearGradient(0, 0, 2000, 0);
+      gradientStrokeHashrate.addColorStop(0, "rgba(255, 165, 0, .3)");
+      gradientStrokeHashrate.addColorStop(0.5, "rgba(255, 140, 0, .5)");
+      gradientStrokeHashrate.addColorStop(1, "rgba(255, 69, 0, .6)");
+
+      var gradientRainbow = ctxHashrate.createLinearGradient(0, 0, 2000, 0);
+      gradientRainbow.addColorStop(0, "green");
+      gradientRainbow.addColorStop(0.3, "yellow");
+      gradientRainbow.addColorStop(0.6, "orange");
+      gradientRainbow.addColorStop(1, "red");
+
+      window.hashrateChart = new Chart(ctxHashrate, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [
+            {
+              label: "Hashrate EH/s",
+              data: [],
+              lineTension: 0,
+              borderColor: "rgba(255, 140, 0, 1)",
+              backgroundColor: gradientStrokeHashrate,
+              borderWidth: 1,
+              pointRadius: 3,
+              pointHitRadius: 5,
+            },
+            {
+              label: "30d Moving Average",
+              data: [],
+              lineTension: 0,
+              borderColor: gradientRainbow,
+              borderWidth: 3,
+              pointRadius: 0,
+              pointHitRadius: 5,
+            },
+          ],
+        },
+        options: {
+          legend: {
+            display: false,
+          },
+          tooltips: {
+            callbacks: {
+              title: function (tooltipItems, data) {
+                return "📅 " + data.labels[tooltipItems[0].index];
+              },
+              label: function (tooltipItem, data) {
+                return tooltipItem.yLabel.toFixed(2) + " EH/s";
+              },
+            },
+          },
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: false,
+                  callback: function (value, index, values) {
+                    return value.toFixed(2) + " EH/s";
+                  },
+                  fontColor: "rgba(255, 255, 255, 0.7)",
+                },
+                gridLines: {
+                  color: "rgba(255, 255, 255, 0.1)",
+                },
+              },
+            ],
+            xAxes: [
+              {
+                ticks: {
+                  autoSkip: false,
+                  callback: function (value, index, values) {
+                    return index % 30 === 0 ? value : null;
+                  },
+                  maxRotation: 40,
+                  minRotation: 40,
+                  fontColor: "rgba(255, 255, 255, 0.7)",
+                },
+                gridLines: {
+                  color: "rgba(255, 255, 255, 0.1)",
+                },
+              },
+            ],
+          },
+        },
+      });
+    }
+
+    function updatePriceChart(prices) {
+      const labels = prices.map((price) => price.date);
+      const values = prices.map((price) => price.value);
+
+      if (labels[labels.length - 1] !== globalChartDate) {
+        labels.push(globalChartDate);
+        values.push(globalCurrentPrice);
+      } else {
+        values[values.length - 1] = globalCurrentPrice;
+      }
+
+      // Ensure labels only every 4th point
+      myChart.data.labels = labels;
+      myChart.data.datasets[0].data = values;
+      myChart.update();
+    }
+
+    function updateHashrateChart(hashrates) {
+      const labels = hashrates.map((hashrate) => hashrate.date);
+      const values = hashrates.map((hashrate) => hashrate.value);
+      const movingAverages = calculateMovingAverage(values, 30); // 30-day moving average
+
+      // Ensure labels only every 30th point
+      hashrateChart.data.labels = labels;
+      hashrateChart.data.datasets[0].data = values;
+      hashrateChart.data.datasets[1].data = movingAverages;
+      hashrateChart.update();
+    }
+
+    async function fetchHistoricPrices() {
+      return fetch(
+        "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          const prices = data.prices.map((price) => ({
+            date: new Date(price[0]),
+            value: price[1],
+          }));
+
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+
+          // Keep only every 10th data point and ensure the last date is today without duplicates
+          const filteredPrices = [];
+          const uniqueDates = new Set();
+          prices.forEach((price, index) => {
+            const priceDate = new Date(price.date);
+            priceDate.setHours(0, 0, 0, 0);
+            const dateString = priceDate.toISOString().split("T")[0];
+            if (
+              (index % 10 === 0 || priceDate.getTime() === today.getTime()) &&
+              !uniqueDates.has(dateString)
+            ) {
+              filteredPrices.push(price);
+              uniqueDates.add(dateString);
+            }
+          });
+
+          const formattedPrices = filteredPrices.map((price) => ({
+            date: price.date
+              .toISOString()
+              .split("T")[0]
+              .substring(5)
+              .replace("-", "."),
+            value: price.value,
+          }));
+
+          return formattedPrices;
+        });
+    }
+
+    async function fetchHistoricHashrates() {
+      try {
+        // Fetching one year of hashrate data
+        const response = await fetch(
+          "https://mempool.space/api/v1/mining/hashrate/365d"
+        );
+        const data = await response.json();
+
+        if (!data.hashrates || !Array.isArray(data.hashrates)) {
+          throw new Error("Expected an array for historic hashrates data");
+        }
+
+        const hashrates = data.hashrates.map((item) => ({
+          date: new Date(item.timestamp * 1000),
+          value: item.avgHashrate / 1e18,
+        }));
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const oneYearAgo = new Date(today);
+        oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+
+        // Filter data to only include the past year
+        const filteredHashrates = hashrates.filter(
+          (hashrate) => hashrate.date >= oneYearAgo
+        );
+
+        const formattedHashrates = filteredHashrates.map((hashrate) => ({
+          date: hashrate.date
+            .toISOString()
+            .split("T")[0]
+            .substring(5)
+            .replace("-", "."),
+          value: hashrate.value,
+        }));
+
+        return formattedHashrates;
+      } catch (error) {
+        return [];
+      }
+    }
+
+    async function updateHashrate() {
+      try {
+        // Fetching hashrate data for the past 3 days
+        const response = await fetch(
+          "https://mempool.space/api/v1/mining/hashrate/3d"
+        );
+        const data = await response.json();
+
+        const currentHashrate = data.currentHashrate / 1e18; // Convert current hashrate to EH/s
+        globalCurrentHashrate = currentHashrate.toFixed(2);
+
+        document.getElementById("current-hashrate").innerText = `${globalCurrentHashrate} EH/s`;
+        document.getElementById("hash-rate").innerText = `${globalCurrentHashrate} EH/s`; // Update Page 1 hashrate
+
+        // Calculate the percentage change in hashrate over the past 24 hours
+        const hashrates = data.hashrates;
+        const oneDayAgoHashrate = hashrates[hashrates.length - 2].avgHashrate / 1e18; // Convert to EH/s
+
+        const hashrateChange = ((currentHashrate - oneDayAgoHashrate) / oneDayAgoHashrate) * 100;
+        const hashrateChangeColor = hashrateChange > 0 ? "green" : hashrateChange < 0 ? "red" : "gray";
+        const hashrateChangeSign = hashrateChange > 0 ? "+" : "";
+        const arrowDirection = hashrateChange > 0 ? "▲" : hashrateChange < 0 ? "▼" : "■";
+
+        document.getElementById("hashrate-change").innerHTML = `<font color="${hashrateChangeColor}">${hashrateChangeSign}${hashrateChange.toFixed(
+          2
+        )}% <span class="arrow">${arrowDirection}</span></font>`;
+        document.getElementById("hashrate-dot").style.backgroundColor = hashrateChangeColor;
+
         if (hashrateChart.data.labels[hashrateChart.data.labels.length - 1] !== globalChartDate) {
           hashrateChart.data.labels.push(globalChartDate);
           hashrateChart.data.datasets[0].data.push(globalCurrentHashrate);
@@ -628,602 +1156,82 @@
         } else {
           hashrateChart.data.datasets[0].data[hashrateChart.data.datasets[0].data.length - 1] = globalCurrentHashrate;
         }
+
         hashrateChart.update();
+      } catch (error) { }
+    }
 
-        // Update SATSUSD UI for Page 9
-        updateSatsusdUI((100000000 / globalCurrentPrice).toFixed(0), priceChange);
-      }
-
-      function updatePrice() {
-        fetch(
-          "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true"
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            globalCurrentPrice = Math.floor(data.bitcoin.usd); // Ensure globalCurrentPrice is updated
-            if (myChart.data.labels[myChart.data.labels.length - 1] !== globalChartDate) {
-              myChart.data.labels.push(globalChartDate);
-              myChart.data.datasets[0].data.push(globalCurrentPrice);
-              myChart.data.labels.shift();
-              myChart.data.datasets[0].data.shift();
-            } else {
-              myChart.data.datasets[0].data[myChart.data.datasets[0].data.length - 1] = globalCurrentPrice;
-            }
-            myChart.update();
-          });
-      }
-
-      function updateDotColor(currency, change) {
-        let color = change > 0 ? "green" : change < 0 ? "red" : "gray";
-        document.getElementById(`price-dot-${currency}`).style.backgroundColor = color;
-      }
-
-      function toggleFullscreen() {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-      }
-
-      let isPlaying = true;
-      let timerInterval;
-      let countdown = 60; // Rotate pages every 60 seconds
-
-      function togglePlayPause() {
-        const button = document.getElementById("play-pause-btn");
-        if (isPlaying) {
-          clearInterval(timerInterval);
-          button.innerHTML = '<i class="fas fa-play"></i>';
+    function calculateMovingAverage(data, windowSize) {
+      let movingAverages = [];
+      for (let i = 0; i < data.length; i++) {
+        if (i < windowSize - 1) {
+          movingAverages.push(null);
         } else {
-          startTimer();
-          button.innerHTML = '<i class="fas fa-pause"></i>';
-        }
-        isPlaying = !isPlaying;
-      }
-
-      function startTimer() {
-        countdown = 60; // Set countdown to 60 seconds
-        const totalTime = countdown; // Store the initial countdown value
-
-        timerInterval = setInterval(() => {
-          countdown--;
-
-          // Dynamically calculate the percentage based on remaining time
-          const progress = ((totalTime - countdown) / totalTime) * 100;
-
-          // Update the button's background using a conic gradient based on progress
-          document.getElementById("play-pause-btn").style.background = `conic-gradient(
-            #ffae42 ${progress}%, 
-            #444 ${progress}%, 
-            #444 100%)`;
-
-          if (countdown === 0) {
-            showNextPage();
-            countdown = totalTime; // Reset countdown to 60 seconds
-          }
-        }, 1000); // Execute every second
-      }
-
-      startTimer();
-      fetchData();
-      setInterval(fetchData, CACHE_EXPIRY); // Update data every 449 seconds
-
-      // Page rotation logic
-      let currentPage = 0;
-      const pages = document.querySelectorAll(".page");
-      const pageCount = pages.length;
-
-      function showNextPage() {
-        clearInterval(timerInterval); // Clear the existing timer
-        pages[currentPage].classList.remove("active");
-        document.querySelector(".svelte-1onyhi4").classList.remove("active");
-        currentPage = (currentPage + 1) % pageCount;
-        pages[currentPage].classList.add("active");
-        window.location.hash = `page${currentPage + 1}`;
-
-        // Initialize flapper when page 3 is displayed
-        if (currentPage === 2) {
-          if (!isFlapperInitialized) {
-            initializeFlappers();
-            isFlapperInitialized = true;
-          }
-          fetchFlapperData();
-        }
-
-        if (currentPage === 5) {
-          setTimeout(() => {
-            document.querySelector(".svelte-1onyhi4").classList.add("active");
-          }, 150);
-        }
-
-        if (isPlaying) {
-          startTimer(); // Restart the timer if it's currently playing
+          let window = data.slice(i - windowSize + 1, i + 1);
+          let average = window.reduce((sum, value) => sum + value, 0) / windowSize;
+          movingAverages.push(average);
         }
       }
+      return movingAverages;
+    }
 
-      function showPrevPage() {
-        clearInterval(timerInterval); // Clear the existing timer
-        pages[currentPage].classList.remove("active");
-        document.querySelector(".svelte-1onyhi4").classList.remove("active");
-        currentPage = (currentPage - 1 + pageCount) % pageCount;
-        pages[currentPage].classList.add("active");
-        window.location.hash = `page${currentPage + 1}`;
+    function updateDateTime() {
+      const dateTimeElement = document.getElementById("date-time");
+      const now = new Date();
+      const options = {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      };
+      const dateTimeString = now.toLocaleString("en-US", options);
+      dateTimeElement.innerHTML = dateTimeString;
+    }
 
-        // Initialize flapper when page 3 is displayed
-        if (currentPage === 2) {
-          if (!isFlapperInitialized) {
-            initializeFlappers();
-            isFlapperInitialized = true;
-          }
-          fetchFlapperData();
+    setInterval(updateDateTime, 1000); // Update date/time every second
+
+    function updateSatsusdUI(satsusd, change) {
+      const satsusdContainer = document.querySelector(".satsusd-container");
+      if (!satsusdContainer) {
+        return;
+      }
+
+      satsusdContainer.innerHTML = ""; // Clear previous content
+
+      const largeSquareCount = Math.floor(satsusd / 100);
+      const remainingSmallSquares = satsusd % 100;
+
+      for (let i = 0; i < largeSquareCount; i++) {
+        const largeSquare = document.createElement("div");
+        largeSquare.classList.add("satsusd-large-square");
+        for (let j = 0; j < 100; j++) {
+          const smallSquare = document.createElement("div");
+          smallSquare.classList.add("satsusd-small-square");
+          largeSquare.appendChild(smallSquare);
         }
+        satsusdContainer.appendChild(largeSquare);
+      }
 
-        if (currentPage === 5) {
-          document.querySelector(".svelte-1onyhi4").classList.add("active");
+      if (remainingSmallSquares > 0) {
+        const largeSquare = document.createElement("div");
+        largeSquare.classList.add("satsusd-large-square");
+        for (let j = 0; j < remainingSmallSquares; j++) {
+          const smallSquare = document.createElement("div");
+          smallSquare.classList.add("satsusd-small-square");
+          largeSquare.appendChild(smallSquare);
         }
-
-        if (isPlaying) {
-          startTimer(); // Restart the timer if it's currently playing
-        }
+        satsusdContainer.appendChild(largeSquare);
       }
 
-      function initializeFlappers() {
-        $(".flapper").remove(); // Remove any existing flapper elements
-        $(".display").flapper({ width: 11, align: "right" });
-      }
+      const satsusdValueElement = document.getElementById("satsusd-value");
+      const satsusdChangeElement = document.getElementById("satsusd-change");
 
-      async function fetchFlapperData() {
-        try {
-          const response = await fetch(
-            "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur,gbp,cad,chf"
-          );
-          const data = await response.json();
+      satsusdValueElement.innerText = satsusd.toLocaleString();
+      satsusdChangeElement.innerHTML = document.getElementById("price-change").innerHTML;
+    }
+  </script>
+</body>
 
-          const btcUSD = Math.floor(data.bitcoin.usd).toLocaleString();
-          const btcEUR = Math.floor(data.bitcoin.eur).toLocaleString();
-          const btcGBP = Math.floor(data.bitcoin.gbp).toLocaleString();
-          const btcCAD = Math.floor(data.bitcoin.cad).toLocaleString();
-          const btcCHF = Math.floor(data.bitcoin.chf).toLocaleString();
-
-          // Ensure consistent USD price
-          $("#display-1")
-            .val(`${globalCurrentPrice.toLocaleString()} USD`)
-            .change(); // No $ symbol
-          $("#display-2").val(`${btcEUR} EUR`).change();
-          $("#display-3").val(`${btcGBP} GBP`).change();
-          $("#display-4").val(`${btcCAD} CAD`).change();
-          $("#display-5").val(`${btcCHF} CHF`).change();
-        } catch (error) {}
-      }
-
-      document.addEventListener("DOMContentLoaded", (event) => {
-        const hash = window.location.hash;
-        if (hash) {
-          const pageNumber = parseInt(hash.replace("#page", ""), 10) - 1;
-
-          if (pageNumber >= 0 && pageNumber < pageCount) {
-            pages[currentPage].classList.remove("active");
-
-            currentPage = pageNumber;
-            pages[currentPage].classList.add("active");
-          }
-          if (pageNumber === 5) {
-            document.querySelector(".svelte-1onyhi4").classList.add("active");
-          } else {
-            document.querySelector(".svelte-1onyhi4").classList.remove("active");
-          }
-        }
-
-        initializeCharts();
-        initializeFlappers();
-
-        fetchHistoricPrices().then((prices) => {
-          updatePriceChart(prices);
-        });
-
-        fetchHistoricHashrates().then((hashrates) => {
-          updateHashrateChart(hashrates);
-        });
-
-        updatePrice();
-        updateHashrate();
-        setInterval(updatePrice, CACHE_EXPIRY); // Update price every 449 seconds
-        setInterval(updateHashrate, CACHE_EXPIRY); // Update hashrate every 449 seconds
-      });
-
-      function initializeCharts() {
-        var ctx = document.getElementById("myChart").getContext("2d");
-        var gradientStroke = ctx.createLinearGradient(0, 0, 2000, 0);
-        gradientStroke.addColorStop(0, "rgba(255, 165, 0, .3)");
-        gradientStroke.addColorStop(0.5, "rgba(255, 140, 0, .5)");
-        gradientStroke.addColorStop(1, "rgba(255, 69, 0, .6)");
-
-        window.myChart = new Chart(ctx, {
-          type: "line",
-          data: {
-            labels: [],
-            datasets: [
-              {
-                label: "Price USD",
-                data: [],
-                lineTension: 0,
-                borderColor: "rgba(255, 140, 0, 1)",
-                backgroundColor: gradientStroke,
-                borderWidth: 1,
-                pointRadius: 3,
-                pointHitRadius: 5,
-              },
-            ],
-          },
-          options: {
-            legend: {
-              display: false,
-            },
-            tooltips: {
-              callbacks: {
-                title: function (tooltipItems, data) {
-                  return "📅 " + data.labels[tooltipItems[0].index];
-                },
-                label: function (tooltipItem, data) {
-                  return (
-                    "$" +
-                    parseFloat(tooltipItem.yLabel).toLocaleString("en-US", {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })
-                  );
-                },
-              },
-            },
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: false,
-                    callback: function (value, index, values) {
-                      return "$" + (value / 1000).toFixed(0) + "k";
-                    },
-                    fontColor: "rgba(255, 255, 255, 0.7)",
-                  },
-                  gridLines: {
-                    color: "rgba(255, 255, 255, 0.1)",
-                  },
-                },
-              ],
-              xAxes: [
-                {
-                  ticks: {
-                    autoSkip: false,
-                    callback: function (value, index, values) {
-                      return index % 4 === 0 ? value : null;
-                    },
-                    maxRotation: 40,
-                    minRotation: 40,
-                    fontColor: "rgba(255, 255, 255, 0.7)",
-                  },
-                  gridLines: {
-                    color: "rgba(255, 255, 255, 0.1)",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        var ctxHashrate = document.getElementById("hashrateChart").getContext("2d");
-        var gradientStrokeHashrate = ctxHashrate.createLinearGradient(0, 0, 2000, 0);
-        gradientStrokeHashrate.addColorStop(0, "rgba(255, 165, 0, .3)");
-        gradientStrokeHashrate.addColorStop(0.5, "rgba(255, 140, 0, .5)");
-        gradientStrokeHashrate.addColorStop(1, "rgba(255, 69, 0, .6)");
-
-        var gradientRainbow = ctxHashrate.createLinearGradient(0, 0, 2000, 0);
-        gradientRainbow.addColorStop(0, "green");
-        gradientRainbow.addColorStop(0.3, "yellow");
-        gradientRainbow.addColorStop(0.6, "orange");
-        gradientRainbow.addColorStop(1, "red");
-
-        window.hashrateChart = new Chart(ctxHashrate, {
-          type: "line",
-          data: {
-            labels: [],
-            datasets: [
-              {
-                label: "Hashrate EH/s",
-                data: [],
-                lineTension: 0,
-                borderColor: "rgba(255, 140, 0, 1)",
-                backgroundColor: gradientStrokeHashrate,
-                borderWidth: 1,
-                pointRadius: 3,
-                pointHitRadius: 5,
-              },
-              {
-                label: "30d Moving Average",
-                data: [],
-                lineTension: 0,
-                borderColor: gradientRainbow,
-                borderWidth: 3,
-                pointRadius: 0,
-                pointHitRadius: 5,
-              },
-            ],
-          },
-          options: {
-            legend: {
-              display: false,
-            },
-            tooltips: {
-              callbacks: {
-                title: function (tooltipItems, data) {
-                  return "📅 " + data.labels[tooltipItems[0].index];
-                },
-                label: function (tooltipItem, data) {
-                  return tooltipItem.yLabel.toFixed(2) + " EH/s";
-                },
-              },
-            },
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: false,
-                    callback: function (value, index, values) {
-                      return value.toFixed(2) + " EH/s";
-                    },
-                    fontColor: "rgba(255, 255, 255, 0.7)",
-                  },
-                  gridLines: {
-                    color: "rgba(255, 255, 255, 0.1)",
-                  },
-                },
-              ],
-              xAxes: [
-                {
-                  ticks: {
-                    autoSkip: false,
-                    callback: function (value, index, values) {
-                      return index % 30 === 0 ? value : null;
-                    },
-                    maxRotation: 40,
-                    minRotation: 40,
-                    fontColor: "rgba(255, 255, 255, 0.7)",
-                  },
-                  gridLines: {
-                    color: "rgba(255, 255, 255, 0.1)",
-                  },
-                },
-              ],
-            },
-          },
-        });
-      }
-
-      function updatePriceChart(prices) {
-        const labels = prices.map((price) => price.date);
-        const values = prices.map((price) => price.value);
-
-        if (labels[labels.length - 1] !== globalChartDate) {
-          labels.push(globalChartDate);
-          values.push(globalCurrentPrice);
-        } else {
-          values[values.length - 1] = globalCurrentPrice;
-        }
-
-        // Ensure labels only every 4th point
-        myChart.data.labels = labels;
-        myChart.data.datasets[0].data = values;
-        myChart.update();
-      }
-
-      function updateHashrateChart(hashrates) {
-        const labels = hashrates.map((hashrate) => hashrate.date);
-        const values = hashrates.map((hashrate) => hashrate.value);
-        const movingAverages = calculateMovingAverage(values, 30); // 30-day moving average
-
-        // Ensure labels only every 30th point
-        hashrateChart.data.labels = labels;
-        hashrateChart.data.datasets[0].data = values;
-        hashrateChart.data.datasets[1].data = movingAverages;
-        hashrateChart.update();
-      }
-
-      async function fetchHistoricPrices() {
-        return fetch(
-          "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365"
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            const prices = data.prices.map((price) => ({
-              date: new Date(price[0]),
-              value: price[1],
-            }));
-
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            // Keep only every 10th data point and ensure the last date is today without duplicates
-            const filteredPrices = [];
-            const uniqueDates = new Set();
-            prices.forEach((price, index) => {
-              const priceDate = new Date(price.date);
-              priceDate.setHours(0, 0, 0, 0);
-              const dateString = priceDate.toISOString().split("T")[0];
-              if (
-                (index % 10 === 0 || priceDate.getTime() === today.getTime()) &&
-                !uniqueDates.has(dateString)
-              ) {
-                filteredPrices.push(price);
-                uniqueDates.add(dateString);
-              }
-            });
-
-            const formattedPrices = filteredPrices.map((price) => ({
-              date: price.date
-                .toISOString()
-                .split("T")[0]
-                .substring(5)
-                .replace("-", "."),
-              value: price.value,
-            }));
-
-            return formattedPrices;
-          });
-      }
-
-      async function fetchHistoricHashrates() {
-        try {
-          // Fetching one year of hashrate data
-          const response = await fetch(
-            "https://mempool.space/api/v1/mining/hashrate/365d"
-          );
-          const data = await response.json();
-
-          if (!data.hashrates || !Array.isArray(data.hashrates)) {
-            throw new Error("Expected an array for historic hashrates data");
-          }
-
-          const hashrates = data.hashrates.map((item) => ({
-            date: new Date(item.timestamp * 1000),
-            value: item.avgHashrate / 1e18,
-          }));
-
-          const today = new Date();
-          today.setHours(0, 0, 0, 0);
-          const oneYearAgo = new Date(today);
-          oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-
-          // Filter data to only include the past year
-          const filteredHashrates = hashrates.filter(
-            (hashrate) => hashrate.date >= oneYearAgo
-          );
-
-          const formattedHashrates = filteredHashrates.map((hashrate) => ({
-            date: hashrate.date
-              .toISOString()
-              .split("T")[0]
-              .substring(5)
-              .replace("-", "."),
-            value: hashrate.value,
-          }));
-
-          return formattedHashrates;
-        } catch (error) {
-          return [];
-        }
-      }
-
-      async function updateHashrate() {
-        try {
-          // Fetching hashrate data for the past 3 days
-          const response = await fetch(
-            "https://mempool.space/api/v1/mining/hashrate/3d"
-          );
-          const data = await response.json();
-
-          const currentHashrate = data.currentHashrate / 1e18; // Convert current hashrate to EH/s
-          globalCurrentHashrate = currentHashrate.toFixed(2);
-
-          document.getElementById("current-hashrate").innerText = `${globalCurrentHashrate} EH/s`;
-          document.getElementById("hash-rate").innerText = `${globalCurrentHashrate} EH/s`; // Update Page 1 hashrate
-
-          // Calculate the percentage change in hashrate over the past 24 hours
-          const hashrates = data.hashrates;
-          const oneDayAgoHashrate = hashrates[hashrates.length - 2].avgHashrate / 1e18; // Convert to EH/s
-
-          const hashrateChange = ((currentHashrate - oneDayAgoHashrate) / oneDayAgoHashrate) * 100;
-          const hashrateChangeColor = hashrateChange > 0 ? "green" : hashrateChange < 0 ? "red" : "gray";
-          const hashrateChangeSign = hashrateChange > 0 ? "+" : "";
-          const arrowDirection = hashrateChange > 0 ? "▲" : hashrateChange < 0 ? "▼" : "■";
-
-          document.getElementById("hashrate-change").innerHTML = `<font color="${hashrateChangeColor}">${hashrateChangeSign}${hashrateChange.toFixed(
-            2
-          )}% <span class="arrow">${arrowDirection}</span></font>`;
-          document.getElementById("hashrate-dot").style.backgroundColor = hashrateChangeColor;
-
-          if (hashrateChart.data.labels[hashrateChart.data.labels.length - 1] !== globalChartDate) {
-            hashrateChart.data.labels.push(globalChartDate);
-            hashrateChart.data.datasets[0].data.push(globalCurrentHashrate);
-            hashrateChart.data.labels.shift();
-            hashrateChart.data.datasets[0].data.shift();
-          } else {
-            hashrateChart.data.datasets[0].data[hashrateChart.data.datasets[0].data.length - 1] = globalCurrentHashrate;
-          }
-
-          hashrateChart.update();
-        } catch (error) {}
-      }
-
-      function calculateMovingAverage(data, windowSize) {
-        let movingAverages = [];
-        for (let i = 0; i < data.length; i++) {
-          if (i < windowSize - 1) {
-            movingAverages.push(null);
-          } else {
-            let window = data.slice(i - windowSize + 1, i + 1);
-            let average = window.reduce((sum, value) => sum + value, 0) / windowSize;
-            movingAverages.push(average);
-          }
-        }
-        return movingAverages;
-      }
-
-      function updateDateTime() {
-        const dateTimeElement = document.getElementById("date-time");
-        const now = new Date();
-        const options = {
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        };
-        const dateTimeString = now.toLocaleString("en-US", options);
-        dateTimeElement.innerHTML = dateTimeString;
-      }
-
-      setInterval(updateDateTime, 1000); // Update date/time every second
-
-      function updateSatsusdUI(satsusd, change) {
-        const satsusdContainer = document.querySelector(".satsusd-container");
-        if (!satsusdContainer) {
-          return;
-        }
-
-        satsusdContainer.innerHTML = ""; // Clear previous content
-
-        const largeSquareCount = Math.floor(satsusd / 100);
-        const remainingSmallSquares = satsusd % 100;
-
-        for (let i = 0; i < largeSquareCount; i++) {
-          const largeSquare = document.createElement("div");
-          largeSquare.classList.add("satsusd-large-square");
-          for (let j = 0; j < 100; j++) {
-            const smallSquare = document.createElement("div");
-            smallSquare.classList.add("satsusd-small-square");
-            largeSquare.appendChild(smallSquare);
-          }
-          satsusdContainer.appendChild(largeSquare);
-        }
-
-        if (remainingSmallSquares > 0) {
-          const largeSquare = document.createElement("div");
-          largeSquare.classList.add("satsusd-large-square");
-          for (let j = 0; j < remainingSmallSquares; j++) {
-            const smallSquare = document.createElement("div");
-            smallSquare.classList.add("satsusd-small-square");
-            largeSquare.appendChild(smallSquare);
-          }
-          satsusdContainer.appendChild(largeSquare);
-        }
-
-        const satsusdValueElement = document.getElementById("satsusd-value");
-        const satsusdChangeElement = document.getElementById("satsusd-change");
-
-        satsusdValueElement.innerText = satsusd.toLocaleString();
-        satsusdChangeElement.innerHTML = document.getElementById("price-change").innerHTML;
-      }
-    </script>
-  </body>
 </html>
