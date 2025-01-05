@@ -17,6 +17,8 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 - **Bitcoin Clock:** A custom Bitcoin-themed clock with "Tick Tock Next Block" branding.
 - **Mempool Visualizer:** Detailed representation of the Bitcoin mempool, highlighting transaction statistics and trends.
 - **Wallet Distribution Chart:** Analyze Bitcoin wallet balance distributions and 24-hour changes.
+- **Gold vs. Bitcoin Market Cap:** Compare Gold Market Cap to Bitcoin Market Cap on a dynamic chart.
+- **Total Global Assets:** View total global assets with dynamic Bitcoin and Gold Market Caps on a tree map chart.
 - **DIY Customization:** Build, assemble, and configure the smart frame yourself.
 
 ---
