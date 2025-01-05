@@ -243,6 +243,12 @@ Thank you for helping BTC Frame grow and evolve! Together, we can build an incre
 ### Wallet Distribution
 ![Wallet Distribution](/screenshots/wallet-distribution.png)
 
+### Bitcoin vs. Gold Market Cap
+![Bitcoin vs. Gold Market Cap](/screenshots/gold-vs-bitcoin.png)
+
+### Total Global Assets
+![Total Global Assets](/screenshots/total-global-assets.png)
+
 ---
 
 ## MIT License
