@@ -1,45 +1,57 @@
-// Added 2-hour persistent cache without changing existing logic.
-// Only added localStorage checks and writes around the fetch calls.
-
 async function fetchMarketCaps() {
-  const cacheKey = "marketCapsCache";
-  const timestampKey = "marketCapsCacheTimestamp";
-  const twoHours = 2 * 60 * 60 * 1000;
+  const CACHE_KEY = "marketCapData";
+  const THIRTEEN_MINUTES = 13 * 60 * 1000; // 13 minutes in ms
 
   try {
-    // Check localStorage for existing cached data
-    const cachedData = localStorage.getItem(cacheKey);
-    const cachedTimestamp = localStorage.getItem(timestampKey);
+    // 1. Check if we already have cached data that is still valid
+    const cachedDataString = localStorage.getItem(CACHE_KEY);
+    const now = Date.now();
 
-    // If cached data exists and is not older than 2 hours, use it
-    if (
-      cachedData &&
-      cachedTimestamp &&
-      Date.now() - parseInt(cachedTimestamp, 10) < twoHours
-    ) {
-      return JSON.parse(cachedData);
+    if (cachedDataString) {
+      const { timestamp, data } = JSON.parse(cachedDataString);
+
+      // Check if cached data is still within 13 minutes
+      if (now - timestamp < THIRTEEN_MINUTES) {
+        // If within 13 minutes, use cached data
+        console.log("Using cached market cap data.");
+        return data; // { btcMarketCap, goldMarketCap }
+      }
     }
 
-    // Otherwise, fetch fresh data
-    const [bitcoinData, goldData] = await Promise.all([
-      fetch("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1"),
+    // 2. If no valid cache, fetch fresh data
+    console.log("Fetching fresh market cap data from API...");
+
+    const [bitcoinResponse, goldResponse] = await Promise.all([
+      fetch("https://api.coingecko.com/api/v3/coins/bitcoin"),
       fetch("https://api.coingecko.com/api/v3/coins/tether-gold/market_chart?vs_currency=usd&days=1"),
     ]);
 
-    const btcMarketCap = await bitcoinData.json().then((data) => data.market_caps[0][1] / 1e12); // Trillions
-    const goldPrice = await goldData.json().then((data) => data.prices[0][1]);
+    if (!bitcoinResponse.ok || !goldResponse.ok) {
+      throw new Error(
+        `API response error! Bitcoin: ${bitcoinResponse.status}, Gold: ${goldResponse.status}`
+      );
+    }
+
+    const bitcoinData = await bitcoinResponse.json();
+    const goldData = await goldResponse.json();
+
+    const btcMarketCap = bitcoinData.market_data.market_cap.usd / 1e12; // Convert to trillions
+    const goldPrice = goldData.prices[0][1];
     const totalGoldOunces = 197576 * 32150.7; // Gold supply in ounces
-    const goldMarketCap = (goldPrice * totalGoldOunces) / 1e12; // Trillions
+    const goldMarketCap = (goldPrice * totalGoldOunces) / 1e12; // Convert to trillions
 
-    // Store the fetched data in cache
-    const result = { btcMarketCap, goldMarketCap };
-    localStorage.setItem(cacheKey, JSON.stringify(result));
-    localStorage.setItem(timestampKey, Date.now().toString());
+    // 3. Save fetched data to localStorage with a timestamp
+    const data = { btcMarketCap, goldMarketCap };
+    const cacheObject = {
+      timestamp: now,
+      data,
+    };
+    localStorage.setItem(CACHE_KEY, JSON.stringify(cacheObject));
 
-    return result;
+    return data;
   } catch (error) {
-    console.error("Error fetching market cap data:", error);
-    return { btcMarketCap: 1.9, goldMarketCap: 17 }; // Fallback values
+    console.error("Error fetching market cap data:", error.message, error.stack);
+    throw new Error("Failed to fetch market cap data. Please try again later.");
   }
 }
 
@@ -110,3 +122,8 @@ async function renderTreemap() {
         : `<div>${d.name}<br>$${d.displayValue.toFixed(2)}T</div>`
     );
 }
+
+// Fetch and render treemap on page load
+document.addEventListener("DOMContentLoaded", () => {
+  renderTreemap();
+});
