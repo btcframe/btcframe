@@ -36,6 +36,7 @@
   <script src="src/flapdemo.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
   <script src="js/jquery.thooClock.js"></script>
+  <script src="js/keyboard.js"></script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7SB6MDJXV"></script>
@@ -425,6 +426,20 @@
 
   <script src="js/worldassets.js"></script>
 
+  <!-- Page 14 -->
+  <div class="page" id="page14">
+    <div class="card">
+      <div class="price-container">
+        <div class="flashing-dot" id="tx-dot" style="background-color: gray;"></div>
+        <div id="current-tx-count">-- TX</div>
+        <div class="price-change" id="tx-change" style="color: gray;">--% ■</div>
+      </div>
+      <canvas id="txChart" width="1600" height="650"></canvas>
+    </div>
+  </div>
+
+  <script src="js/tx-count.js"></script>
+
   <script>
     function formatDateToMMDDYYYY(date) {
       const day = ("0" + date.getDate()).slice(-2);
@@ -446,7 +461,7 @@
       .substring(5)
       .replace("-", ".");
     const CACHE_KEY = "btcFrameCache";
-    const CACHE_EXPIRY = 720000; // 12 minutes in milliseconds
+    const CACHE_EXPIRY = 780000; // 13 minutes in milliseconds
 
     async function fetchData() {
       try {

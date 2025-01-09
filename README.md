@@ -19,6 +19,7 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 - **Wallet Distribution Chart:** Analyze Bitcoin wallet balance distributions and 24-hour changes.
 - **Gold vs. Bitcoin Market Cap:** Compare Gold Market Cap to Bitcoin Market Cap on a dynamic chart.
 - **Total Global Assets:** View total global assets with dynamic Bitcoin and Gold Market Caps on a tree map chart.
+- **Daily Confirmed Transactions:** Track daily transaction trends and see how the network is evolving in real-time.
 - **DIY Customization:** Build, assemble, and configure the smart frame yourself.
 
 ---
@@ -153,6 +154,14 @@ BTC Frame includes 11 interactive dashboards, each displaying unique Bitcoin met
 11. **Page 11: Wallet Distribution Chart**
     - Displays wallet balance distributions in the Bitcoin network.
     - Includes address counts, BTC balances, and 24-hour changes.
+12. **Page 12: Gold vs. Bitcoin Market Cap**
+    - Compare Gold Market Cap to Bitcoin Market Cap on a dynamic chart.
+
+13. **Page 13: Total Global Assets**
+    - View total global assets with dynamic Bitcoin and Gold Market Caps on a tree map chart.
+
+14. **Page 14: Daily Confirmed Transactions**
+    - Track daily transaction trends and see how the network is evolving in real-time.
 
 ---
 
@@ -162,6 +171,7 @@ BTC Frame relies on various external APIs and data providers:
 
 - [CoinGecko API](https://www.coingecko.com/en/api) for Bitcoin prices and market data.
 - [mempool.space API](https://mempool.space/) for block height and hash rate.
+- [Blockchain.com API](https://www.blockchain.com/explorer/api/blockchain_api) for daily confirmed transactions.
 - [Bitfeed](https://bits.monospace.live/) for mempool visualizer.
 - [BitInfoCharts](https://bitinfocharts.com/) for wallet distribution data.
 - [Alternative.me API](https://alternative.me/) for the Fear and Greed Index.
@@ -250,6 +260,9 @@ Thank you for helping BTC Frame grow and evolve! Together, we can build an incre
 
 ### Total Global Assets
 ![Total Global Assets](/screenshots/total-global-assets.png)
+
+### Daily Confirmed Transactions
+![Daily Confirmed Transactions](/screenshots/tx-count.png)
 
 ---
 
