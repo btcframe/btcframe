@@ -1,5 +1,26 @@
+// Added 2-hour persistent cache without changing existing logic.
+// Only added localStorage checks and writes around the fetch calls.
+
 async function fetchMarketCaps() {
+  const cacheKey = "marketCapsCache";
+  const timestampKey = "marketCapsCacheTimestamp";
+  const twoHours = 2 * 60 * 60 * 1000;
+
   try {
+    // Check localStorage for existing cached data
+    const cachedData = localStorage.getItem(cacheKey);
+    const cachedTimestamp = localStorage.getItem(timestampKey);
+
+    // If cached data exists and is not older than 2 hours, use it
+    if (
+      cachedData &&
+      cachedTimestamp &&
+      Date.now() - parseInt(cachedTimestamp, 10) < twoHours
+    ) {
+      return JSON.parse(cachedData);
+    }
+
+    // Otherwise, fetch fresh data
     const [bitcoinData, goldData] = await Promise.all([
       fetch("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1"),
       fetch("https://api.coingecko.com/api/v3/coins/tether-gold/market_chart?vs_currency=usd&days=1"),
@@ -10,7 +31,12 @@ async function fetchMarketCaps() {
     const totalGoldOunces = 197576 * 32150.7; // Gold supply in ounces
     const goldMarketCap = (goldPrice * totalGoldOunces) / 1e12; // Trillions
 
-    return { btcMarketCap, goldMarketCap };
+    // Store the fetched data in cache
+    const result = { btcMarketCap, goldMarketCap };
+    localStorage.setItem(cacheKey, JSON.stringify(result));
+    localStorage.setItem(timestampKey, Date.now().toString());
+
+    return result;
   } catch (error) {
     console.error("Error fetching market cap data:", error);
     return { btcMarketCap: 1.9, goldMarketCap: 17 }; // Fallback values
@@ -25,11 +51,11 @@ async function renderTreemap() {
     name: "Assets",
     children: [
       { name: "Bitcoin", value: btcMarketCap * 1, displayValue: btcMarketCap, color: "#f79414", fontSize: "12px", isBitcoin: true },
-      { name: "Gold", value: goldMarketCap * 1, displayValue: goldMarketCap, color: "#f7e787", fontSize: "14px" },
-      { name: "Art", value: 18 * 1.25, displayValue: 18, color: "#9bc2e6", fontSize: "14px" },
+      { name: "Gold", value: goldMarketCap * 1, displayValue: goldMarketCap, color: "#d8c059", fontSize: "14px" },
+      { name: "Art", value: 18 * 1.25, displayValue: 18, color: "#b3eefc", fontSize: "14px" },
       { name: "Collectibles", value: 6 * 1, displayValue: 6, color: "#cc99ff", fontSize: "12px" },
       { name: "Equities", value: 115 * 1, displayValue: 115, color: "#79a6ff", fontSize: "16px" },
-      { name: "Money", value: 120 * 1, displayValue: 120, color: "#c6e0b4", fontSize: "16px" },
+      { name: "Money", value: 120 * 1, displayValue: 120, color: "#b1e090", fontSize: "16px" },
       { name: "Bonds", value: 300 * 1, displayValue: 300, color: "#d9d9d9", fontSize: "16px" },
       { name: "Real Estate", value: 330 * 1, displayValue: 330, color: "#c9ab95", fontSize: "16px" },
     ],
@@ -82,5 +108,5 @@ async function renderTreemap() {
              <span>$${d.displayValue.toFixed(2)}T</span>
            </div>`
         : `<div>${d.name}<br>$${d.displayValue.toFixed(2)}T</div>`
-    ); // Add line break or image for Bitcoin
+    );
 }
