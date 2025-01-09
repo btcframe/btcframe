@@ -248,7 +248,6 @@
   <script src="./build/bundle.2.3.4.js"></script>
   <script src="./build/env.js"></script>
   <script>
-    // Initialize your Svelte app in the 'page6' div
     new SvelteApp({
       target: document.getElementById("svelte-app"),
     });
@@ -311,7 +310,6 @@
         SATS PER DOLLAR
       </div>
       <div class="satsusd-container">
-        <!-- Add the large square blocks here dynamically using JavaScript -->
       </div>
     </div>
   </div>
@@ -807,7 +805,7 @@
         const btcCHF = Math.floor(data.bitcoin.chf).toLocaleString();
         const btcAUD = Math.floor(data.bitcoin.aud).toLocaleString();
 
-        // Ensure consistent USD price
+        // Consistent USD price
         $("#display-1")
           .val(`${globalCurrentPrice.toLocaleString()} USD`)
           .change(); // No $ symbol
