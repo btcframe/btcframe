@@ -8,6 +8,7 @@
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
+    margin-bottom: 6px;
 }
 
 .flapper .digit {
@@ -48,9 +49,9 @@
 /* XXL 96x128 */
 
 .flapper.XXL {
-    font-size: 116px;
-    line-height: 123px;
-    height: 132px;
+    font-size: 117px;
+    line-height: 135px;
+    height: 115px;
 }
 
 .flapper.XXL .digit {
