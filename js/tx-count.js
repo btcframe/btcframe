@@ -1,6 +1,9 @@
 async function fetchBitcoinTxData() {
   try {
+<<<<<<< HEAD
+=======
     // Use the CORS proxy to make the API request
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
     const response = await fetch("https://tx-count.ngrok.app/bitcoin-transactions");
 
     if (!response.ok) {
@@ -9,7 +12,10 @@ async function fetchBitcoinTxData() {
 
     const data = await response.json();
 
+<<<<<<< HEAD
+=======
     // Ensure data is valid
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
     if (!data || !data.values) {
       throw new Error("No transaction data available");
     }
@@ -20,6 +26,18 @@ async function fetchBitcoinTxData() {
       return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`; // Format as YYYY-MM-DD
     });
 
+<<<<<<< HEAD
+    let txCounts = data.values.map(item => item.y);
+
+    // Update the last date and transaction count if provided
+    const latestPeriod = data.latestPeriod || null; 
+    const lastValue = data.lastValue || null; 
+
+    if (latestPeriod && lastValue) {
+      const lastDate = new Date(latestPeriod);
+      const formattedLastDate = `${lastDate.getFullYear()}-${String(lastDate.getMonth() + 1).padStart(2, '0')}-${String(lastDate.getDate()).padStart(2, '0')}`;
+
+=======
     let txCounts = data.values.map(item => item.y); // Transaction counts
 
     // Update the last date and transaction count from the API's "Last Value" and "Latest Period"
@@ -34,6 +52,7 @@ async function fetchBitcoinTxData() {
       const formattedLastDate = `${lastDate.getFullYear()}-${String(lastDate.getMonth() + 1).padStart(2, '0')}-${String(lastDate.getDate()).padStart(2, '0')}`;
 
       // Replace or append the last date and value in the dataset
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
       if (labels[labels.length - 1] !== formattedLastDate) {
         labels.push(formattedLastDate);
         txCounts.push(lastValue);
@@ -48,7 +67,11 @@ async function fetchBitcoinTxData() {
     const yesterdayTxCount = txCounts[txCounts.length - 2];
     const dailyChange = ((todayTxCount - yesterdayTxCount) / yesterdayTxCount) * 100;
 
+<<<<<<< HEAD
+    // Update UI with today's data
+=======
     // Update price-container with today's data
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
     const txContainer = document.querySelector(".price-container");
     if (txContainer) {
       const dotColor = dailyChange > 0 ? "green" : dailyChange < 0 ? "red" : "gray";
@@ -57,15 +80,25 @@ async function fetchBitcoinTxData() {
       document.getElementById("tx-dot").style.backgroundColor = dotColor;
       const txChangeElement = document.getElementById("tx-change");
       txChangeElement.innerHTML = `${dailyChange.toFixed(2)}% ${arrow}`;
+<<<<<<< HEAD
+      txChangeElement.style.color = dotColor;
+=======
       txChangeElement.style.color = dotColor; // Update text and arrow color
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
 
       document.getElementById("current-tx-count").innerText = `${todayTxCount.toLocaleString()} TX`;
     }
 
     // Reduce the number of labels on the x-axis: Show one dot and date every 30 days
+<<<<<<< HEAD
+    const reducedDates = []; // <-- Keep full YYYY-MM-DD dates in this array
+    const reducedTxCounts = [];
+    const daysInterval = 30; 
+=======
     const reducedLabels = [];
     const reducedTxCounts = [];
     const daysInterval = 30; // Interval in days
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
 
     const firstDate = new Date(labels[0]);
     const lastDate = new Date(labels[labels.length - 1]);
@@ -77,7 +110,11 @@ async function fetchBitcoinTxData() {
       const index = labels.indexOf(formattedDate);
 
       if (index !== -1) {
+<<<<<<< HEAD
+        reducedDates.push(labels[index]); // <-- Store the exact YYYY-MM-DD
+=======
         reducedLabels.push(labels[index]);
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
         reducedTxCounts.push(txCounts[index]);
       }
 
@@ -85,6 +122,18 @@ async function fetchBitcoinTxData() {
     }
 
     // Always include the last date
+<<<<<<< HEAD
+    if (reducedDates[reducedDates.length - 1] !== labels[labels.length - 1]) {
+      reducedDates.push(labels[labels.length - 1]);
+      reducedTxCounts.push(txCounts[txCounts.length - 1]);
+    }
+
+    // Format for the X-axis display only: "MMM YYYY"
+    const xAxisLabels = reducedDates.map(fullDateString => {
+      const date = new Date(fullDateString); 
+      const month = date.toLocaleString("default", { month: "short" });
+      return `${month} ${date.getFullYear()}`;
+=======
     if (reducedLabels[reducedLabels.length - 1] !== labels[labels.length - 1]) {
       reducedLabels.push(labels[labels.length - 1]);
       reducedTxCounts.push(txCounts[txCounts.length - 1]);
@@ -95,11 +144,29 @@ async function fetchBitcoinTxData() {
       const date = new Date(label);
       const month = date.toLocaleString("default", { month: "short" }); // e.g., "Jan", "Feb"
       return `${month} ${date.getFullYear()}`; // e.g., "Jan 2023"
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
     });
 
     // Initialize the chart
     const ctx = document.getElementById("txChart").getContext("2d");
 
+<<<<<<< HEAD
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: xAxisLabels, // Use short month-year for the X-axis
+        datasets: [{
+          label: "Confirmed Bitcoin Transactions Per Day",
+          data: reducedTxCounts,
+          borderColor: "rgba(255, 165, 0, 1)", 
+          borderWidth: 2,
+          pointRadius: 6,
+          pointBackgroundColor: "rgba(255, 165, 0, 1)",
+          pointHitRadius: 5,
+          lineTension: 0.3,
+          fill: true,
+          backgroundColor: "rgba(128, 128, 128, 0.3)"
+=======
     // Create the chart
     new Chart(ctx, {
       type: "line",
@@ -116,6 +183,7 @@ async function fetchBitcoinTxData() {
           lineTension: 0.3, // Smoothing the line to make it look more fluid
           fill: true, // Fill the area under the line
           backgroundColor: "rgba(128, 128, 128, 0.3)" // Gray with 30% transparency
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
         }],
       },
       options: {
@@ -124,7 +192,11 @@ async function fetchBitcoinTxData() {
             ticks: {
               beginAtZero: false,
               callback: function(value) {
+<<<<<<< HEAD
+                return value.toLocaleString();
+=======
                 return value.toLocaleString(); // Format y-axis values
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
               },
             },
             gridLines: {
@@ -144,6 +216,15 @@ async function fetchBitcoinTxData() {
         },
         tooltips: {
           callbacks: {
+<<<<<<< HEAD
+            // Override the title callback to show the full date (YYYY-MM-DD)
+            title: function(tooltipItems) {
+              const index = tooltipItems[0].index;
+              return reducedDates[index]; // <-- Show the original date
+            },
+            // The label will remain the TX count
+=======
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
             label: function(tooltipItem) {
               return tooltipItem.yLabel.toLocaleString() + " TX";
             },
@@ -153,7 +234,10 @@ async function fetchBitcoinTxData() {
           display: true,
         },
         plugins: {
+<<<<<<< HEAD
+=======
           // Add transaction count labels on top of each dot
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
           datalabels: {
             display: true,
             align: 'top',
@@ -161,9 +245,15 @@ async function fetchBitcoinTxData() {
               size: 10,
               weight: 'bold',
             },
+<<<<<<< HEAD
+            color: 'rgba(255, 165, 0, 1)',
+            formatter: function(value) {
+              return value.toLocaleString();
+=======
             color: 'rgba(255, 165, 0, 1)', // Set the color of the text to match the dots
             formatter: function(value) {
               return value.toLocaleString(); // Format number with commas
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
             }
           }
         }
@@ -174,5 +264,8 @@ async function fetchBitcoinTxData() {
   }
 }
 
+<<<<<<< HEAD
+=======
 // Call the function when the page is loaded
+>>>>>>> 3fd609de7d09b2bfd610db57e588479d32a84963
 document.addEventListener("DOMContentLoaded", fetchBitcoinTxData);
