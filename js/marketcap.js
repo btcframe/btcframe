@@ -111,7 +111,7 @@ async function renderMarketCapChart() {
             type: "linear",
             scaleLabel: {
               display: true,
-              labelString: "Market Cap (in Trillions)"
+              labelString: "Market Capitalization (in Trillions)"
             },
             ticks: {
               callback: function (value) {
