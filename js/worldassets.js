@@ -63,7 +63,7 @@ async function renderTreemap() {
     name: "Assets",
     children: [
       { name: "Bitcoin", value: btcMarketCap * 1, displayValue: btcMarketCap, color: "#f79414", fontSize: "12px", isBitcoin: true },
-      { name: "Gold", value: goldMarketCap * 1, displayValue: goldMarketCap, color: "#d8c059", fontSize: "14px" },
+      { name: "Gold", value: goldMarketCap * 1, displayValue: goldMarketCap, color: "#f0d049", fontSize: "14px" },
       { name: "Art", value: 18 * 1.25, displayValue: 18, color: "#b3eefc", fontSize: "14px" },
       { name: "Collectibles", value: 6 * 1, displayValue: 6, color: "#cc99ff", fontSize: "12px" },
       { name: "Equities", value: 115 * 1, displayValue: 115, color: "#79a6ff", fontSize: "16px" },
