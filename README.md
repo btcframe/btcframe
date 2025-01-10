@@ -1,8 +1,6 @@
 # BTC Frame
 
-BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related metrics in real-time. BTC Frame is a community-driven project, and we welcome developers of all skill levels to contribute. Your ideas and improvements can help make this project even better! Thank you for your contribution! <a href="https://btcframe.com" target="_blank" rel="noopener noreferrer">
-  Visit live dashboard at BTCFrame
-</a>
+BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related metrics in real-time. BTC Frame is a community-driven project, and we welcome developers of all skill levels to contribute. Your ideas and improvements can help make this project even better! Thank you for your contribution! Visit the live dashboard at <a href="https://btcframe.com" target="_blank">https://btcframe.com</a>
 
 ---
 
