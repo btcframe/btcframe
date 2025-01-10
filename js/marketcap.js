@@ -19,7 +19,7 @@ async function fetchHistoricalGoldMarketCap() {
       "https://api.coingecko.com/api/v3/coins/tether-gold/market_chart?vs_currency=usd&days=365"
     );
     const goldData = await goldResponse.json();
-    const goldSupplyInTonnes = 197576;
+    const goldSupplyInTonnes = 215000;
     const ouncesPerTonne = 32150.7;
     const totalGoldSupplyInOunces = goldSupplyInTonnes * ouncesPerTonne;
     const goldMarketCaps = goldData.prices.map(([timestamp, price]) => ({
