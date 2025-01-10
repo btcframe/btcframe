@@ -37,7 +37,7 @@ async function fetchMarketCaps() {
 
     const btcMarketCap = bitcoinData.market_data.market_cap.usd / 1e12; // Convert to trillions
     const goldPrice = goldData.prices[0][1];
-    const totalGoldOunces = 197576 * 32150.7; // Gold supply in ounces
+    const totalGoldOunces = 215000 * 32150.7; // Gold supply in ounces
     const goldMarketCap = (goldPrice * totalGoldOunces) / 1e12; // Convert to trillions
 
     // 3. Save fetched data to localStorage with a timestamp
