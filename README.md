@@ -260,6 +260,9 @@ Thank you for helping BTC Frame grow and evolve! Together, we can build an incre
 ### Daily Confirmed Transactions
 ![Daily Confirmed Transactions](/screenshots/tx-count.png)
 
+### Bitcoin Wealth Distribution
+![Bitcoin Wealth Distribution](/screenshots/wealth-distribution.png)
+
 ---
 
 ## MIT License
