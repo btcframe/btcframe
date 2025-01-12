@@ -91,15 +91,6 @@ BTC Frame is designed as a DIY project. Here's a basic guide to building your fr
    - Clone the BTC Frame repository onto the Raspberry Pi.
    - Set up a browser to launch the dashboard on startup.
 
-3. **Configuration:**
-   - Configure the environment variables for API keys and settings in `env.js`.
-
-4. **Final Assembly:**
-   - Install the LCD display and Raspberry Pi into the frame.
-   - Connect the components and test the setup.
-
-For detailed DIY assembly instructions, refer to the [DIY Guide](DIY.md).
-
 ---
 
 ## Dashboard Overview
