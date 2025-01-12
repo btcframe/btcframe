@@ -16,10 +16,11 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 - **SATs per Dollar Visualization:** Visual breakdown of SATs per dollar using grid-based visualizations.
 - **Bitcoin Clock:** A custom Bitcoin-themed clock with "Tick Tock Next Block" branding.
 - **Mempool Visualizer:** Detailed representation of the Bitcoin mempool, highlighting transaction statistics and trends.
-- **Wallet Distribution Chart:** Analyze Bitcoin wallet balance distributions and 24-hour changes.
+- **Address Distribution:** Analyze Bitcoin address distribution based on the BTC they hold.
 - **Gold vs. Bitcoin Market Cap:** Compare Gold Market Cap to Bitcoin Market Cap on a dynamic chart.
 - **Total Global Assets:** View total global assets with dynamic Bitcoin and Gold Market Caps on a tree map chart.
 - **Daily Confirmed Transactions:** Track daily transaction trends and see how the network is evolving in real-time.
+- **Bitcoin Wealth Distribution:** Wealth Distribution dashboard visualizes wallet addresses categorized by the value they hold in USD.
 - **DIY Customization:** Build, assemble, and configure the smart frame yourself.
 
 ---
@@ -34,6 +35,7 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 6. [Screenshots](#screenshots)
 7. [Contributing](#contributing)
 8. [MIT License](#mit-license)
+9. [Contact](#contact)
 
 ---
 
@@ -153,6 +155,9 @@ BTC Frame includes 11 interactive dashboards, each displaying unique Bitcoin met
 
 14. **Page 14: Daily Confirmed Transactions**
     - Track daily transaction trends and see how the network is evolving in real-time.
+
+14. **Page 15: Bitcoin Wealth Distribution**
+    - Wealth Distribution dashboard visualizes wallet addresses categorized by the value they hold in USD.
 
 ---
 
@@ -278,3 +283,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Contact
+
+If you have any questions about BTC Frame or are interested in contributing to the project, feel free to contact us at <a href="mailto:info@btcframe.com">info@btcframe.com</a>.
+
