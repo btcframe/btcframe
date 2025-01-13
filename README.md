@@ -21,6 +21,7 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 - **Total Global Assets:** View total global assets with dynamic Bitcoin and Gold Market Caps on a tree map chart.
 - **Daily Confirmed Transactions:** Track daily transaction trends and see how the network is evolving in real-time.
 - **Bitcoin Wealth Distribution:** Wealth Distribution dashboard visualizes wallet addresses categorized by the value they hold in USD.
+- **Mayer Multiple:**  Mayer Multiple compares Bitcoin to its 200-day SMA, revealing key insights into its long-term behavior.
 - **DIY Customization:** Build, assemble, and configure the smart frame yourself.
 
 ---
@@ -159,6 +160,9 @@ BTC Frame includes 11 interactive dashboards, each displaying unique Bitcoin met
 14. **Page 15: Bitcoin Wealth Distribution**
     - Wealth Distribution dashboard visualizes wallet addresses categorized by the value they hold in USD.
 
+14. **Page 15: Mayer Multiple**
+    - Mayer Multiple compares Bitcoin to its 200-day SMA, revealing key insights into its long-term behavior.
+
 ---
 
 ## Data Providers
@@ -262,6 +266,9 @@ Thank you for helping BTC Frame grow and evolve! Together, we can build an incre
 
 ### Bitcoin Wealth Distribution
 ![Bitcoin Wealth Distribution](/screenshots/wealth-distribution.png)
+
+### Mayer Multiple
+![Mayer Multiple](/screenshots/mayer-multiple.png)
 
 ---
 
