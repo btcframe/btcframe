@@ -172,6 +172,7 @@ BTC Frame relies on various external APIs and data providers:
 - [CoinGecko API](https://www.coingecko.com/en/api) for Bitcoin prices and market data.
 - [mempool.space API](https://mempool.space/) for block height and hash rate.
 - [Blockchain.com API](https://www.blockchain.com/explorer/api/blockchain_api) for daily confirmed transactions.
+- [CryptoCompare API](https://min-api.cryptocompare.com/)) for historic Bitcoin metrics.
 - [Bitfeed](https://bits.monospace.live/) for mempool visualizer.
 - [BitInfoCharts](https://bitinfocharts.com/) for wallet distribution data.
 - [Alternative.me API](https://alternative.me/) for the Fear and Greed Index.
