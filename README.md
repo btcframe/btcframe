@@ -160,7 +160,7 @@ BTC Frame includes 11 interactive dashboards, each displaying unique Bitcoin met
 14. **Page 15: Bitcoin Wealth Distribution**
     - Wealth Distribution dashboard visualizes wallet addresses categorized by the value they hold in USD.
 
-14. **Page 15: Mayer Multiple**
+14. **Page 16: Mayer Multiple**
     - Mayer Multiple compares Bitcoin to its 200-day SMA, revealing key insights into its long-term behavior.
 
 ---
