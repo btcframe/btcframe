@@ -382,7 +382,7 @@
   <!-- Page 13 -->
   <div class="page" id="page13">
     <div class="card">
-      <p class="marketcap-text">Total Global Assets</p><br /><br />
+      <p class="globalassets-text">Total Global Assets</p><br /><br />
       <div id="treemapContainer" class="treemap"></div>
     </div>
   </div>
@@ -441,7 +441,7 @@
   <!-- Page 15 -->
   <div class="page" id="page15">
     <div class="card">
-      <p class="marketcap-text">Bitcoin Wealth Distribution</p><br />
+      <p class="wealthdistribution-text">Bitcoin Wealth Distribution</p><br />
       <div id="wealth-distribution-container" style="width: 100%; height: 800px;">
         <!-- The SVG will be dynamically injected here -->
       </div>
@@ -449,6 +449,16 @@
   </div>
 
   <script src="js/wealth-distribution.js"></script>
+
+ <!-- Page 16 -->
+  <div class="page" id="page16">
+    <div class="card">
+      <p class="mayermultiple-text">Mayer Multiple</p>
+      <canvas id="mayerMultipleChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/mayer-multiple.js"></script>
 
   <script>
     function formatDateToMMDDYYYY(date) {
@@ -471,7 +481,7 @@
       .substring(5)
       .replace("-", ".");
     const CACHE_KEY = "btcFrameCache";
-    const CACHE_EXPIRY = 840000; // 14 minutes in milliseconds
+    const CACHE_EXPIRY = 900000; // 15 minutes in milliseconds
 
     async function fetchData() {
       try {
