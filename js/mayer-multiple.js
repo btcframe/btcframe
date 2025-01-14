@@ -1,3 +1,6 @@
+let isMayerMultipleChartRendered = false;
+let mayerChartInstance = null;
+
 async function fetchAndRenderMayerMultipleChart() {
   console.log("Starting to fetch and render the Mayer Multiple Chart");
 
@@ -20,7 +23,6 @@ async function fetchAndRenderMayerMultipleChart() {
       return;
     }
 
-    // Fetch new data if no valid cache is found
     const response = await fetch(`${apiUrl}?fsym=BTC&tsym=USD&limit=${limit}`);
     const data = await response.json();
 
@@ -37,10 +39,8 @@ async function fetchAndRenderMayerMultipleChart() {
 
     console.log("Total historical prices fetched:", prices);
 
-    // Filter out any invalid prices (e.g., price = 0)
     const validPrices = prices.filter((p) => p.price > 0);
 
-    // Cache the data
     localStorage.setItem(cacheKey, JSON.stringify(validPrices));
     localStorage.setItem(cacheExpiryKey, (Date.now() + cacheDuration).toString());
 
@@ -59,7 +59,12 @@ function renderChart(prices, smaLength) {
 
   const ctx = canvas.getContext("2d");
 
-  console.log("Total prices available for charting:", prices.length);
+  if (mayerChartInstance) {
+    console.log("Reusing existing Mayer Multiple chart instance.");
+    return;
+  }
+
+  console.log("Rendering new Mayer Multiple chart.");
 
   const chartData = [];
   const priceData = [];
@@ -102,18 +107,11 @@ function renderChart(prices, smaLength) {
     }
   }
 
-  console.log("Filtered Chart Data:", chartData);
-
-  if (chartData.length === 0) {
-    console.error("No valid data to render the chart.");
-    return;
-  }
-
   canvas.width = canvas.parentElement.offsetWidth;
   canvas.height = 400;
 
-  // Render the chart
-  new Chart(ctx, {
+  // Create and store the chart instance
+  mayerChartInstance = new Chart(ctx, {
     type: "bar",
     data: {
       datasets: [
@@ -207,17 +205,20 @@ function renderChart(prices, smaLength) {
   });
 }
 
-// Initialize chart when Page 16 is active
 document.addEventListener("DOMContentLoaded", () => {
   const hash = window.location.hash;
-  console.log("Page loaded, current hash:", hash);
-  if (hash === "#page16") {
+
+  if (hash === "#page16" && !isMayerMultipleChartRendered) {
     fetchAndRenderMayerMultipleChart();
+    isMayerMultipleChartRendered = true;
   }
 
   window.addEventListener("hashchange", () => {
-    if (window.location.hash === "#page16") {
+    if (window.location.hash === "#page16" && !isMayerMultipleChartRendered) {
       fetchAndRenderMayerMultipleChart();
+      isMayerMultipleChartRendered = true;
+    } else if (window.location.hash !== "#page16") {
+      isMayerMultipleChartRendered = false; // Reset flag
     }
   });
 });
