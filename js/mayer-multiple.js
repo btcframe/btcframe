@@ -150,6 +150,10 @@ function renderChart(prices, smaLength) {
               maxTicksLimit: 20,
               minRotation: 45,
             },
+            gridLines: {
+              display: true,
+              color: "rgba(255, 255, 255, 0.1)", // Gridline color
+            },
           },
         ],
         yAxes: [
@@ -162,6 +166,10 @@ function renderChart(prices, smaLength) {
             },
             ticks: {
               callback: (value) => value.toFixed(2),
+            },
+            gridLines: {
+              display: true,
+              color: "rgba(255, 255, 255, 0.1)", // Gridline color
             },
           },
           {
@@ -182,7 +190,8 @@ function renderChart(prices, smaLength) {
               },
             },
             gridLines: {
-              drawOnChartArea: false,
+              display: false,
+              color: "rgba(255, 255, 255, 0.1)", // Gridline color
             },
           },
         ],
