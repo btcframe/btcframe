@@ -1,25 +1,47 @@
 document.addEventListener("keydown", (event) => {
   switch (event.code) {
     case "ArrowRight":
-      // Navigate to the next slide
+
       if (typeof showNextPage === "function") {
         showNextPage();
       }
       break;
     case "ArrowLeft":
-      // Navigate to the previous slide
+
       if (typeof showPrevPage === "function") {
         showPrevPage();
       }
       break;
     case "Space":
-      // Toggle play/pause
+
       if (typeof togglePlayPause === "function") {
         togglePlayPause();
-        event.preventDefault(); // Prevent default scrolling behavior
+        event.preventDefault();
+      }
+      break;
+    case "Home":
+
+      if (typeof navigateToFirstPage === "function") {
+        navigateToFirstPage();
       }
       break;
     default:
       break;
   }
 });
+
+// Home button support for ir remote control
+function navigateToFirstPage() {
+  const pages = document.querySelectorAll(".page");
+
+  if (pages.length > 0) {
+
+    pages.forEach((page) => page.classList.remove("active"));
+
+    pages[0].classList.add("active");
+
+    if (typeof currentPage !== "undefined") {
+      currentPage = 0;
+    }
+  }
+}
