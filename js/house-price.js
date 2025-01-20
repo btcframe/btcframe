@@ -1,11 +1,13 @@
 const HOUSE_PRICE_API = "https://house-price.ngrok.app/api/house-price";
-const BTC_PRICE_API = "https://min-api.cryptocompare.com/data/v2/histoday";
+const BTC_PRICE_API = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD"; // For dynamic current price
+const BTC_HISTORY_API = "https://min-api.cryptocompare.com/data/v2/histoday"; // For historical prices
 const HOUSE_PRICE_CACHE_KEY = "housePriceBTCData";
-const CACHE_DURATION = 16 * 60 * 1000; // 16 minutes in milliseconds
+const CACHE_DURATION = 16 * 60 * 1000; // 15 minutes in milliseconds
 
+// Fetch historical BTC price based on days ago
 async function fetchHistoricalBTCPrice(daysAgo) {
     const limit = daysAgo; // Fetch historical data based on daysAgo
-    const response = await fetch(`${BTC_PRICE_API}?fsym=BTC&tsym=USD&limit=${limit}`);
+    const response = await fetch(`${BTC_HISTORY_API}?fsym=BTC&tsym=USD&limit=${limit}`);
     const data = await response.json();
     if (data.Response === "Success" && data.Data && data.Data.Data.length > 0) {
         // Get the closing price of the specified day
@@ -17,6 +19,7 @@ async function fetchHistoricalBTCPrice(daysAgo) {
     }
 }
 
+// Check and retrieve cached data
 function getHousePriceCache() {
     const cached = localStorage.getItem(HOUSE_PRICE_CACHE_KEY);
     if (!cached) return null;
@@ -29,6 +32,7 @@ function getHousePriceCache() {
     return data;
 }
 
+// Fetch and display house prices with BTC conversions
 async function fetchAndDisplayHousePrices() {
     try {
         // Check cache first
@@ -52,17 +56,17 @@ async function fetchAndDisplayHousePrices() {
             return;
         }
 
-        // If no cache, fetch fresh data
-        const btcPriceResponse = await fetch(`${BTC_PRICE_API}?fsym=BTC&tsym=USD&limit=1`);
-        const btcPriceData = await btcPriceResponse.json();
-        const btcPriceUSD = btcPriceData.Data.Data[btcPriceData.Data.Data.length - 1].close;
+        // Fetch current BTC price from dynamic endpoint
+        const currentPriceResponse = await fetch(BTC_PRICE_API);
+        const currentPriceData = await currentPriceResponse.json();
+        const btcPriceUSD = currentPriceData.USD; // Current dynamic price
 
         // Fetch historical prices
         const [btcPrice24h, btcPrice7d, btcPrice30d, btcPrice1y] = await Promise.all([
-            fetchHistoricalBTCPrice(1),
-            fetchHistoricalBTCPrice(7),
-            fetchHistoricalBTCPrice(30),
-            fetchHistoricalBTCPrice(365)
+            fetchHistoricalBTCPrice(1),   // 1 day ago
+            fetchHistoricalBTCPrice(7),   // 7 days ago
+            fetchHistoricalBTCPrice(30),  // 30 days ago
+            fetchHistoricalBTCPrice(365)  // 1 year ago
         ]);
 
         const housePriceResponse = await fetch(HOUSE_PRICE_API);
@@ -120,6 +124,7 @@ async function fetchAndDisplayHousePrices() {
     }
 }
 
+// Update percentage change values
 function updateChange(elementId, change) {
     const element = document.getElementById(elementId);
     if (element) {
@@ -130,7 +135,7 @@ function updateChange(elementId, change) {
     }
 }
 
-// Initialize and auto-update
+// Initialize auto-update
 setInterval(fetchAndDisplayHousePrices, CACHE_DURATION);
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', fetchAndDisplayHousePrices);
