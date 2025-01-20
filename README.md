@@ -22,6 +22,7 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 - **Daily Confirmed Transactions:** Track daily transaction trends and see how the network is evolving in real-time.
 - **Bitcoin Wealth Distribution:** Wealth Distribution dashboard visualizes wallet addresses categorized by the value they hold in USD.
 - **Mayer Multiple:**  Mayer Multiple compares Bitcoin to its 200-day SMA, revealing key insights into its long-term behavior.
+- **US Median House Price in BTC:**  Ever wondered how many ₿ it takes to buy the median US house? Explore it live on this dashboard.
 - **DIY Customization:** Build, assemble, and configure the smart frame yourself.
 
 ---
@@ -157,11 +158,14 @@ BTC Frame includes 11 interactive dashboards, each displaying unique Bitcoin met
 14. **Page 14: Daily Confirmed Transactions**
     - Track daily transaction trends and see how the network is evolving in real-time.
 
-14. **Page 15: Bitcoin Wealth Distribution**
+15. **Page 15: Bitcoin Wealth Distribution**
     - Wealth Distribution dashboard visualizes wallet addresses categorized by the value they hold in USD.
 
-14. **Page 16: Mayer Multiple**
+16. **Page 16: Mayer Multiple**
     - Mayer Multiple compares Bitcoin to its 200-day SMA, revealing key insights into its long-term behavior.
+   
+17. **Page 17: US Median House Price in BTC**
+    - Ever wondered how many ₿ it takes to buy the median US house? Explore it live on this dashboard.
 
 ---
 
@@ -270,6 +274,9 @@ Thank you for helping BTC Frame grow and evolve! Together, we can build an incre
 
 ### Mayer Multiple
 ![Mayer Multiple](/screenshots/mayer-multiple.png)
+
+### US Median House Price in BTC
+![Mayer Multiple](/screenshots/house-price.png)
 
 ---
 
