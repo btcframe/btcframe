@@ -35,7 +35,7 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 5. [Data Providers](#data-providers)
 6. [Screenshots](#screenshots)
 7. [Contributing](#contributing)
-8. [MIT License](#mit-license)
+8. [CC License](#cc-license)
 9. [Contact](#contact)
 
 ---
@@ -273,27 +273,42 @@ Thank you for helping BTC Frame grow and evolve! Together, we can build an incre
 
 ---
 
-## MIT License
+## CC License
 
-Copyright (c) [2021] [BTC Frame]
+Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+
+This repository is licensed under a **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.
+
+### Permissions
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format.
+- **Adapt** — remix, transform, and build upon the material.
+
+### Restrictions
+Under the following terms:
+1. **Attribution**: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+2. **NonCommercial**: You may not use the material for commercial purposes.
+
+### Full License Text
+You can find the full license text at the following link:
+[https://creativecommons.org/licenses/by-nc/4.0/legalcode](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
+
+### How to Attribute
+When using this work, please attribute it as follows:
+
+```plaintext
+[BTC Frame] licensed under CC BY-NC 4.0.
+To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/.
+
 
 ---
 
