@@ -1,20 +1,20 @@
 const HOUSE_PRICE_API = "https://house-price.ngrok.app/api/house-price";
-const BTC_PRICE_API = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD"; // For dynamic current price
+const BTC_PRICE_API = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD"; // Current price
 const BTC_HISTOHOUR_API = "https://min-api.cryptocompare.com/data/v2/histohour"; // For 24-hour ago price
-const BTC_HISTORY_API = "https://min-api.cryptocompare.com/data/v2/histoday"; // For historical prices (7d, 30d, 1y)
+const BTC_HISTORY_API = "https://min-api.cryptocompare.com/data/v2/histoday"; // For historical prices
 const HOUSE_PRICE_CACHE_KEY = "housePriceBTCData";
 const CACHE_DURATION = 16 * 60 * 1000; // 15 minutes in milliseconds
 
 // Fetch historical BTC price based on days ago
 async function fetchHistoricalBTCPrice(daysAgo) {
-    const response = await fetch(`${BTC_HISTORY_API}?fsym=BTC&tsym=USD&limit=${daysAgo}`);
+    const response = await fetch(`${BTC_HISTORY_API}?fsym=BTC&tsym=USD&limit=${daysAgo + 1}`);
     const data = await response.json();
     if (data.Response === "Success" && data.Data && data.Data.Data.length > 0) {
         const historicalData = data.Data.Data;
-        const targetDayData = historicalData[historicalData.length - 2]; // Second-to-last day
+        const targetDayData = historicalData[historicalData.length - 1 - daysAgo];
         return targetDayData.close;
     } else {
-        throw new Error("Failed to fetch BTC historical price data");
+        throw new Error(`Failed to fetch BTC price for ${daysAgo} days ago`);
     }
 }
 
@@ -23,7 +23,6 @@ async function fetch24HourAgoBTCPrice() {
     const response = await fetch(`${BTC_HISTOHOUR_API}?fsym=BTC&tsym=USD&limit=24`);
     const data = await response.json();
     if (data.Response === "Success" && data.Data && data.Data.Data.length > 0) {
-        // Get the price exactly 24 hours ago
         const historicalData = data.Data.Data;
         const price24hAgo = historicalData[0].close; // 24 hours ago
         return price24hAgo;
@@ -32,56 +31,26 @@ async function fetch24HourAgoBTCPrice() {
     }
 }
 
-// Check and retrieve cached data
-function getHousePriceCache() {
-    const cached = localStorage.getItem(HOUSE_PRICE_CACHE_KEY);
-    if (!cached) return null;
-
-    const { timestamp, data } = JSON.parse(cached);
-    if (Date.now() - timestamp > CACHE_DURATION) {
-        localStorage.removeItem(HOUSE_PRICE_CACHE_KEY);
-        return null;
-    }
-    return data;
-}
-
 // Fetch and display house prices with BTC conversions
 async function fetchAndDisplayHousePrices() {
     try {
-        // Check cache first
         const cachedData = getHousePriceCache();
         if (cachedData) {
-            document.getElementById('current-house-btc').textContent = `₿${cachedData.values.current}`;
-            document.querySelector('[data-type="7d"]').textContent = `₿${cachedData.values['7d']}`;
-            document.querySelector('[data-type="30d"]').textContent = `₿${cachedData.values['30d']}`;
-            document.querySelector('[data-type="1y"]').textContent = `₿${cachedData.values['1y']}`;
-
-            updateChange('house-price-change', cachedData.changes.current);
-            updateChange('seven-days-change', cachedData.changes['7d']);
-            updateChange('thirty-days-change', cachedData.changes['30d']);
-            updateChange('one-year-change', cachedData.changes['1y']);
-
-            const dot = document.getElementById('house-price-dot');
-            if (dot) {
-                dot.style.backgroundColor = cachedData.changes.current > 0 ? 'green' : cachedData.changes.current < 0 ? 'red' : 'gray';
-                dot.classList.add('active');
-            }
+            displayData(cachedData.values, cachedData.changes);
             return;
         }
 
         // Fetch current BTC price
         const currentPriceResponse = await fetch(BTC_PRICE_API);
         const currentPriceData = await currentPriceResponse.json();
-        const btcPriceUSD = currentPriceData.USD; // Current dynamic price
+        const btcPriceUSD = currentPriceData.USD;
 
-        // Fetch 24-hour ago BTC price
-        const btcPrice24h = await fetch24HourAgoBTCPrice();
-
-        // Fetch historical prices for 7 days, 30 days, 1 year
-        const [btcPrice7d, btcPrice30d, btcPrice1y] = await Promise.all([
-            fetchHistoricalBTCPrice(7),   // 7 days ago
-            fetchHistoricalBTCPrice(30),  // 30 days ago
-            fetchHistoricalBTCPrice(365)  // 1 year ago
+        // Fetch 24-hour and historical prices
+        const [btcPrice24h, btcPrice7d, btcPrice30d, btcPrice1y] = await Promise.all([
+            fetch24HourAgoBTCPrice(),
+            fetchHistoricalBTCPrice(7),
+            fetchHistoricalBTCPrice(30),
+            fetchHistoricalBTCPrice(365)
         ]);
 
         const housePriceResponse = await fetch(HOUSE_PRICE_API);
@@ -102,36 +71,15 @@ async function fetchAndDisplayHousePrices() {
 
         // Calculate changes
         const changes = {
-            current: ((btcPriceUSD - btcPrice24h) / btcPrice24h) * 100,  // Correctly calculated against 24-hour ago price
+            current: ((btcPriceUSD - btcPrice24h) / btcPrice24h) * 100,
             '7d': ((btcPriceUSD - btcPrice7d) / btcPrice7d) * 100,
             '30d': ((btcPriceUSD - btcPrice30d) / btcPrice30d) * 100,
             '1y': ((btcPriceUSD - btcPrice1y) / btcPrice1y) * 100
         };
 
-        // Cache the data
-        localStorage.setItem(HOUSE_PRICE_CACHE_KEY, JSON.stringify({
-            timestamp: Date.now(),
-            data: { values, changes }
-        }));
-
-        // Update BTC values
-        document.getElementById('current-house-btc').textContent = `₿${values.current}`;
-        document.querySelector('[data-type="7d"]').textContent = `₿${values['7d']}`;
-        document.querySelector('[data-type="30d"]').textContent = `₿${values['30d']}`;
-        document.querySelector('[data-type="1y"]').textContent = `₿${values['1y']}`;
-
-        // Update Changes
-        updateChange('house-price-change', changes.current);
-        updateChange('seven-days-change', changes['7d']);
-        updateChange('thirty-days-change', changes['30d']);
-        updateChange('one-year-change', changes['1y']);
-
-        // Update dot color based on 24h change
-        const dot = document.getElementById('house-price-dot');
-        if (dot) {
-            dot.style.backgroundColor = changes.current > 0 ? 'green' : changes.current < 0 ? 'red' : 'gray';
-            dot.classList.add('active');
-        }
+        // Cache and display the data
+        localStorage.setItem(HOUSE_PRICE_CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data: { values, changes } }));
+        displayData(values, changes);
 
     } catch (error) {
         console.error('Error:', error);
@@ -139,7 +87,27 @@ async function fetchAndDisplayHousePrices() {
     }
 }
 
-// Update percentage change values
+// Display BTC values and changes
+function displayData(values, changes) {
+    document.getElementById('current-house-btc').textContent = `₿${values.current}`;
+    document.querySelector('[data-type="7d"]').textContent = `₿${values['7d']}`;
+    document.querySelector('[data-type="30d"]').textContent = `₿${values['30d']}`;
+    document.querySelector('[data-type="1y"]').textContent = `₿${values['1y']}`;
+
+    updateChange('house-price-change', changes.current);
+    updateChange('seven-days-change', changes['7d']);
+    updateChange('thirty-days-change', changes['30d']);
+    updateChange('one-year-change', changes['1y']);
+
+    // Update the flashing dot based on the current price change
+    const dot = document.getElementById('house-price-dot');
+    if (dot) {
+        dot.classList.add('flashing-dot', 'active');
+        dot.style.backgroundColor = changes.current > 0 ? 'green' : changes.current < 0 ? 'red' : 'gray';
+    }
+}
+
+// Update percentage changes
 function updateChange(elementId, change) {
     const element = document.getElementById(elementId);
     if (element) {
@@ -150,7 +118,38 @@ function updateChange(elementId, change) {
     }
 }
 
-// Initialize auto-update
+// Cache utilities
+function getHousePriceCache() {
+    const cached = localStorage.getItem(HOUSE_PRICE_CACHE_KEY);
+    if (!cached) return null;
+    const { timestamp, data } = JSON.parse(cached);
+    if (Date.now() - timestamp > CACHE_DURATION) {
+        localStorage.removeItem(HOUSE_PRICE_CACHE_KEY);
+        return null;
+    }
+    return data;
+}
+
+// Add required styles
+const housePriceStyle = document.createElement('style');
+housePriceStyle.textContent = `
+    .flashing-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    .flashing-dot.active {
+        animation: flash 1s infinite;
+    }
+    @keyframes flash {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+`;
+document.head.appendChild(housePriceStyle);
+
+// Auto-update setup
 setInterval(fetchAndDisplayHousePrices, CACHE_DURATION);
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', fetchAndDisplayHousePrices);
