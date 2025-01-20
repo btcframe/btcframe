@@ -305,7 +305,6 @@ You can find the full license text at the following link:
 ### How to Attribute
 When using this work, please attribute it as follows:
 
-```plaintext
 [BTC Frame] licensed under CC BY-NC 4.0.
 To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/.
 
