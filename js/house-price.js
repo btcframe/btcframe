@@ -1,21 +1,34 @@
 const HOUSE_PRICE_API = "https://house-price.ngrok.app/api/house-price";
 const BTC_PRICE_API = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD"; // For dynamic current price
-const BTC_HISTORY_API = "https://min-api.cryptocompare.com/data/v2/histoday"; // For historical prices
+const BTC_HISTOHOUR_API = "https://min-api.cryptocompare.com/data/v2/histohour"; // For 24-hour ago price
+const BTC_HISTORY_API = "https://min-api.cryptocompare.com/data/v2/histoday"; // For historical prices (7d, 30d, 1y)
 const HOUSE_PRICE_CACHE_KEY = "housePriceBTCData";
 const CACHE_DURATION = 16 * 60 * 1000; // 15 minutes in milliseconds
 
 // Fetch historical BTC price based on days ago
 async function fetchHistoricalBTCPrice(daysAgo) {
-    const limit = daysAgo; // Fetch historical data based on daysAgo
-    const response = await fetch(`${BTC_HISTORY_API}?fsym=BTC&tsym=USD&limit=${limit}`);
+    const response = await fetch(`${BTC_HISTORY_API}?fsym=BTC&tsym=USD&limit=${daysAgo}`);
     const data = await response.json();
     if (data.Response === "Success" && data.Data && data.Data.Data.length > 0) {
-        // Get the closing price of the specified day
         const historicalData = data.Data.Data;
-        const targetDayData = historicalData[historicalData.length - daysAgo - 1];
+        const targetDayData = historicalData[historicalData.length - 2]; // Second-to-last day
         return targetDayData.close;
     } else {
         throw new Error("Failed to fetch BTC historical price data");
+    }
+}
+
+// Fetch BTC price exactly 24 hours ago
+async function fetch24HourAgoBTCPrice() {
+    const response = await fetch(`${BTC_HISTOHOUR_API}?fsym=BTC&tsym=USD&limit=24`);
+    const data = await response.json();
+    if (data.Response === "Success" && data.Data && data.Data.Data.length > 0) {
+        // Get the price exactly 24 hours ago
+        const historicalData = data.Data.Data;
+        const price24hAgo = historicalData[0].close; // 24 hours ago
+        return price24hAgo;
+    } else {
+        throw new Error("Failed to fetch BTC 24-hour ago price");
     }
 }
 
@@ -56,14 +69,16 @@ async function fetchAndDisplayHousePrices() {
             return;
         }
 
-        // Fetch current BTC price from dynamic endpoint
+        // Fetch current BTC price
         const currentPriceResponse = await fetch(BTC_PRICE_API);
         const currentPriceData = await currentPriceResponse.json();
         const btcPriceUSD = currentPriceData.USD; // Current dynamic price
 
-        // Fetch historical prices
-        const [btcPrice24h, btcPrice7d, btcPrice30d, btcPrice1y] = await Promise.all([
-            fetchHistoricalBTCPrice(1),   // 1 day ago
+        // Fetch 24-hour ago BTC price
+        const btcPrice24h = await fetch24HourAgoBTCPrice();
+
+        // Fetch historical prices for 7 days, 30 days, 1 year
+        const [btcPrice7d, btcPrice30d, btcPrice1y] = await Promise.all([
             fetchHistoricalBTCPrice(7),   // 7 days ago
             fetchHistoricalBTCPrice(30),  // 30 days ago
             fetchHistoricalBTCPrice(365)  // 1 year ago
@@ -87,7 +102,7 @@ async function fetchAndDisplayHousePrices() {
 
         // Calculate changes
         const changes = {
-            current: ((btcPriceUSD - btcPrice24h) / btcPrice24h) * 100,
+            current: ((btcPriceUSD - btcPrice24h) / btcPrice24h) * 100,  // Correctly calculated against 24-hour ago price
             '7d': ((btcPriceUSD - btcPrice7d) / btcPrice7d) * 100,
             '30d': ((btcPriceUSD - btcPrice30d) / btcPrice30d) * 100,
             '1y': ((btcPriceUSD - btcPrice1y) / btcPrice1y) * 100
