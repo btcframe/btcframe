@@ -18,7 +18,7 @@
   <meta name="twitter:description" value="An open-source Bitcoin smart frame." />
   <meta name="twitter:image" content="https://btcframe.com/screenshot.png" />
   <meta name="twitter:url" value="https://btcframe.com/" />
-  <title>BTC Frame - Bitcoin Dashboard</title>
+  <title>BTC Frame - Live Bitcoin Dashboard</title>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="BTC Frame" />
   <meta name="application-name" content="BTC Frame" />
@@ -460,6 +460,43 @@
 
   <script src="js/mayer-multiple.js"></script>
 
+  <!-- Page 17 -->
+  <div class="page debug-page" id="page17">
+      <div class="card">
+          <p class="house-price-text">US Median House Price in ₿TC</p>
+          
+          <!-- Current Price Display -->
+          <div class="price-container">
+              <div class="flashing-dot" id="house-price-dot"></div>
+              <div id="current-house-btc" class="btc-value" data-type="current">₿0.00</div>
+              <div class="price-change" id="house-price-change" data-type="current-change">0.00% ■</div>
+          </div>
+          
+          <!-- Historical Data -->
+          <div class="historical-house-prices">
+              <div class="historical-price-card">
+                  <div class="period-label">7 Days Ago</div>
+                  <div class="price-value btc-value" id="seven-days-value" data-type="7d">₿0.00</div>
+                  <div class="change-value" id="seven-days-change" data-type="7d-change">0.00%</div>
+              </div>
+              
+              <div class="historical-price-card">
+                  <div class="period-label">30 Days Ago</div>
+                  <div class="price-value btc-value" id="thirty-days-value" data-type="30d">₿0.00</div>
+                  <div class="change-value" id="thirty-days-change" data-type="30d-change">0.00%</div>
+              </div>
+              
+              <div class="historical-price-card">
+                  <div class="period-label">1 Year Ago</div>
+                  <div class="price-value btc-value" id="one-year-value" data-type="1y">₿0.00</div>
+                  <div class="change-value" id="one-year-change" data-type="1y-change">0.00%</div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script src="js/house-price.js"></script>
+
   <script>
     function formatDateToMMDDYYYY(date) {
       const day = ("0" + date.getDate()).slice(-2);
@@ -481,7 +518,7 @@
       .substring(5)
       .replace("-", ".");
     const CACHE_KEY = "btcFrameCache";
-    const CACHE_EXPIRY = 900000; // 15 minutes in milliseconds
+    const CACHE_EXPIRY = 960000; // 16 minutes in milliseconds
 
     async function fetchData() {
       try {
