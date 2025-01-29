@@ -179,7 +179,6 @@ BTC Frame relies on various external APIs and data providers:
 - [St. Louis Fed Web Services: FRED® API](https://fred.stlouisfed.org/docs/api/fred/) for US Median House Prices.
 - [CryptoCompare API](https://min-api.cryptocompare.com/)) for historic Bitcoin metrics.
 - [Bitfeed](https://bits.monospace.live/) for mempool visualizer.
-- [BitInfoCharts](https://bitinfocharts.com/) for wallet distribution data.
 - [Alternative.me API](https://alternative.me/) for the Fear and Greed Index.
 - [Bitnodes API](https://bitnodes.io/) for public Bitcoin node data.
 - [Flapper](https://github.com/flapper) for real-time value displays.
