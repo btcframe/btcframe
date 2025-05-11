@@ -2,7 +2,7 @@ const SATS_PER_BITCOIN = 100000000;
 const UPDATE_INTERVAL = 5 * 60 * 1000; // 5 minutes
 const PRICE_CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-const PRICE_ENDPOINT = 'https://mempool.btcframe.com/api/v1/prices';
+const PRICE_ENDPOINT = 'https://mempool.space/api/v1/prices';
 const PRICE_ENDPOINT_FALLBACK = 'https://mempool.space/api/v1/prices';
 
 let satsPriceCache = {
@@ -33,7 +33,7 @@ async function fetchPrice24HoursAgo() {
   const timestamp24Hr = Math.floor((Date.now() - 24 * 60 * 60 * 1000) / 1000);
   try {
     const data = await fetchWithFallbackPage9(
-      `https://mempool.btcframe.com/api/v1/historical-price?currency=USD&timestamp=${timestamp24Hr}`,
+      `https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${timestamp24Hr}`,
       `https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${timestamp24Hr}`
     );
     if (data && data.prices && data.prices.length > 0) {
