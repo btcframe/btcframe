@@ -6,9 +6,9 @@ const S2F_MODEL_PARAMS = {
     multiplier: 0.34
 };
 
-const MEMPOOL_API_S2F = 'https://mempool.btcframe.com/api/v1/historical-price?currency=USD';
+const MEMPOOL_API_S2F = 'https://mempool.space/api/v1/historical-price?currency=USD';
 const FALLBACK_API_S2F = 'https://mempool.space/api/v1/historical-price?currency=USD';
-const REALTIME_API = 'https://mempool.btcframe.com/api/v1/prices';
+const REALTIME_API = 'https://mempool.space/api/v1/prices';
 const FALLBACK_REALTIME_API = 'https://mempool.space/api/v1/prices';
 
 const S2F_CACHE_DURATION = 20 * 60 * 1000;
