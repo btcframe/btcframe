@@ -248,8 +248,8 @@ Thank you for helping BTC Frame grow and evolve! Together, we can build an incre
 ### Next Halving Progress
 ![Next Halving Progress](/screenshots/next-halving.png)
 
-### Bitcoin Clock
-![Bitcoin Clock](/screenshots/bitcoin-clock.png)
+### Days Bitcoin Has Spent in Price Ranges
+<img width="1792" alt="price-range" src="https://github.com/user-attachments/assets/8d6fdaf9-2cd8-41f5-b2f1-61e6670619c2" />
 
 ### Current Hashrate
 ![Current Hashrate](/screenshots/current-hashrate.png)
@@ -272,15 +272,36 @@ Thank you for helping BTC Frame grow and evolve! Together, we can build an incre
 ### Bitcoin Wealth Distribution
 ![Bitcoin Wealth Distribution](/screenshots/wealth-distribution.png)
 
-### Mayer Multiple
+### Bitcoin Mayer Multiple
 ![Mayer Multiple](/screenshots/mayer-multiple.png)
 
 ### US Median House Price in BTC
 ![Mayer Multiple](/screenshots/house-price.png)
 
+### Bitcoin Polar Graph
+<img width="1792" alt="polar-graph" src="https://github.com/user-attachments/assets/99bcc3d8-5da7-41ca-9339-55a60a3a1ecc" />
+
+### Bitcoin Power Law Model
+<img width="1792" alt="power-law" src="https://github.com/user-attachments/assets/630bf5cc-a8a7-4920-9803-dcc91408cbc9" />
+
+### Bitcoin Stock-to-Flow Model (S2F Model)
+<img width="1792" alt="stock-to-flow-s2f" src="https://github.com/user-attachments/assets/29aabef6-b0e3-44e6-bfa9-1f925682f37a" />
+
+### Thank You Satoshi
+<img width="1792" alt="thank-you-satoshi" src="https://github.com/user-attachments/assets/8962a84d-ee25-4f8e-8b68-2ace0ffbad5a" />
+
+### Bitcoin top Reachable Node Version
+<img width="1792" alt="node-versions" src="https://github.com/user-attachments/assets/e16b637a-604a-4277-adda-196448fb904b" />
+
+### Bitcoin Seasonality (Monthly Returns)
+<img width="1792" alt="monthly-returns" src="https://github.com/user-attachments/assets/128ac726-2435-4a78-853a-5062954e723e" />
+
+### Bitcoin Bi Mac Index
+<img width="1792" alt="bigmac-index" src="https://github.com/user-attachments/assets/ede8c3f3-74e9-4b93-bb16-2f37c884ed66" />
+
 ---
 
-## CC License
+## License
 
 MIT License
 
