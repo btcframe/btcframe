@@ -258,26 +258,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-### Permissions
-You are free to:
-- **Share** — copy and redistribute the material in any medium or format.
-- **Adapt** — remix, transform, and build upon the material.
-
-### Restrictions
-Under the following terms:
-1. **Attribution**: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-2. **NonCommercial**: You may not use the material for commercial purposes.
-
-### Full License Text
-You can find the full license text at the following link:
-[https://creativecommons.org/licenses/by-nc/4.0/legalcode](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
-
-### How to Attribute
-When using this work, please attribute it as follows:
-
-[BTC Frame] licensed under CC BY-NC 4.0.
-To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/.
-
 ---
 
 ## Contact
