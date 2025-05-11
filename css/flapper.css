@@ -299,4 +299,51 @@
     background-color: #f6f6f6;
 }
 
+/* For 2K monitors (2560 x 1440) */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
 
+  .flapper.XXXL {
+    font-size: 158px;
+    line-height: 182px;
+    height: 155px;
+  }
+
+  .flapper.XXXL .digit {
+    border-radius: 11px;
+    height: 173px;
+    width: 130px;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 0 0 7px;
+  }
+
+  .flapper.XXXL .digit:first-child {
+    margin: 0;
+  }
+
+  .flapper.XXXL .digit div {
+    border-radius: 9px;
+  }
+
+  .flapper.XXXL .digit .top {
+    clip: rect(0px, auto, 86px, 0px);
+  }
+
+  .flapper.XXXL .digit .bottom {
+    clip: rect(87px, auto, 173px, 0px); 
+  }
+  
+  .activity {
+    top: 93px;
+    left: -50px;
+  }
+  
+  .flapper-flashing-dot {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .displays {
+    padding: 25px 10px 45px 10px;
+  }
+}

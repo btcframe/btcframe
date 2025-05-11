@@ -2,7 +2,6 @@
 
 body {
   background-color: #000;
-  color: #fff;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
@@ -101,7 +100,7 @@ body {
 }
 
 #fullscreen-btn:hover {
-  color: #f39c12;  /* Same orange color as settings button hover */
+  color: #f39c12;
 }
 
 #play-pause-btn {
@@ -112,9 +111,9 @@ body {
   border: none;
   color: #fff;
   cursor: pointer;
-  font-size: 15px;
-  width: 32px;
-  height: 32px;
+  font-size: 17px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -126,8 +125,8 @@ body {
 #play-pause-btn::before {
   content: "";
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   background-color: #202023;
   border-radius: 50%;
 }
@@ -340,16 +339,17 @@ body {
 }
 
 .difficulty-card .remaining-blocks {
-  font-size: 20px;
-  margin: 10px 0;
+  font-size: 17px;
+  margin: 0 0 20px 0;
   text-align: center;
+  color: white;
 }
 
 .difficulty-card .adjustments {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 50px;
+  margin-left: 60px;
   margin-bottom: -20px;
 }
 
@@ -686,34 +686,34 @@ div.activity {
 }
 
 #bitcoin-distribution-table td {
-  background-color: #444;
+  background-color: #FFF2E0;
   color: #000000;
 }
 
 .wallet-type-container {
   display: flex;
-  align-items: center; /* Vertically center the items */
-  justify-content: flex-start; /* Align items to the left */
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .wallet-icon {
-  font-size: 1.9em; /* Adjust the size as needed */
+  font-size: 1.9em;
   width: 2em;
   height: 2em;
   border-radius: 50%;
-  background-color: #d7bc99; /* Circle color */
+  background-color: #d7bc99;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px; /* Space between icon and text */
-  line-height: 1; /* Ensure the icons are centered */
+  margin-right: 10px;
+  line-height: 1;
 }
 
 .wallet-type {
-  color: #000000; /* Specific color for wallet type */
-  font-weight: bold; /* Bold font */
-  text-transform: uppercase; /* Convert text to uppercase */
-  line-height: 1; /* Adjust line-height if needed */
+  color: #000000;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .header-icons {
@@ -812,20 +812,20 @@ div.activity {
     font-weight: bold;
     color: #333;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px !important; 
 }
 
 #bitcoin-distribution-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 0px 0px 40px 0px;
     font-size: 19px;
     text-align: left;
 }
 
 #bitcoin-distribution-table th, 
 #bitcoin-distribution-table td {
-    padding: 12px;
+    padding: 8px;
     border: 0px solid #ddd;
 }
 
@@ -835,39 +835,35 @@ div.activity {
 }
 
 #bitcoin-distribution-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-#bitcoin-distribution-table tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: #BE2506;
 }
 
 .wallet-100k {
-  background-color: #AD6600 !important;
+  background-color: ##BE2506 !important;
 }
 
 .wallet-humpback {
-  background-color: #E08300 !important;
+  background-color: #CB5204 !important;
 }
 
 .wallet-whale {
-  background-color: #FF9E14 !important;
+  background-color: #E08300 !important;
 }
 
 .wallet-shark {
-  background-color: #FFB347 !important;
+  background-color: #FF9E14 !important;
 }
 
 .wallet-fish {
-  background-color: #FFC87A !important;
+  background-color: #FFB347 !important;
 }
 
 .wallet-crab {
-  background-color: #FFDDAD !important;
+  background-color: #FFC87A !important;
 }
 
 .wallet-shrimp {
-  background-color: #FFF2E0 !important;
+  background-color: #FFDDAD !important;
 }
 
 .wallet-other {
@@ -994,6 +990,11 @@ div.activity {
 #satsusd-value {
   font-size: 60px;
   margin-right: 10px;
+  color: white;
+}
+
+#sats-per-dollar {
+  color: white;
 }
 
 .satsusd-price-change {
@@ -1188,14 +1189,14 @@ div.activity {
   gap: 10px; 
   position: absolute; 
   bottom: 0px; 
-  left: 20px;
+  left: 0px !important;
 }
 
 #btcframe-text {
     font-size: 14px;
     color: #fff;
-    margin-bottom: 38px;
-    margin-left: 80px;
+    margin-bottom: 41px;
+    margin-left: 90px;
     z-index: 1;
 }
 
@@ -1204,7 +1205,7 @@ div.activity {
     font-weight: bold;
     color: #333;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
 }
 
 .worldassets-text {
@@ -1215,12 +1216,6 @@ div.activity {
     margin-bottom: 20px;
 }
 
-.treemap {
-  position: relative;
-  width: 100%;
-  height: 700px;
-}
-
 .node {
   position: absolute;
   border: 1px solid #fff;
@@ -1229,12 +1224,6 @@ div.activity {
   font-size: 12px;
   line-height: 1.5;
   color: white;
-  transition: all 0.3s ease;
-}
-
-.node:hover {
-  background-color: grey !important;
-  color: #fff !important;
 }
 
 .globalassets-text {
@@ -1242,7 +1231,15 @@ div.activity {
     font-weight: bold;
     color: #333;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px !important;
+}
+
+.pricerange-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px !important;
 }
 
 .wealthdistribution-text {
@@ -1271,7 +1268,7 @@ div.activity {
 
 #mayerMultipleChart {
     width: 100% !important;
-    height: 750px !important;
+    height: 80% !important;
 }
 
 #settings-btn {
@@ -1527,136 +1524,1631 @@ div.activity {
   animation-fill-mode: forwards;
 }
 
+/* Page 17 */
+#page17 {
+    position: relative;
+}
+
+#page17::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 85%;
+    background-color: #2a2a2d;
+    clip-path: polygon(50% 0%, 100% 35%, 100% 100%, 0% 100%, 0% 35%);
+    border-radius: 10px;
+    z-index: 0;
+}
+
 .house-price-text {
-    font-size: 20px;
+    font-size: 36px; 
     font-weight: bold;
     color: #fff;
     text-align: center;
     margin-bottom: 40px;
+    z-index: 10;
 }
 
-.historical-house-prices {
+#page17 .house-price-text {
+    position: absolute;
+    left: 50%;
+    bottom: 110px;
+    transform: translateX(-50%);
+    margin-bottom: 0 !important;
+    z-index: 10;
+}
+
+#page17 .price-container {
+    transform: scale(1.5);
+    transform-origin: top center;
+    z-index: 10;
+    margin-bottom: 70px;
+}
+
+#page17::after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(460px, -280px);
+    background-color: #2a2a2d;
+    border-radius: 4px;
+    z-index: 0;
+}
+
+.historical-house-prices,
+.extended-historical-house-prices {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 60px;
+    gap: 16px;
     padding: 0 20px;
+    align-items: stretch;
+    z-index: 20;
+    color: white;
 }
 
 .historical-price-card {
     background-color: #202023;
     border-radius: 10px;
-    padding: 20px;
+    padding: 40px;
     text-align: center;
     transition: transform 0.2s ease;
-    border: 1px solid #333;
+    border: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
 }
 
-.historical-price-card:hover {
-    transform: translateY(-5px);
+.historical-house-prices .historical-price-card {
+    height: 170px;
+    width: 238px;
 }
 
-.period-label {
-    color: #ffae42;
-    font-size: 24px;
+.historical-house-prices .period-label {
+    font-size: 36px;
     margin-bottom: 15px;
 }
 
-.price-value {
-    color: #fff;
-    font-size: 36px;
-    margin-bottom: 10px;
+.historical-house-prices .price-value {
+    font-size: 60px;
+    margin-bottom: 0px;
 }
 
-.change-value {
+.historical-house-prices .change-value {
+    font-size: 32px;
+    margin-top: 16px;
+}
+
+.extended-historical-house-prices {
+    margin-top: 20px;
+    margin-bottom: 110px;
+}
+
+.extended-historical-house-prices .historical-price-card {
+    height: 55px;  
+    width: 238px;
+    font-size: 0.8em;
+    margin-bottom: -150px;
+}
+
+.extended-historical-house-prices .period-label {
+    font-size: 23px;
+    margin-bottom: 8px;
+    color: #7d7b7b;
+}
+
+.extended-historical-house-prices .price-value {
+    font-size: 30px;
+    margin-bottom: 6px;
+    color: #7d7b7b;
+}
+
+.extended-historical-house-prices .change-value {
+    font-size: 17px;
+    margin-top: 6px;
+}
+
+.historical-house-prices .historical-price-card:last-child,
+.extended-historical-house-prices .historical-price-card:last-child {
+    margin-right: 0;
+}
+
+
+/* Page 18 */
+
+.polar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .centered-polar-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .powerlaw-text {
     font-size: 20px;
-    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px !important;
 }
 
-#page17 {
+/* Page 19 */
+#page19 .card {
   position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#page17::before {
-  content: "";
+#btcPowerLawChart {
+  width: 100% !important; 
+  height: 80% !important;
+}
+
+#bandPrices {
   position: absolute;
+  bottom: 200px;
+  right: 70px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+  z-index: 10;
+  color: white;
+  text-align: left;
+  font-size: 15px;
+}
 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.model-box {
+  position: absolute;
+  bottom: 145px;
+  right: 70px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+  z-index: 10;
+  font-family: 'Times New Roman', serif;
+  color: white;
+  text-align: left;
+  font-size: 15px;
+}
 
-  width: 1200px;
-  height: 850px;
+/* Page 20 */
 
-  background-color: #2a2a2d;
+#page20 .card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  clip-path: polygon(50% 0%, 100% 35%, 100% 100%, 0% 100%, 0% 35%);
+#btcStockToFlowChart {
+  width: 100% !important; 
+  height: 80% !important;
+}
+
+.stocktoflow-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px !important;
+}
+
+#s2fMetrics {
+  position: absolute;
+  bottom: 250px;
+  right: 70px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+  z-index: 10;
+  color: white;
+  text-align: left;
+  font-size: 15px;
+}
+
+#halvingColorScale {
+    position: absolute;
+    bottom: 150px;
+    right: 70px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 4px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#halvingColorScale > div:first-child {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.halving-gradient-bar {
+    display: flex;
+    height: 20px;
+    margin-bottom: 2px;
+}
+
+.halving-gradient {
+    flex-grow: 1;
+    background: linear-gradient(to right, 
+        #0047AB 0%,    /* Dark Blue */
+        #00A6ED 20%,   /* Light Blue */
+        #00FF94 30%,   /* Cyan */
+        #4CBB17 40%,   /* Green */
+        #FFD700 50%,   /* Yellow */
+        #FFA500 60%,   /* Orange */
+        #FF4500 70%,   /* Orange Red */
+        #FF0000 80%,   /* Red */
+        #DC143C 90%,   /* Crimson */
+        #8B0000 100%   /* Dark Red */
+    );
+}
+
+.halving-scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.s2f-formula {
+    color: rgba(72, 217, 150, 1);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.page-navigation {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+#page-counter {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 30px;
+  margin-right: 120px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 15px;
   border-radius: 20px;
-  z-index: 0;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#page17 .house-price-text {
-  font-size: 36px; 
-  z-index: 2;
+button#prev-btn,
+button#next-btn {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  margin-right: 5px;
 }
 
-#page17 .historical-house-prices {
-  gap: 32px;
-  margin-top: 135px;
-  padding: 0 32px;
-  z-index: 2;
+button#next-btn {
+  margin-right: 0px;
 }
 
-#page17 .historical-price-card {
-  padding: 40px;
-  border-radius: 16px;
-  border: 2px solid #333;
+button#prev-btn:hover,
+button#next-btn:hover {
 }
 
-#page17 .period-label {
-  font-size: 36px;
-  margin-bottom: 22px;
+#hashrateChart {
+  width: 100% !important; 
+  height: 80% !important;
 }
 
-#page17 .price-value {
-  font-size: 60px;
-  margin-bottom: 16px;
+#myChart {
+  width: 100% !important; 
+  height: 80% !important;
 }
 
-#page17 .change-value {
-  font-size: 32px;
-  margin-top: 16px;
+#marketCapChart {
+  width: 100% !important; 
+  height: 80% !important;
 }
 
-#page17 .house-price-text {
-  position: absolute;
-  left: 50%;
-  bottom: 125px;
-  transform: translateX(-50%);
-  margin-bottom: 0 !important;
-  z-index: 2;
+#priceRangeChart {
+  width: 100% !important; 
+  height: 80% !important;
 }
 
-#page17 .price-container {
+#treemapContainer {
+  position: relative;
+  width: 100% !important; 
+  height: 80% !important;
+  margin-bottom: 30px;
+}
 
-  margin-top: 0px;
+#txChart {
+  width: 100% !important; 
+  height: 80% !important;
+}
+
+.mayer-flashing-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 15px;
+  background-color: gray;
+  animation: flash 1s infinite alternate;
+}
+
+@keyframes flash {
+  from { opacity: 1; }
+  to   { opacity: 0.5; }
+}
+
+.mayer-price-container {
+  display: flex;
+  align-items: center;
+}
+
+/* For 2K monitors (2560 x 1440) - Page 1 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  #dashboard .card h2 {
+    font-size: 90px;
+  }
   
-  transform: scale(1.5);
-  transform-origin: top center; 
+  #dashboard .card p {
+    font-size: 38px;
+  }
+  
+  #dashboard .card h2 span {
+    font-size: 24px;
+    right: -65px;
+    top: -12px;
+  }
+  
+  .difficulty-card .adjustment span {
+    font-size: 20px;
+  }
+  
+  .difficulty-card .progress-bar span {
+    font-size: 20px;
+  }
+  
+  .difficulty-card .remaining-blocks {
+    font-size: 18px;
+  }
+  
+  .difficulty-card h1 {
+    font-size: 28px;
+  }
+  
+  .difficulty-card .progress-bar {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .difficulty-card .progress-bar::before {
+    width: 90px;
+    height: 90px;
+  }
+  
+  #dashboard {
+    gap: 15px;
+  }
+  
+  .card, .difficulty-card {
+    padding: 25px;
+  }
+  
+  .difficulty-card .adjustments {
+    margin-bottom: -60px;
+    margin-top: 50px;
+  }
 }
 
-#page17::after {
-  content: "";
+@media screen and (min-width: 3000px) {
+  #dashboard .card h2 {
+    font-size: 110px;
+  }
+  
+  #dashboard .card p {
+    font-size: 46px;
+  }
+  
+  #dashboard .card h2 span {
+    font-size: 30px;
+    right: -80px;
+    top: -15px;
+  }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 4 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  .halving-progress-circle {
+    width: 1200px;
+    height: 1200px;
+  }
+  
+  .halving-progress-circle::before {
+    width: 1050px;
+    height: 1050px;
+  }
+  
+  .halving-progress-circle .progress-text {
+    font-size: 60px;
+    padding: 15px 18px;
+    top: 275px;
+  }
+  
+  .halving-progress-circle .inner-circle {
+    margin-top: 100px !important;
+  }
+  
+  .remaining-text {
+    font-size: 60px !important;
+    margin-top: 30px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .split-flap .digit {
+    font-size: 210px;
+    width: 1.2ch;
+    line-height: 1;
+    margin-right: 3px;
+  }
+  
+  .next-halving-text {
+    font-size: 40px !important;
+    margin-top: 35px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .card .dynamic-date {
+    font-size: 55px !important;
+  }
+  
+  .marker.vertical {
+    height: 6.27%;
+    width: 3px;
+  }
+  
+  .marker.horizontal {
+    width: 6.27%;
+    height: 3px;
+  }
+
+}
+
+/* For 2K monitors (2560 x 1440) - Page 8 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  #map-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #map {
+    height: 100%;
+    width: 100%;
+    transform: scale(1.6);
+    transform-origin: center;
+    margin-top: 320px;
+    clip-path: inset(0 0 4% 0);
+  }
+  
+  #reachable-nodes {
+    bottom: 110px;
+    font-size: 35px;
+    padding: 20px 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+  }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 9 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  #page9 .satsusd-price-container {
+    transform: scale(1.5);
+    transform-origin: center top;
+    margin-bottom: 60px;
+  }
+  
+  #page9 #satsusd-value {
+    font-size: 70px;
+    margin-right: 30px;
+  }
+  
+  #page9 .satsusd-price-change {
+    font-size: 40px;
+  }
+  
+  #page9 .satsusd-flashing-dot {
+    width: 25px;
+    height: 25px;
+  }
+  
+  #page9 #sats-per-dollar {
+    font-size: 40px;
+    padding: 15px 30px;
+    margin-bottom: 40px;
+  }
+  
+  #page9 .satsusd-container {
+    max-width: 1800px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
+    justify-content: center !important;
+  }
+  
+  #page9 .satsusd-large-square {
+    width: 280px;
+    height: 280px;
+    grid-template-columns: repeat(10, 28px);
+    grid-template-rows: repeat(10, 28px);
+    margin: 0;
+  }
+  
+  #page9 .satsusd-small-square {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 10 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+
+  #page10 .price-container {
+    font-size: 90px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  
+  #page10 .value-wrapper {
+    width: 130px;
+    height: 130px;
+  }
+  
+  #page10 .value {
+    font-size: 70px !important;
+    padding-right: 5px;
+  }
+  
+  #page10 .price-change {
+    font-size: 50px;
+    margin-left: 20px;
+  }
+  
+  #page10 .highcharts-figure {
+    height: 900px;
+    margin: -60px auto;
+  }
+  
+  #page10 .historical-data-container {
+    margin-top: 30px;
+  }
+  
+  #page10 .historical-data {
+    gap: 60px;
+  }
+  
+  #page10 .historical-data li {
+    margin: 0 25px;
+  }
+  
+  #page10 .historical-data .label {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  #page10 .historical-data .value-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+  
+  #page10 .historical-data .value {
+    font-size: 50px !important;
+  }
+
+  #page10 .value-wrapper {
+    margin-left: 20px;
+  }
+
+}
+
+/* General styling for the table (applies to all screen sizes) */
+#bitcoin-distribution-table {
+    border: none;
+}
+
+#bitcoin-distribution-table th,
+#bitcoin-distribution-table td {
+    border: none;
+}
+
+/* For 2K monitors (2560 x 1440) - Page 11 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+
+    #page11 #bitcoin-distribution-table {
+        font-size: 23px;
+        border: none;
+        border-collapse: collapse;
+    }
+
+    #page11 #bitcoin-distribution-table th,
+    #page11 #bitcoin-distribution-table td {
+        height: 50px;
+        padding: 8px;
+        border: none !important;
+    }
+
+    #page11 #bitcoin-distribution-table th {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    #page11 .wallet-type-container {
+        padding: 5px 0;
+    }
+
+    #page11 .wallet-icon {
+        font-size: 2.1em;
+        width: 2.1em;
+        height: 2.1em;
+        margin-right: 12px;
+    }
+
+    #page11 .wallet-type {
+        font-size: 24px;
+    }
+}
+
+/* For 2K monitors (2560 x 1440) - Generic CSS */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+    .card p {
+        font-size: 45px;
+    }
+
+    .price-container {
+    font-size: 80px !important;
+    }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 13 */
+.node .bitcoin-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: -2px;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+}
+
+.node {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  #page13 .node {
+    font-size: 18px !important;
+  }
+
+  #page13 .node[style*="background: rgb(247, 148, 20)"] {
+    font-size: 16px !important;
+    padding: 8px !important;
+  }
+
+  #page13 .node[style*="background: rgb(247, 148, 20)"] .bitcoin-content {
+    gap: 4px !important;
+  }
+
+  #page13 .node[style*="background: rgb(247, 148, 20)"] img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  #page13 .node[style*="background: rgb(247, 148, 20)"] span {
+    font-size: 18px !important;
+  }
+
+  #page13 .node[style*="background: rgb(240, 208, 73)"] {
+    font-size: 18px !important;
+  }
+
+  #page13 .node[style*="background: rgb(179, 238, 252)"] {
+    font-size: 18px !important;
+  }
+
+  #page13 .node[style*="background: rgb(204, 153, 255)"] {
+    font-size: 18px !important;
+  }
+
+  #page13 .node[style*="background: rgb(121, 166, 255)"] {
+    font-size: 20px !important;
+  }
+
+  #page13 .node[style*="background: rgb(177, 224, 144)"] {
+    font-size: 20px !important;
+  }
+
+  #page13 .node[style*="background: rgb(217, 217, 217)"] {
+    font-size: 20px !important;
+  }
+
+  #page13 .node[style*="background: rgb(201, 171, 149)"] {
+    font-size: 20px !important;
+  }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 15 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  #page15 .wealthdistribution-text {
+    font-size: 45px;
+    margin-bottom: 5px !important;
+  }
+  
+  #page15 #wealth-distribution-container {
+    height: 85% !important;
+    transform-origin: center center;
+  }
+  
+  #page15 #wealth-distribution-container svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 17 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  /* House Background Shape */
+  #page17::before {
+    width: 70%;
+    height: 85%;
+  }
+  
+  #page17::after {
+    width: 90px;
+    height: 150px;
+    transform: translate(720px, -350px);
+  }
+  
+  /* Main Title */
+  #page17 .house-price-text {
+    font-size: 50px;
+    bottom: 170px;
+  }
+  
+  /* Current Price Container */
+  #page17 .price-container {
+    transform: scale(1.8);
+    transform-origin: top center;
+    margin-bottom: 100px;
+  }
+  
+  #page17 .flashing-dot {
+    width: 25px;
+    height: 25px;
+  }
+  
+  /* Upper Historical Prices */
+  #page17 .historical-house-prices {
+    margin-top: 30px;
+    gap: 24px;
+  }
+  
+  #page17 .historical-house-prices .historical-price-card {
+    height: 220px;
+    width: 400px;
+  }
+  
+  #page17 .historical-house-prices .period-label {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+  
+  #page17 .historical-house-prices .price-value {
+    font-size: 70px;
+    margin-bottom: 1px;
+  }
+  
+  #page17 .historical-house-prices .change-value {
+    font-size: 38px;
+    margin-top: 20px;
+  }
+  
+  /* Lower Historical Prices */
+  #page17 .extended-historical-house-prices {
+    margin-top: 30px;
+    margin-bottom: 130px;
+    gap: 24px;
+  }
+  
+  #page17 .extended-historical-house-prices .historical-price-card {
+    height: 100px;
+    width: 400px;
+    margin-bottom: -170px;
+  }
+  
+  #page17 .extended-historical-house-prices .period-label {
+    font-size: 27px;
+    margin-bottom: 10px;
+  }
+  
+  #page17 .extended-historical-house-prices .price-value {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+  
+  #page17 .extended-historical-house-prices .change-value {
+    font-size: 22px;
+    margin-top: 8px;
+  }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 18 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  #page18 .polar-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #page18 .centered-polar-image {
+    width: 1250px;
+    height: auto;
+  }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 19 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  #page19 .powerlaw-text {
+    font-size: 45px;
+  }
+  
+  #page19 #bandPrices {
+    bottom: 267px;
+    right: 85px;
+    padding: 15px;
+    width: 270px;
+    font-size: 19px;
+  }
+  
+  #page19 #bandPrices div {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  #page19 .model-box {
+    bottom: 187px;
+    right: 85px;
+    padding: 15px;
+    width: 270px;
+    font-size: 21px;
+  }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 20 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  #page20 .stocktoflow-text {
+    font-size: 45px;
+  }
+  
+  #page20 #s2fMetrics {
+    bottom: 345px;
+    right: 85px;
+    padding: 15px;
+    width: 284px;
+    font-size: 22px;
+  }
+  
+  #page20 #s2fMetrics div {
+    margin: 4px 0;
+  }
+  
+  #page20 #s2fMetrics div:last-child {
+    font-size: 20px !important;
+    margin-top: 5px;
+  }
+  
+  #page20 #halvingColorScale {
+    bottom: 190px;
+    right: 85px;
+    padding: 22px;
+    width: 270px;
+  }
+  
+  #page20 #halvingColorScale > div:first-child {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  #page20 .halving-gradient-bar {
+    height: 25px;
+    margin-bottom: 4px;
+  }
+  
+  #page20 .halving-scale-labels {
+    font-size: 20px;
+  }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 21 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  #page21 .thank-you {
+    font-size: 140px;
+  }
+  
+  #page21 .satoshi {
+    font-size: 140px;
+  }
+  
+  #page21 .circle {
+    width: 48%;
+    height: 48%;
+  }
+  
+  #page21 .circle .text {
+    font-size: 32px;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(calc(360deg / 21 * var(--i))) translateX(36%);
+    }
+    100% {
+      transform: rotate(calc(360deg + 360deg / 21 * var(--i))) translateX(36%);
+    }
+  }
+}
+
+#page21 .thankyou-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#page21 .center-text {
   position: absolute;
-  width: 75px;
-  height: 125px;
+  z-index: 10;
+  text-align: center;
+}
 
-  top: 50%;
-  left: 50%;
+#page21 .thank-you {
+  font-size: 100px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+  animation: subtle-glow 2.5s ease-out infinite alternate;
+}
 
-  transform: translate(460px, -280px);
+#page21 .satoshi {
+  font-size: 100px;
+  font-weight: bold;
+  color: #ffae42;
+  text-shadow: 0 0 0px rgba(255, 174, 66, 0);
+  animation: subtle-glow-orange 2.5s ease-out infinite alternate;
+}
 
-  background-color: #2a2a2d;
-  border-radius: 4px;
-  z-index: 0;
+#circleTextCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+@keyframes subtle-glow {
+  from {
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+  }
+  to {
+    text-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.7), 
+      0 0 25px rgba(255, 255, 255, 0.5),
+      0 0 35px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes subtle-glow-orange {
+  from {
+    text-shadow: 0 0 0px rgba(255, 174, 66, 0);
+  }
+  to {
+    text-shadow: 
+      0 0 15px rgba(255, 174, 66, 0.7), 
+      0 0 25px rgba(255, 174, 66, 0.5),
+      0 0 35px rgba(255, 174, 66, 0.3);
+  }
+}
+
+/* Media queries for responsive text sizing */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+  #page21 .thank-you {
+    font-size: 140px;
+  }
+  
+  #page21 .satoshi {
+    font-size: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  #page21 .thank-you,
+  #page21 .satoshi {
+    font-size: 60px;
+  }
+}
+
+/* Page 22 Card & Container */
+#page22 .card {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Removed justify-content: space-between */
+  justify-content: flex-start;
+  background-color: #202023;
+  overflow: hidden;
+}
+
+.space-race-container {
+  width: 100%;
+  /* Let the container size itself based on content */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px; /* optional spacing */
+  color: white;
+  background-color: #202023;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Title Styling */
+.stocktoflow-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Chart Container Styles */
+#page22 .chart-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  /* Reduced height so the footer doesn't get pushed too far down */
+  height: 75%;
+}
+
+#spaceRaceChart {
+  width: 100%;
+  height: 100%;
+  background-color: #202023;
+}
+
+/* Footer Styles */
+.space-race-footer {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.space-race-total {
+  font-size: 22px;
+  color: #fff;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.space-race-updated {
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+/* SVG Specific Styles */
+.grid-line {
+  stroke: #444;
+  stroke-dasharray: 5,5;
+}
+
+.bar {
+  fill: url(#gradient);
+  opacity: 0.7;
+}
+
+.country-label {
+  text-anchor: middle;
+  fill: white;
+  font-size: 14px;
+  dominant-baseline: middle;
+}
+
+.btc-value {
+  text-anchor: middle;
+  fill: #ffae42;
+  font-size: 60px;
+}
+
+.usd-value {
+  text-anchor: middle;
+  fill: #999;
+  font-size: 13px;
+}
+
+/* Flag and Rocket Animation Styles */
+.flag-container {
+  animation: float 2s infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-5px); }
+}
+
+.flame {
+  animation: flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker {
+  from { opacity: 0.7; }
+  to   { opacity: 1; }
+}
+
+/* Page 7 - Bitcoin Clock */
+
+#page7 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#page7 #clock {
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  max-height: 800px;
+  display: block;
+  margin: auto;
+  preserveAspectRatio: xMidYMid meet;
+}
+
+#page7 #clock text {
+  font-family: 'Jost', sans-serif;
+}
+
+#page7 #clock *:hover {
+  transition: none;
+  transform: none;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1999px) {
+  #page7 .container {
+    padding: 2vmin;
+  }
+  
+  #page7 #clock {
+    width: min(90vh, 90vw);
+    height: min(90vh, 90vw);
+  }
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2999px) {
+  #page7 .container {
+    padding: 3vmin;
+  }
+  
+  #page7 #clock {
+    width: min(85vh, 85vw);
+    height: min(85vh, 85vw);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+@media screen and (min-width: 3000px) {
+  #page7 .container {
+    padding: 4vmin;
+  }
+  
+  #page7 #clock {
+    width: min(80vh, 80vw);
+    height: min(80vh, 80vw);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+  #page7 .container {
+    padding: 1.5vmin;
+  }
+  
+  #page7 #clock {
+    width: min(95vh, 95vw);
+    height: min(95vh, 95vw);
+  }
+}
+
+@media (max-width: 768px) {
+  #page7 .container {
+    padding: 1vmin;
+  }
+  
+  #page7 #clock {
+    width: min(98vh, 98vw);
+    height: min(98vh, 98vw);
+  }
+}
+
+/* Page 22 */
+#page22 .card {
+  padding: 0 20px;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #202023;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#page22 .split-outer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#page22 .split-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+}
+
+#page22 .nodeversions-text {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffae42
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+}
+
+#page22 .left-panel {
+  flex: 1;
+  padding-left: 20px;
+  min-width: 0;
+}
+
+#page22 .right-panel {
+  flex: 1;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#versionPieChart {
+  width: 100%;
+  max-width: 700px;
+  max-height: 700px;
+  height: auto;
+  margin-top: 20px;
+}
+
+#node-version-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Jost", sans-serif;
+  font-size: 0.95rem;
+  color: #eee;
+  background-color: #262626;
+  border-radius: 12px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+#node-version-table thead {
+  background-color: #2c2c2c;
+  color: #f7931a;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+#node-version-table th,
+#node-version-table td {
+  padding: 9px 16px;
+  border-bottom: 1px solid #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#node-version-table th:nth-child(1),
+#node-version-table td:nth-child(1) {
+  width: 33.33%;
+  text-align: left;
+}
+
+#node-version-table th:nth-child(2),
+#node-version-table td:nth-child(2) {
+  width: 33.33%;
+  text-align: center;
+}
+
+#node-version-table th:nth-child(3),
+#node-version-table td:nth-child(3) {
+  width: 33.33%;
+  text-align: right;
+}
+
+#node-version-table tbody tr:nth-child(even) {
+  background-color: #1f1f1f;
+}
+
+#node-version-table tbody tr:nth-child(odd) {
+  background-color: #222;
+}
+
+#node-version-table tbody tr:hover {
+  background-color: #2b2b2b !important;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#node-version-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media screen and (min-width: 2000px) {
+  #page22 .split-layout {
+    max-width: 100%;
+    padding: 0 80px;
+    gap: 60px;
+  }
+
+  #page22 .left-panel {
+    flex: 1.2;
+  }
+
+  #page22 .right-panel {
+    flex: 1;
+  }
+
+  #versionPieChart {
+    max-width: 1000px;
+    max-height: 1000px;
+  }
+
+  #node-version-table {
+    font-size: 1.15rem;
+  }
+
+  #node-version-table th,
+  #node-version-table td {
+    padding: 14px 24px;
+  }
+
+  #page22 .nodeversions-text {
+    font-size: 45px;
+    top: 80px;
+  }
+}
+
+/* Page 23 */
+
+#page23 .monthlyreturns-text {
+  font-size: 38px;
+  font-weight: bold;
+  color: #ffae42;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+#page23 #monthlyReturnsContainer {
+  width: 100%;
+  height: calc(100vh - 120px);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#page23 #monthlyReturnsCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Page 24 */
+
+#page24 .bigmac-content-wrapper {
+  margin-top: -130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bigmac-price-text {
+    font-size: 36px; 
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    z-index: 10;
+}
+
+#page24 .period-label {
+  color: #fbd7a6;
+}
+
+
+#page24 .bigmac-price-text {
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+    margin-bottom: 0 !important;
+    z-index: 10;
+}
+
+#page24 .price-container {
+    transform: scale(1.5);
+    transform-origin: top center;
+    z-index: 10;
+    margin-bottom: 60px;
+    font-size: 40px !important;
+}
+
+.historical-bigmac-prices,
+.extended-historical-bigmac-prices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 0 20px;
+    align-items: stretch;
+    z-index: 20;
+    color: white;
+}
+
+.historical-price-card {
+    background-color: #202023;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    border: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+}
+
+.historical-bigmac-prices .historical-price-card {
+    height: 170px;
+    width: 238px;
+}
+
+.historical-bigmac-prices .period-label {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.historical-bigmac-prices .price-value {
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+.historical-bigmac-prices .change-value {
+    font-size: 32px;
+    margin-top: 16px;
+}
+
+.extended-historical-bigmac-prices {
+    margin-top: 20px;
+    margin-bottom: 110px;
+}
+
+.extended-historical-bigmac-prices .historical-price-card {
+    height: 55px;  
+    width: 238px;
+    font-size: 0.8em;
+    margin-bottom: -150px;
+}
+
+.extended-historical-bigmac-prices .period-label {
+    font-size: 23px;
+    margin-bottom: 8px;
+    color: #7d7b7b;
+}
+
+.extended-historical-bigmac-prices .price-value {
+    font-size: 30px;
+    margin-bottom: 6px;
+    color: #7d7b7b;
+}
+
+.extended-historical-bigmac-prices .change-value {
+    font-size: 17px;
+    margin-top: 6px;
+}
+
+.historical-bigmac-prices .historical-price-card:last-child,
+.extended-historical-bigmac-prices .historical-price-card:last-child {
+    margin-right: 0;
 }
