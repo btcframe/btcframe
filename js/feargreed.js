@@ -76,119 +76,129 @@ function updateTitleWithCurrentValue(value) {
   priceContainer.appendChild(valueWrapper);
 }
 
-// Function to initialize or update the Highcharts Fear & Greed gauge
+// Add this at the beginning of your updateFearGreedGauge function in feargreed.js
 function updateFearGreedGauge(value) {
-  if (!chart) {
-    // Initialize the chart if it's not already initialized
-    chart = Highcharts.chart('fearGreedGauge', {
-      chart: {
-        type: 'gauge',
-        plotBackgroundColor: null,
-        plotBorderWidth: 0,
-        plotShadow: false,
-        backgroundColor: 'transparent',
-        spacing: [0, 0, 0, 0] // Reduce spacing around the chart
-      },
+  // Check if it's a 2K monitor
+  const is2KMonitor = window.innerWidth >= 2000 && window.innerWidth <= 2600;
+  
+  const chartOptions = {
+    chart: {
+      type: 'gauge',
+      plotBackgroundColor: null,
+      plotBorderWidth: 0,
+      plotShadow: false,
+      backgroundColor: 'transparent',
+      spacing: [0, 0, 0, 0]
+    },
 
-      title: {
-        text: null // Title will be updated dynamically in the price-container
-      },
+    title: {
+      text: null
+    },
 
-      pane: {
-        startAngle: -90,
-        endAngle: 90,
-        background: null,
-        center: ['50%', '80%'],
-        size: '100%'
-      },
+    pane: {
+      startAngle: -90,
+      endAngle: 90,
+      background: null,
+      center: ['50%', '80%'],
+      size: is2KMonitor ? '120%' : '100%' // Larger for 2K monitors
+    },
 
-      exporting: {
-        enabled: false
-      },
+    exporting: {
+      enabled: false
+    },
 
-      credits: {
-        enabled: false
-      },
+    credits: {
+      enabled: false
+    },
 
-      tooltip: {
-        enabled: false
-      },
+    tooltip: {
+      enabled: false
+    },
 
-      yAxis: {
-        min: 0,
-        max: 100,
-        tickPixelInterval: 72,
-        tickPosition: 'inside',
-        tickLength: 40,
-        tickColor: '#202023', // Set the tick color here
-        tickWidth: 2,
-        minorTickInterval: null,
-        labels: {
-          distance: 40,
-          style: {
-            fontSize: '20px',
-            color: '#ffffff'
-          }
-        },
-        lineWidth: 0,
-        plotBands: [
-          {
-            from: 0,
-            to: 20,
-            color: '#8B0000',
-            thickness: 40
-          },
-          {
-            from: 20,
-            to: 40,
-            color: '#e74c3c',
-            thickness: 40
-          },
-          {
-            from: 40,
-            to: 60,
-            color: '#f1c40f',
-            thickness: 40
-          },
-          {
-            from: 60,
-            to: 80,
-            color: '#27ae60',
-            thickness: 40
-          },
-          {
-            from: 80,
-            to: 100,
-            color: '#006400',
-            thickness: 40
-          }
-        ]
+    yAxis: {
+      min: 0,
+      max: 100,
+      tickPixelInterval: is2KMonitor ? 90 : 72, // Adjust for 2K
+      tickPosition: 'inside',
+      tickLength: is2KMonitor ? 50 : 40, // Longer ticks for 2K
+      tickColor: '#202023',
+      tickWidth: is2KMonitor ? 3 : 2, // Thicker ticks for 2K
+      minorTickInterval: null,
+      labels: {
+        distance: is2KMonitor ? 50 : 40,
+        style: {
+          fontSize: is2KMonitor ? '26px' : '20px', // Larger font for 2K
+          color: '#ffffff'
+        }
       },
-
-      series: [
+      lineWidth: 0,
+      plotBands: [
         {
-          name: 'Index',
-          data: [value],
-          dataLabels: {
-            enabled: false, // Disable the current index label
-          },
-          dial: {
-            radius: '80%',
-            backgroundColor: 'gray',
-            baseWidth: 12,
-            baseLength: '0%',
-            rearLength: '0%'
-          },
-          pivot: {
-            backgroundColor: 'gray',
-            radius: 6
-          }
+          from: 0,
+          to: 20,
+          color: '#8B0000',
+          thickness: is2KMonitor ? 50 : 40
+        },
+        {
+          from: 20,
+          to: 40,
+          color: '#e74c3c',
+          thickness: is2KMonitor ? 50 : 40
+        },
+        {
+          from: 40,
+          to: 60,
+          color: '#f1c40f',
+          thickness: is2KMonitor ? 50 : 40
+        },
+        {
+          from: 60,
+          to: 80,
+          color: '#27ae60',
+          thickness: is2KMonitor ? 50 : 40
+        },
+        {
+          from: 80,
+          to: 100,
+          color: '#006400',
+          thickness: is2KMonitor ? 50 : 40
         }
       ]
-    });
+    },
+
+    series: [
+      {
+        name: 'Index',
+        data: [value],
+        dataLabels: {
+          enabled: false,
+        },
+        dial: {
+          radius: is2KMonitor ? '85%' : '80%',
+          backgroundColor: 'gray',
+          baseWidth: is2KMonitor ? 15 : 12,
+          baseLength: '0%',
+          rearLength: '0%'
+        },
+        pivot: {
+          backgroundColor: 'gray',
+          radius: is2KMonitor ? 8 : 6
+        }
+      }
+    ]
+  };
+
+  if (!chart) {
+    // Initialize the chart if it's not already initialized
+    chart = Highcharts.chart('fearGreedGauge', chartOptions);
   } else {
     // Update the chart's data if it is already initialized
     chart.series[0].setData([value], true);
+    
+    // For 2K monitors, update chart settings on resize or page change
+    if (is2KMonitor) {
+      chart.update(chartOptions);
+    }
   }
 }
 

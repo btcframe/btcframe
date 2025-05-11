@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  console.log("Initializing wealth distribution...");
-
   const container = document.getElementById("wealth-distribution-container");
 
   if (!container) {
-    console.error("Wealth distribution container not found!");
     return;
   }
 
@@ -30,7 +27,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const currentTime = new Date().getTime();
 
     if (cachedData && cachedTimestamp && currentTime - cachedTimestamp < CACHE_EXPIRATION_TIME) {
-      console.log("Using cached data");
       return JSON.parse(cachedData);
     } else {
       localStorage.removeItem(CACHE_KEY);
@@ -47,9 +43,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const fetchData = async () => {
     try {
-      const proxyUrl = "https://pet-magpie-humbly.ngrok-free.app/proxy?url=";
-      const targetUrl = "https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html";
-      const response = await fetch(proxyUrl + encodeURIComponent(targetUrl));
+      // Directly fetch data from the new URL (no proxy needed)
+      const dataUrl = "https://address-distribution.btcframe.com/proxy";
+      const response = await fetch(dataUrl);
       const html = await response.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
@@ -66,7 +62,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (addresses.length !== 7) throw new Error("Unexpected number of address columns!");
       return addresses.reverse(); // Reverse to match the pyramid layout
     } catch (error) {
-      console.error("Error fetching data:", error.message);
+      console.error("Error fetching data:", error);
       return null;
     }
   };
@@ -78,7 +74,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (addresses) {
         cacheData(addresses);
       } else {
-        console.error("No data available to render the pyramid.");
         return;
       }
     }
@@ -188,7 +183,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     footer.textContent = "Distribution of Bitcoin addresses by value held";
     svg.appendChild(footer);
 
-    console.log("Wealth distribution SVG successfully appended.");
     container.appendChild(svg);
   };
 
