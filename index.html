@@ -1,87 +1,694 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta name="description" content="BTC Frame is an open-source live #Bitcoin dashboard, also available as a smart frame device.">
-    <meta name="keywords" content="BTC Frame, Bitcoin, Bitcoin Dashboard, Live Dashboard, Smart Frame, Bitcoin Frame, Dashboard, Bitcoin Collectibles, Bitcoin Digital Display, Real-time Bitcoin Display">
-    <meta name='viewport' content='width=device-width,initial-scale=1'>
-    <!-- facebook open graph tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://btcframe.com/" />
-    <meta property="og:title" content="BTC Frame - Live Bitcoin Dashboard" />
-    <meta property="og:description" content="BTC Frame is an open-source live #Bitcoin dashboard, also available as a smart frame device." />
-    <meta property="og:image" content="https://btcframe.com/img/unfurl-a.png" />
-    <!-- twitter card tags additive with the og: tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:domain" value="btcframe.com" />
-    <meta name="twitter:title" value="BTC Frame - Live Bitcoin Dashboard" />
-    <meta name="twitter:description" value="BTC Frame is an open-source live #Bitcoin dashboard, also available as a smart frame device." />
-    <meta name="twitter:image" content="https://btcframe.com/img/unfurl-a.png" />
-    <meta name="twitter:url" value="https://btcframe.com/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="BTC Frame is a live Bitcoin dashboard also available as a smart frame, meticulously handcrafted for Bitcoin enthusiasts. With only 500 units available, this unique collector's item combines cutting-edge technology with artisanal craftsmanship." />
+  <meta name="keywords" content="BTC Frame, Bitcoin, Smart Frame, Bitcoin Frame, Bitcoin Dashboard, Bitcoin Collectibles, Bitcoin Digital Display, Bitcoin Dashboard, Live Bitcoin Dashboard Real-time Bitcoin Display" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://btcframe.com/" />
+  <meta property="og:title" content="BTC Frame - Bitcoin Dashboard" />
+  <meta property="og:description" content="BTC Frame - Live Bitcoin Dashboard" />
+  <meta property="og:image" content="https://btcframe.com/screenshot.png" />
+  <meta name="twitter:card" content="screenshot.png" />
+  <meta name="twitter:domain" content="btcframe.com" />
+  <meta name="twitter:title" content="BTC Frame" />
+  <meta name="twitter:description" value="BTC Frame - Live Bitcoin Dashboard" />
+  <meta name="twitter:image" content="https://btcframe.com/screenshot.png" />
+  <meta name="twitter:url" value="https://btcframe.com/" />
+  <title>BTC Frame - Live Bitcoin Dashboard</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="BTC Frame" />
+  <meta name="application-name" content="BTC Frame" />
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" media="screen" href="css/main.css" />
+  <link rel="stylesheet" href="build/global.css" />
+  <link rel="stylesheet" href="build/bundle.2.3.4.css" />
+  <link href="css/template.css" type="text/css" rel="stylesheet" />
+  <link href="css/flapper.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="transform/dist/jquery.transform-0.9.3.min.js"></script>
+  <script src="src/jquery.flapper.js"></script>
+  <script src="src/flapdemo.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+  <script src="js/jquery.thooClock.js"></script>
+  <script src="js/keyboard.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/common.js"></script>
 
-    <title>BTC Frame: Live Bitcoin Dashboard</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7SB6MDJXV"></script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f7941d">
-    <meta name="apple-mobile-web-app-title" content="BTC Frame">
-    <meta name="application-name" content="BTC Frame">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link href="css/site.css" type="text/css" rel="stylesheet" />
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-Z7SB6MDJXV");
+  </script>
+  <script>
+  // Function to detect mobile or tablet devices
+  function isMobileOrTablet() {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7SB6MDJXV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-Z7SB6MDJXV');
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const yearSpan = document.getElementById("current-year");
-            yearSpan.textContent = new Date().getFullYear();
-        });
-    </script>
+  // Redirect to mobile.html if on mobile or tablet
+  if (isMobileOrTablet()) {
+    window.location.href = "mobile.html";
+  }
+</script>
 </head>
+
 <body>
-    <img src="logo.png" alt="BTC Frame Logo" class="logo">
-    <div class="card-container">
-        <div class="card">
-            <a href="dashboard.html">
-                <div class="icon"><i class="fa-thin fa-gauge-circle-bolt"></i></div>
-                <h2>View Bitcoin Dashboard</h2>
-            </a>
-        </div>
-        <div class="card">
-            <a href="presale.html">
-                <div class="icon"><i class="fa-thin fa-cart-shopping"></i></div>
-                <h2>Purchase Smart Frame</h2>
-                <p>(Coming Soon)</p>
-            </a>
-        </div>
+  <a href="https://btcframe.com">
+    <img src="bitcoin.png" class="logo" alt="BTC Frame Logo" />
+  </a>
+  <div class="header-icons">
+    <div class="live-button">
+      <div class="live-dot"></div>
+      LIVE
     </div>
-    <div class="footer">
-        <div class="social-icons">
-            <a href="https://x.com/btcframe" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://njump.me/npub1gkkahxwca30rf2td22u9p3jnmlh79dylgmm2et0kykftle6tdcysj4zden" target="_blank"><i class="fa-solid fa-n"></i></a>
-            <a href="https://github.com/btcframe" target="_blank"><i class="fab fa-github"></i></a>
+    <div class="date-time" id="date-time"></div>
+    <button id="fullscreen-btn" onclick="toggleFullscreen()">
+      <i class="fas fa-expand"></i>
+    </button>
+  </div>
+  <div class="play-pause-container">
+    <button id="play-pause-btn" onclick="togglePlayPause()">
+      <i class="fas fa-pause"></i>
+    </button>
+    <span id="btcframe-text">btcframe.com</span>
+  </div>
+  <!-- Page Navigation -->
+  <div class="page-navigation">
+    <span id="page-counter">1/21</span>
+    <button id="prev-btn" onclick="showPrevPage()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <button id="next-btn" onclick="showNextPage()">
+      <i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+
+  <!-- Page 1 -->
+  <div class="page active" id="page1">
+    <div id="dashboard">
+      <div class="card equal-height">
+        <h2 id="btc-usd">$0.00</h2>
+        <p>BTC/USD</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="sats-per-dollar">0</h2>
+        <p>SATS PER DOLLAR</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="avg-tx-fee">0</h2>
+        <p>AVG TX FEE (sat/vB)</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="block-height">0</h2>
+        <p>BLOCK HEIGHT</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="hash-rate">0</h2>
+        <p>CURRENT HASH RATE</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="difficulty">0</h2>
+        <p>NETWORK DIFFICULTY</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="circulating-supply">0<span>∞/21m</span></h2>
+        <p>CIRCULATING SUPPLY</p>
+      </div>
+      <div class="card equal-height">
+        <h2 id="market-cap">$0.00</h2>
+        <p>MARKET CAP</p>
+      </div>
+      <div class="difficulty-card equal-height">
+        <div class="adjustments">
+          <div class="adjustments-left">
+            <div class="adjustment adjustment-next">
+              <div class="left-align">
+                <span id="next-adjustment-value">0.00% ▲</span>
+                <span style="color: white">Next</span>
+              </div>
+            </div>
+            <div class="adjustment adjustment-prev">
+              <div class="left-align">
+                <span id="prev-adjustment-value">0.00% ▼</span>
+                <span style="color: white">Prev</span>
+              </div>
+            </div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar">
+              <span id="progress-percent">00.00%</span>
+            </div>
+          </div>
         </div>
-        <div class="footer-links">
-            <a href="terms-of-use.html">Terms of Use</a>
-            <span class="separator">|</span>
-            <a href="disclaimers.html">Disclaimers & Credits</a>
-            <span class="separator">|</span>
-            <a href="mailto:info@btcframe.com">Contact</a>
+        <div class="card equal-height">
+          <p>DIFFICULTY ADJ.</p>
+          <div class="remaining-blocks" id="remaining-blocks">
+            0,000 blocks remaining
+          </div>
         </div>
-        <p>© <span id="current-year"></span> BTC Frame: Live Bitcoin Dashboard</p>
+      </div>
     </div>
+  </div>
+
+  <script src="js/main-dashboard.js"></script>
+
+  <!-- Page 2 -->
+  <div class="page" id="page2">
+    <div class="card">
+      <div class="price-container">
+        <div class="flashing-dot" id="price-dot"></div>
+        <div id="current-price">$0.00</div>
+        <div class="price-change" id="price-change">0.00%</div>
+      </div>
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/bitcoin-chart.js"></script>
+
+  <!-- Page 3 -->
+  <div class="page" id="page3">
+    <div class="card">
+      <div class="displays">
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-usd" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-1" />
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-eur" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-2" />
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-gbp" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-3" />
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-cad" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-4" />
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-chf" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-5" />
+        <div class="activity">
+          <div class="flapper-flashing-dot" id="price-dot-aud" style="background-color: green"></div>
+        </div>
+        <input class="display XXL" id="display-6" />
+      </div>
+    </div>
+  </div>
+
+  <script src="js/multi-currency.js"></script>
+
+  <!-- Page 4 -->
+  <div class="page" id="page4">
+    <div class="card">
+      <div class="halving-progress-circle">
+        <div class="marker marker-0 vertical"></div>
+        <div class="marker marker-25 horizontal"></div>
+        <div class="marker marker-50 vertical"></div>
+        <div class="marker marker-75 horizontal"></div>
+        <div class="inner-circle">
+          <div class="progress-container">
+            <span class="progress-text" id="halving-percentage-text">0%</span>
+          </div>
+          <p class="remaining-text">REMAINING BLOCKS</p>
+          <div id="blocks-remaining" class="split-flap">
+            <span class="digit" data-kind="digit">0</span>
+            <span class="digit" data-kind="digit">0</span>
+            <span class="digit" data-kind="digit">0</span>
+            <span class="digit" data-kind="digit">0</span>
+            <span class="digit" data-kind="digit">0</span>
+            <span class="digit" data-kind="digit">0</span>
+          </div>
+          <p class="next-halving-text">NEXT HALVING</p>
+          <p id="dynamic-date" class="dynamic-date">≈</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/next-halving.js"></script>
+
+  <!-- Page 5 -->
+  <div class="page" id="page5">
+    <div class="card">
+      <div class="price-container">
+        <div class="flashing-dot" id="hashrate-dot"></div>
+        <div id="current-hashrate">0 EH/s</div>
+        <div class="price-change" id="hashrate-change">0.00%</div>
+      </div>
+      <canvas id="hashrateChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/current-hashrate.js"></script>
+
+  <!-- Page 6 -->
+  <div style="height: auto" class="page" id="page6">
+    <div id="svelte-app"></div>
+  </div>
+
+  <script src="./build/bundle.2.3.4.js"></script>
+  <script src="./build/env.js"></script>
+
+  <!-- Page 7 -->
+  <div class="page" id="page7">
+    <div class="card">
+      <p class="pricerange-text">Days Bitcoin Has Spent in Price Ranges</p><br />
+      <canvas id="priceRangeChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/price-range.js"></script>
+
+  <!-- Page 8 -->
+  <div class="page" id="page8">
+    <div class="card">
+      <div id="map-container">
+        <div id="map"></div>
+      </div>
+      <div id="reachable-nodes" class="reachable-nodes">
+        Public Bitcoin Nodes: <span id="node-count">0</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="js/nodemap.js"></script>
+
+  <!-- Page 9 -->
+  <div class="page" id="page9">
+    <div class="card">
+      <div class="satsusd-price-container">
+        <div class="satsusd-flashing-dot" id="satsusd-dot"></div>
+        <div id="satsusd-value-container">
+          <div id="satsusd-value">0</div>
+          <div class="satsusd-price-change" id="satsusd-change">0.00%</div>
+        </div>
+      </div>
+      <div id="sats-per-dollar" class="reachable-nodes">
+        SATS PER DOLLAR
+      </div>
+      <div class="satsusd-container">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/sats-per-dollar.js"></script>
+
+  <!-- Page 10 -->
+  <div class="page" id="page10">
+    <div class="card fear-greed-page">
+      <div class="price-container">Fear & Greed</div>
+
+      <figure class="highcharts-figure">
+        <div id="fearGreedGauge"></div>
+      </figure>
+
+      <div class="historical-data-container">
+        <ul class="historical-data">
+          <li>
+            <span class="label">Yesterday</span>
+            <span class="value-wrapper"><span id="yesterday-value" class="value">--</span></span>
+          </li>
+          <li>
+            <span class="label">7 Days Ago</span>
+            <span class="value-wrapper"><span id="seven-days-value" class="value">--</span></span>
+          </li>
+          <li>
+            <span class="label">30 Days Ago</span>
+            <span class="value-wrapper"><span id="thirty-days-value" class="value">--</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src="js/feargreed.js"></script>
+
+  <!-- Page 11 -->
+  <div class="page" id="page11">
+      <div class="card">
+          <p class="wallet-distribution-text">Address Distribution</p><br />
+          <table id="bitcoin-distribution-table" border="1" style="display: none;">
+              <thead>
+                  <tr>
+                      <th>Address Type</th>
+                      <th>BTC Balance</th>
+                      <th># of Addresses</th>
+                      <th>Total BTC</th>
+                      <th>BTC %</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+      </div>
+  </div>
+
+  <script src="js/wallet-distribution.js"></script>
+
+  <!-- Page 12 -->
+  <div class="page" id="page12">
+    <div class="card">
+      <p class="marketcap-text">Bitcoin vs. Gold Market Cap</p><br />
+      <canvas id="marketCapChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/marketcap.js"></script>
+
+  <!-- Page 13 -->
+  <div class="page" id="page13">
+    <div class="card">
+      <p class="globalassets-text">Total Global Assets</p><br />
+      <div id="treemapContainer"></div>
+    </div>
+  </div>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+
+  <script>
+    function checkAndRenderTreemap() {
+      if (window.location.href.includes("page13")) {
+        setTimeout(async () => {
+          await renderTreemap();
+        }, 1000);
+      }
+    }
+
+    // Initial load
+    document.addEventListener("DOMContentLoaded", checkAndRenderTreemap);
+
+    // Listen for URL changes (SPA or dynamic routing)
+    window.addEventListener("popstate", checkAndRenderTreemap);
+    window.addEventListener("hashchange", checkAndRenderTreemap);
+
+    // Detect pushState and replaceState for frameworks that do not trigger popstate
+    (function () {
+      const originalPushState = history.pushState;
+      const originalReplaceState = history.replaceState;
+
+      history.pushState = function (...args) {
+        originalPushState.apply(this, args);
+        checkAndRenderTreemap();
+      };
+
+      history.replaceState = function (...args) {
+        originalReplaceState.apply(this, args);
+        checkAndRenderTreemap();
+      };
+    })();
+  </script>
+
+  <script src="js/worldassets.js"></script>
+
+  <!-- Page 14 -->
+  <div class="page" id="page14">
+    <div class="card">
+      <div class="price-container">
+        <div class="flashing-dot" id="tx-dot" style="background-color: gray;"></div>
+        <div id="current-tx-count">-- TX</div>
+        <div class="price-change" id="tx-change" style="color: gray;">--% ■</div>
+      </div>
+      <canvas id="txChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/tx-count.js"></script>
+
+  <!-- Page 15 -->
+  <div class="page" id="page15">
+    <div class="card">
+      <p class="wealthdistribution-text">Bitcoin Wealth Distribution</p><br />
+      <div id="wealth-distribution-container" style="width: 100%; height: 800px;">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/wealth-distribution.js"></script>
+
+  <!-- Page 16 -->
+  <div class="page" id="page16">
+    <div class="card">
+      <div class="price-container">
+        <div class="flashing-dot" id="price-dot-mayer"></div>
+        <div id="mayer-current-price">Mayer Multiple: 0.00</div>
+        <div class="price-change" id="mayer-price-change">0.00% ■</div>
+      </div>
+      <canvas id="mayerMultipleChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/mayer-multiple.js"></script>
+
+  <!-- Page 17 -->
+  <div class="page" id="page17">
+    <div class="card">
+      <p class="house-price-text">US Median House Price in ₿TC</p>
+      
+      <div class="price-container">
+        <div class="flashing-dot" id="house-price-dot"></div>
+        <div id="current-house-btc" class="btc-value" data-type="current">₿0.00</div>
+        <div class="price-change" id="house-price-change" data-type="current-change">0.00% ■</div>
+      </div>
+      
+      <div class="historical-house-prices">
+        <div class="historical-price-card">
+          <div class="period-label">1 Year Ago</div>
+          <div class="price-value btc-value" id="one-year-value" data-type="1y">₿0.00</div>
+          <div class="change-value" id="one-year-change" data-type="1y-change">0.00%</div>
+        </div>
+        
+        <div class="historical-price-card">
+          <div class="period-label">30 Days Ago</div>
+          <div class="price-value btc-value" id="thirty-days-value" data-type="30d">₿0.00</div>
+          <div class="change-value" id="thirty-days-change" data-type="30d-change">0.00%</div>
+        </div>
+        
+        <div class="historical-price-card">
+          <div class="period-label">7 Days Ago</div>
+          <div class="price-value btc-value" id="seven-days-value" data-type="7d">₿0.00</div>
+          <div class="change-value" id="seven-days-change" data-type="7d-change">0.00%</div>
+        </div>
+      </div>
+      
+      <div class="extended-historical-house-prices">
+        <div class="historical-price-card small">
+          <div class="period-label">10 Years Ago</div>
+          <div class="price-value btc-value" id="ten-years-value" data-type="10y">₿0.00</div>
+          <div class="change-value" id="ten-years-change" data-type="10y-change">0.00%</div>
+        </div>
+        <div class="historical-price-card small">
+          <div class="period-label">5 Years Ago</div>
+          <div class="price-value btc-value" id="five-years-value" data-type="5y">₿0.00</div>
+          <div class="change-value" id="five-years-change" data-type="5y-change">0.00%</div>
+        </div>
+        <div class="historical-price-card small">
+          <div class="period-label">3 Years Ago</div>
+          <div class="price-value btc-value" id="three-years-value" data-type="3y">₿0.00</div>
+          <div class="change-value" id="three-years-change" data-type="3y-change">0.00%</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="js/house-price.js"></script>
+
+  <!-- Page 18 -->
+  <div class="page" id="page18">
+    <div class="card">
+      <div class="polar-container">
+        <img src="https://btcframe.com/static/polar-graph.php?paramsFile=likeAlice&size=925" alt="Polar Graph" class="centered-polar-image" />
+      </div>
+    </div>
+  </div>
+
+ <script src="js/polar-graph.js"></script>
+
+  <!-- Page 19 -->
+  <div class="page" id="page19">
+    <div class="card">
+      <p class="powerlaw-text">Bitcoin Power Law Model</p><br />
+
+      <div id="bandPrices">
+        <div style="margin-bottom: 5px;">Current Deviation Bands:</div>
+      </div>
+
+      <div class="model-box">
+        Model: P(t) = 1.2×10⁻¹⁷ × t⁵·⁹⁸
+      </div>
+
+      <canvas id="btcPowerLawChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/power-law.js"></script>
+
+  <!-- Page 20 -->
+  <div class="page" id="page20">
+    <div class="card">
+      <p class="stocktoflow-text">Bitcoin Stock-to-Flow Model</p><br />
+      <div id="s2fMetrics">
+          <div>
+              S2F Model Price: Loading...
+          </div>
+          <div>
+              Current Price: Loading...
+          </div>
+          <div>
+              Model: S2F²·⁹⁴ × 0.34
+          </div>
+      </div>
+      <div id="halvingColorScale">
+        <div>Months until next halving:</div>
+        <div class="halving-gradient-bar">
+          <div class="halving-gradient"></div>
+        </div>
+        <div class="halving-scale-labels">
+          <span>0m</span>
+          <span>25m</span>
+          <span>50m</span>
+        </div>
+      </div>
+      <canvas id="btcStockToFlowChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/stock-to-flow.js"></script>
+
+  <!-- Page 21 -->
+  <div class="page" id="page21">
+    <div class="card">
+      <div class="thankyou-container">
+        <canvas id="circleTextCanvas"></canvas>
+        <div class="center-text">
+          <div class="thank-you">Thank You,</div>
+          <div class="satoshi">Satoshi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/thank-you-satoshi.js"></script>
+
+  <!-- Page 22 -->
+  <div class="page" id="page22">
+    <div class="card">
+      <div class="split-outer">
+        <div class="split-layout">
+          <p class="nodeversions-text">Top Reachable Node Versions</p>
+
+          <div class="left-panel">
+            <table id="node-version-table" class="version-table">
+              <thead>
+                <tr>
+                  <th>Version</th>
+                  <th>Count</th>
+                  <th>% of Total</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="right-panel">
+            <canvas id="versionPieChart" width="700" height="700"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/node-versions.js"></script>
+
+  <!-- Page 23 -->
+  <div class="page" id="page23">
+    <div class="card">
+      <p class="monthlyreturns-text">Seasonality (Monthly Returns)</p><br />
+      <div id="monthlyReturnsContainer">
+        <canvas id="monthlyReturnsCanvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/monthly-returns.js"></script>
+
+  <!-- Page 24 -->
+  <div class="page" id="page24">
+    <div class="card">
+      <div class="bigmac-content-wrapper">
+        <div class="bigmac-img-wrapper">
+          <img src="img/bigmac-btc-index.png" alt="Big Mac Index" style="width:200px; margin-bottom:20px;" />
+        </div>
+
+        <div class="price-container">
+          <div class="flashing-dot" id="bigmac-dot"></div>
+          <div id="current-bigmac-btc">0 sats</div>
+          <div class="price-change" id="bigmac-price-change">--%</div>
+        </div>
+
+        <div class="bigmac-historical-wrapper">
+          <div class="historical-bigmac-prices">
+            <div class="historical-price-card">
+              <div class="period-label">1 Year Ago</div>
+              <div class="price-value" id="bigmac-1y-value">--</div>
+              <div class="change-value" id="bigmac-1y-change">--%</div>
+            </div>
+            <div class="historical-price-card">
+              <div class="period-label">30 Days Ago</div>
+              <div class="price-value" id="bigmac-30d-value">--</div>
+              <div class="change-value" id="bigmac-30d-change">--%</div>
+            </div>
+            <div class="historical-price-card">
+              <div class="period-label">7 Days Ago</div>
+              <div class="price-value" id="bigmac-7d-value">--</div>
+              <div class="change-value" id="bigmac-7d-change">--%</div>
+            </div>
+          </div>
+
+          <div class="extended-historical-bigmac-prices">
+            <div class="historical-price-card">
+              <div class="period-label">10 Years Ago</div>
+              <div class="price-value" id="bigmac-10y-value">--</div>
+              <div class="change-value" id="bigmac-10y-change">--%</div>
+            </div>
+            <div class="historical-price-card">
+              <div class="period-label">5 Years Ago</div>
+              <div class="price-value" id="bigmac-5y-value">--</div>
+              <div class="change-value" id="bigmac-5y-change">--%</div>
+            </div>
+            <div class="historical-price-card">
+              <div class="period-label">3 Years Ago</div>
+              <div class="price-value" id="bigmac-3y-value">--</div>
+              <div class="change-value" id="bigmac-3y-change">--%</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="bigmac-price-text">Big Mac BTC Index</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bigmac-index.js"></script>
+
 </body>
 </html>
