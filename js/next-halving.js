@@ -1,7 +1,7 @@
 // Constants for halving calculations
 const BLOCKS_PER_HALVING = 210000;
 const AVERAGE_BLOCK_TIME_MINUTES = 10;
-const API_ENDPOINT = 'https://mempool.btcframe.com/api/blocks/tip/height';
+const API_ENDPOINT = 'https://mempool.space/api/blocks/tip/height';
 const API_ENDPOINT_FALLBACK = 'https://mempool.space/api/blocks/tip/height';
 
 // Cache configuration for halving info
