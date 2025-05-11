@@ -11,7 +11,7 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 - **Fear and Greed Index:** Gauge market sentiment with interactive charts.
 - **Halving Progress Tracking:** Stay updated on Bitcoin halving schedules and progress.
 - **Node Map:** Visualize public Bitcoin nodes on an interactive map.
-- **Multi-Currency Dashboard:** View Bitcoin prices in multiple currencies (USD, EUR, GBP, CAD, CHF and AUD) with real-time updates.
+- **Multi-Currency Dashboard:** View Bitcoin prices in multiple currencies (USD, EUR, GBP, CAD, CHF and AUD).
 - **Hashrate Chart:** Explore network hash rate trends with detailed historical data.
 - **SATs per Dollar Visualization:** Visual breakdown of SATs per dollar using grid-based visualizations.
 - **Days Bitcoin Has Spent in Price Ranges:**  Shows how many days Bitcoin has traded within specific price ranges.
