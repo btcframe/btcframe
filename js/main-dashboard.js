@@ -1,10 +1,10 @@
 // Primary API endpoints (BTC Frame Private Node)
 const ENDPOINTS = {
-  BITCOIN_PRICE: 'https://mempool.btcframe.com/api/v1/prices',
-  BLOCK_HEIGHT: 'https://mempool.btcframe.com/api/blocks/tip/height',
-  FEES: 'https://mempool.btcframe.com/api/v1/fees/recommended',
-  HASHRATE: 'https://mempool.btcframe.com/api/v1/mining/hashrate/3d',
-  DIFFICULTY: 'https://mempool.btcframe.com/api/v1/difficulty-adjustment'
+  BITCOIN_PRICE: 'https://mempool.space/api/v1/prices',
+  BLOCK_HEIGHT: 'https://mempool.space/api/blocks/tip/height',
+  FEES: 'https://mempool.space/api/v1/fees/recommended',
+  HASHRATE: 'https://mempool.space/api/v1/mining/hashrate/3d',
+  DIFFICULTY: 'https://mempool.space/api/v1/difficulty-adjustment'
 };
 
 // Fallback API endpoints (Public mempool.space)
