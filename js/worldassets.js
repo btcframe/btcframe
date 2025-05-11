@@ -38,7 +38,7 @@ async function fetchMarketCaps() {
         "text"
       ),
       fetchWithFallbackPage13(
-        "https://mempool.btcframe.com/api/v1/prices",
+        "https://mempool.space/api/v1/prices",
         "https://mempool.space/api/v1/prices"
       ),
       fetch("https://api.coingecko.com/api/v3/coins/tether-gold/market_chart?vs_currency=usd&days=365"),
