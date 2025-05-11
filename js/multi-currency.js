@@ -1,5 +1,5 @@
 let isFlapperInitialized = false;
-const CURRENCY_ENDPOINT = 'https://mempool.btcframe.com/api/v1/prices';
+const CURRENCY_ENDPOINT = 'https://mempool.space/api/v1/prices';
 const CURRENCY_ENDPOINT_FALLBACK = 'https://mempool.space/api/v1/prices';
 
 const FLAPPER_CACHE_EXPIRY = 5 * 60 * 1000;
@@ -49,7 +49,7 @@ async function fetchPrice24HoursAgoForCurrency(currency) {
       return JSON.parse(cachedPrice);
     }
 
-    const primary = `https://mempool.btcframe.com/api/v1/historical-price?currency=${currency}&timestamp=${timestamp24Hr}`;
+    const primary = `https://mempool.space/api/v1/historical-price?currency=${currency}&timestamp=${timestamp24Hr}`;
     const fallback = `https://mempool.space/api/v1/historical-price?currency=${currency}&timestamp=${timestamp24Hr}`;
     const data = await fetchWithFallback(primary, fallback);
 
