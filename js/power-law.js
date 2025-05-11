@@ -1,4 +1,4 @@
-const MEMPOOL_API = 'https://mempool.btcframe.com/api/v1/historical-price';
+const MEMPOOL_API = 'https://mempool.space/api/v1/historical-price';
 const MEMPOOL_API_FALLBACK = 'https://mempool.space/api/v1/historical-price';
 const GENESIS_DATE = new Date('2009-01-03');
 const FUTURE_END_DATE = new Date('2028-01-07');
