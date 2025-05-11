@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
       try {
-        const openRes = await fetch(`https://mempool.btcframe.com/api/v1/historical-price?currency=USD&timestamp=${openTs}`);
+        const openRes = await fetch(`https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${openTs}`);
         const openJson = await openRes.json();
         const openPrice = openJson?.prices?.[0]?.USD;
 
-        const closeRes = await fetch(`https://mempool.btcframe.com/api/v1/historical-price?currency=USD&timestamp=${closeTs}`);
+        const closeRes = await fetch(`https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${closeTs}`);
         const closeJson = await closeRes.json();
         const closePrice = closeJson?.prices?.[0]?.USD;
 
