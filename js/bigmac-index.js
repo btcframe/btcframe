@@ -16,7 +16,7 @@ function getExactTimestamp(yearsAgo) {
 }
 
 async function fetchMempoolBTCPrice(timestamp) {
-  const url = `https://mempool.btcframe.com/api/v1/historical-price?currency=USD&timestamp=${timestamp}`;
+  const url = `https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${timestamp}`;
   const response = await fetch(url);
   const data = await response.json();
   if (data.prices?.[0]?.USD !== undefined) {
