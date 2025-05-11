@@ -2,8 +2,8 @@ let hashrateChart;
 let globalCurrentHashrate = 0;
 let globalChartDate = new Date().toISOString().split("T")[0].substring(5).replace("-", ".");
 
-const HASHRATE_ENDPOINT = 'https://mempool.btcframe.com/api/v1/mining/hashrate/365d';
-const RECENT_HASHRATE_ENDPOINT = 'https://mempool.btcframe.com/api/v1/mining/hashrate/3d';
+const HASHRATE_ENDPOINT = 'https://mempool.space/api/v1/mining/hashrate/365d';
+const RECENT_HASHRATE_ENDPOINT = 'https://mempool.space/api/v1/mining/hashrate/3d';
 const HASHRATE_ENDPOINT_FALLBACK = 'https://mempool.space/api/v1/mining/hashrate/365d';
 const RECENT_HASHRATE_ENDPOINT_FALLBACK = 'https://mempool.space/api/v1/mining/hashrate/3d';
 
