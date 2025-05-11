@@ -11,10 +11,10 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 - **Fear and Greed Index:** Gauge market sentiment with interactive charts.
 - **Halving Progress Tracking:** Stay updated on Bitcoin halving schedules and progress.
 - **Node Map:** Visualize public Bitcoin nodes on an interactive map.
-- **Multi-Currency Prices Dashboard:** View Bitcoin prices in multiple currencies (USD, EUR, GBP, CAD, CHF and AUD) with real-time updates.
+- **Multi-Currency Dashboard:** View Bitcoin prices in multiple currencies (USD, EUR, GBP, CAD, CHF and AUD) with real-time updates.
 - **Hashrate Chart:** Explore network hash rate trends with detailed historical data.
 - **SATs per Dollar Visualization:** Visual breakdown of SATs per dollar using grid-based visualizations.
-- **Bitcoin Clock:** A custom Bitcoin-themed clock with "Tick Tock Next Block" branding.
+- **Days Bitcoin Has Spent in Price Ranges:**  Shows how many days Bitcoin has traded within specific price ranges.
 - **Mempool Visualizer:** Detailed representation of the Bitcoin mempool, highlighting transaction statistics and trends.
 - **Address Distribution:** Analyze Bitcoin address distribution based on the BTC they hold.
 - **Gold vs. Bitcoin Market Cap:** Compare Gold Market Cap to Bitcoin Market Cap on a dynamic chart.
@@ -23,6 +23,13 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 - **Bitcoin Wealth Distribution:** Wealth Distribution dashboard visualizes wallet addresses categorized by the value they hold in USD.
 - **Mayer Multiple:**  Mayer Multiple compares Bitcoin to its 200-day SMA, revealing key insights into its long-term behavior.
 - **US Median House Price in BTC:**  Ever wondered how many ₿ it takes to buy the median US house? Explore it live on this dashboard.
+- **Polar Halving Spiral:**  Spiral chart showing Bitcoin price evolution relative to halving cycles.
+- **Bitcoin Power Law Model:**  Shows Bitcoin price respecting a long-term power law trend.
+- **Bitcoin Stock-to-Flow Model:**  Visualizes S2F model vs actual price.
+- **Thank You, Satoshi:**  A visual tribute to Bitcoin’s anonymous creator in 21 languages.
+- **Top Reachable Node Versions:**  Breakdown of which reachable Bitcoin node versions are live.
+- **Seasonality (Monthly Returns):**  A matrix map showing Bitcoin’s monthly returns from 2013 to the current date.
+- **Big Mac BTC Index:**  Tracks how many sats are needed to buy a Big Mac over time.
 - **DIY Customization:** Build, assemble, and configure the smart frame yourself.
 
 ---
@@ -36,7 +43,7 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 5. [Data Providers](#data-providers)
 6. [Screenshots](#screenshots)
 7. [Contributing](#contributing)
-8. [CC License](#cc-license)
+8. [MIT License](#mit-license)
 9. [Contact](#contact)
 
 ---
@@ -97,92 +104,18 @@ BTC Frame is designed as a DIY project. Here's a basic guide to building your fr
 
 ---
 
-## Dashboard Overview
-
-BTC Frame includes 11 interactive dashboards, each displaying unique Bitcoin metrics and data:
-
-1. **Page 1: Overview**
-   - Displays live Bitcoin price in USD.
-   - SATs per Dollar.
-   - Average transaction fee in SAT/vB.
-   - Current block height.
-   - Network hash rate and difficulty.
-   - Circulating supply and market cap.
-
-2. **Page 2: Price History**
-   - A dynamic line chart showing historical Bitcoin prices over time.
-   - Includes 24-hour price change and percentage change.
-
-3. **Page 3: Multi-Currency Prices**
-   - Displays real-time Bitcoin prices in various currencies: USD, EUR, GBP, CAD, CHF and AUD.
-   - Visual indicators for price changes.
-
-4. **Page 4: Halving Progress**
-   - Tracks Bitcoin halving events and their progress.
-   - Displays the percentage of blocks completed in the current halving cycle.
-   - Projects the date for the next halving.
-
-5. **Page 5: Hash Rate**
-   - Visualizes Bitcoin's network hash rate using an interactive line chart.
-   - Includes historical and real-time hash rate data.
-
-6. **Page 6: Mempool Visualizer**
-   - Detailed representation of the Bitcoin mempool.
-   - Highlights transaction statistics, fees, sizes, and confirmation times.
-
-7. **Page 7: Bitcoin Clock**
-   - A stylized clock with a Bitcoin theme.
-   - Displays "Tick Tock Next Block" branding.
-
-8. **Page 8: Node Map**
-   - Interactive map showing reachable public Bitcoin nodes.
-   - Displays the total number of nodes in the network.
-
-9. **Page 9: SATs per Dollar Visualization**
-   - Breaks down SATs per dollar into visual components.
-   - Uses grids and visual elements to showcase micro values.
-
-10. **Page 10: Fear and Greed Index**
-    - Displays the market's fear and greed index.
-    - Includes historical data for 7-day and 30-day trends.
-
-11. **Page 11: Wallet Distribution Chart**
-    - Displays wallet balance distributions in the Bitcoin network.
-    - Includes address counts, BTC balances, and 24-hour changes.
-12. **Page 12: Gold vs. Bitcoin Market Cap**
-    - Compare Gold Market Cap to Bitcoin Market Cap on a dynamic chart.
-
-13. **Page 13: Total Global Assets**
-    - View total global assets with dynamic Bitcoin and Gold Market Caps on a tree map chart.
-
-14. **Page 14: Daily Confirmed Transactions**
-    - Track daily transaction trends and see how the network is evolving in real-time.
-
-15. **Page 15: Bitcoin Wealth Distribution**
-    - Wealth Distribution dashboard visualizes wallet addresses categorized by the value they hold in USD.
-
-16. **Page 16: Mayer Multiple**
-    - Mayer Multiple compares Bitcoin to its 200-day SMA, revealing key insights into its long-term behavior.
-   
-17. **Page 17: US Median House Price in BTC**
-    - Ever wondered how many ₿ it takes to buy the median US house? Explore it live on this dashboard.
-
----
 
 ## Data Providers
 
 BTC Frame relies on various external APIs and data providers:
 
-- [CoinGecko API](https://www.coingecko.com/en/api) for Bitcoin prices and market data.
 - [mempool.space API](https://mempool.space/) for block height and hash rate.
-- [Blockchain.com API](https://www.blockchain.com/explorer/api/blockchain_api) for daily confirmed transactions.
 - [St. Louis Fed Web Services: FRED® API](https://fred.stlouisfed.org/docs/api/fred/) for US Median House Prices.
 - [CryptoCompare API](https://min-api.cryptocompare.com/)) for historic Bitcoin metrics.
 - [Bitfeed](https://bits.monospace.live/) for mempool visualizer.
 - [Alternative.me API](https://alternative.me/) for the Fear and Greed Index.
 - [Bitnodes API](https://bitnodes.io/) for public Bitcoin node data.
 - [Flapper](https://github.com/flapper) for real-time value displays.
-- [thooClock](https://github.com/thooClock) for the animated Bitcoin clock.
 
 ---
 
