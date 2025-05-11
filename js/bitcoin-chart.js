@@ -125,7 +125,7 @@ async function fetchDailyHistoricPrices() {
 
   const promises = dates.map(date => {
     const ts = Math.floor(date.getTime() / 1000);
-    const primary = `https://mempool.btcframe.com/api/v1/historical-price?currency=USD&timestamp=${ts}`;
+    const primary = `https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${ts}`;
     const fallback = `https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${ts}`;
 
     return fetchWithFallbackPage2(primary, fallback)
@@ -236,7 +236,7 @@ async function fetchPrice24HoursAgo() {
   }
 
   const ts = Math.floor((Date.now() - 24 * 60 * 60 * 1000) / 1000);
-  const primary = `https://mempool.btcframe.com/api/v1/historical-price?currency=USD&timestamp=${ts}`;
+  const primary = `https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${ts}`;
   const fallback = `https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${ts}`;
 
   try {
