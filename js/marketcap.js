@@ -47,7 +47,7 @@ async function fetchHistoricalBitcoinMarketCap() {
 
     // Get current price
     const priceData = await fetchWithFallbackPage12(
-      "https://mempool.btcframe.com/api/v1/prices",
+      "https://mempool.space/api/v1/prices",
       "https://mempool.space/api/v1/prices"
     );
     const currentPrice = priceData.USD;
@@ -65,7 +65,7 @@ async function fetchHistoricalBitcoinMarketCap() {
     // Fetch historical prices
     const pricePromises = timestamps.map(timestamp =>
       fetchWithFallbackPage12(
-        `https://mempool.btcframe.com/api/v1/historical-price?currency=USD&timestamp=${timestamp}`,
+        `https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${timestamp}`,
         `https://mempool.space/api/v1/historical-price?currency=USD&timestamp=${timestamp}`
       ).then(res => res)
     );
