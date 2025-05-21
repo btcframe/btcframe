@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   drawPriceRangeChart();
+
+  setInterval(() => {
+    drawPriceRangeChart();
+  }, 300000); // every 5 mins
 });
 
 async function drawPriceRangeChart() {
@@ -42,7 +46,7 @@ async function drawPriceRangeChart() {
     if (cached) {
       priceData = JSON.parse(cached);
     } else {
-      const res = await fetch("https://mempool.space/api/v1/historical-price?currency=USD");
+      const res = await fetch("https://mempool.btcframe.com/api/v1/historical-price?currency=USD");
       const data = await res.json();
       priceData = data.prices;
       localStorage.setItem(cacheKey, JSON.stringify(priceData));
