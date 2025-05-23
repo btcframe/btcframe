@@ -3152,3 +3152,316 @@ button#next-btn:hover {
 .extended-historical-bigmac-prices .historical-price-card:last-child {
     margin-right: 0;
 }
+
+/* Page 25 - Bitcoin Dominance Styles - Fixed Version */
+
+#page25 .card {
+    padding: 80px 20px 60px 20px; /* Reduced bottom padding from 100px to 60px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.dominance-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.dominance-card {
+    background-color: #2a2a2d;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dominance-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.dominance-card-header h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #ababab;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-shadow: 0px 0px 0px #fff !important;
+}
+
+.bitcoin-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.dominance-value {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.bitcoin-card .dominance-value {
+    color: #f7931a;
+}
+
+.market-card .dominance-value {
+    color: #3861fb;
+}
+
+.dominance-main-card .dominance-value {
+    color: #16c784;
+}
+
+.dominance-change {
+    font-size: 14px;
+    color: #4caf50;
+}
+
+.dominance-change.negative {
+    color: #f44336;
+}
+
+.market-comparison-section {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.sparkline-container {
+    height: 40px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.sparkline-container canvas {
+    width: 100% !important;
+    height: 40px !important;
+}
+
+.market-comparison-section h4 {
+    font-size: 18px;
+    color: #ababab;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.market-comparison {
+    height: 40px;
+    border-radius: 20px;
+    background-color: #2a2a2d;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.bitcoin-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #f7931a 0%, #ff8c00 100%);
+    border-radius: 20px;
+    transition: width 0.5s ease;
+    min-width: 2px;
+}
+
+.comparison-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.bitcoin-color {
+    background-color: #f7931a;
+}
+
+.other-color {
+    background-color: #333;
+}
+
+/* UPDATED: Dynamic chart container with footer spacing */
+.dominance-chart-container {
+    width: 100%;
+    position: relative;
+    flex: 1; /* This makes it grow to fill remaining space */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px; /* Reduced from 20px */
+    min-height: 250px; /* Reduced minimum height */
+    max-height: calc(100vh - 450px); /* Reduced from 500px to allow more chart space */
+}
+
+.dominance-chart-container h4 {
+    font-size: 18px;
+    color: #ababab;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 500;
+    flex-shrink: 0; /* Don't shrink the title */
+}
+
+/* NEW: Chart wrapper that grows dynamically */
+.dominance-chart-wrapper {
+    flex: 1;
+    position: relative;
+    width: 100%;
+}
+
+#dominance-chart {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.dominance-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #333;
+    border-top: 4px solid #f7931a;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design for Page 25 */
+@media (max-width: 768px) {
+    #page25 .card {
+        padding: 80px 20px 80px 20px; /* Reduced from 120px to 80px */
+    }
+    
+    .dominance-cards-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .dominance-card {
+        min-height: 120px;
+    }
+    
+    .dominance-value {
+        font-size: 24px;
+    }
+    
+    .dominance-card-header h3 {
+        font-size: 14px;
+    }
+    
+    .market-comparison-section h4,
+    .dominance-chart-container h4 {
+        font-size: 16px;
+    }
+    
+    .comparison-legend {
+        gap: 20px;
+        font-size: 12px;
+    }
+    
+    .dominance-chart-container {
+        min-height: 200px;
+        max-height: calc(100vh - 550px); /* Reduced from 600px */
+    }
+}
+
+/* For 2K monitors (2560 x 1440) - Page 25 */
+@media screen and (min-width: 2000px) and (max-width: 2600px) {
+    #page25 .card {
+        padding: 80px 20px 100px 20px; /* Reduced from 140px to 100px */
+    }
+    
+    .dominance-cards-row {
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .dominance-card {
+        padding: 30px;
+        min-height: 180px;
+    }
+    
+    .dominance-card-header h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .dominance-value {
+        font-size: 42px;
+        margin-bottom: 12px;
+    }
+    
+    .dominance-change {
+        font-size: 18px;
+    }
+    
+    .market-comparison-section {
+        margin-bottom: 40px;
+    }
+    
+    .market-comparison-section h4,
+    .dominance-chart-container h4 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .market-comparison {
+        height: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .comparison-legend {
+        gap: 40px;
+        font-size: 18px;
+    }
+    
+    .legend-color {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+    }
+    
+    .dominance-chart-container {
+        min-height: 350px;
+        max-height: calc(100vh - 550px); /* Reduced from 600px to allow more chart space */
+    }
+}
