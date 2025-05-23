@@ -690,5 +690,81 @@
 
   <script src="js/bigmac-index.js"></script>
 
+  <!-- Page 25 -->
+  <div class="page" id="page25">
+    <div class="card">
+      <!-- Top Cards Row -->
+      <div class="dominance-cards-row">
+        <div class="dominance-card bitcoin-card">
+          <div class="dominance-card-header">
+            <img class="bitcoin-icon" src="https://btcframe.com/dominance/bitcoin.png" alt="Bitcoin" />
+            <h3>Bitcoin Market Cap</h3>
+          </div>
+          <div class="dominance-value" id="bitcoin-market-cap">--</div>
+          <div class="dominance-change" id="bitcoin-change">--</div>
+          <div class="sparkline-container">
+            <canvas id="bitcoin-sparkline" width="100" height="40"></canvas>
+          </div>
+        </div>
+        
+        <div class="dominance-card market-card">
+          <div class="dominance-card-header">
+            <img class="bitcoin-icon" src="https://btcframe.com/dominance/crypto.png" alt="Total Crypto" />
+            <h3>Total Crypto Market Cap</h3>
+          </div>
+          <div class="dominance-value" id="total-market-cap">--</div>
+          <div class="dominance-change" id="market-change">--</div>
+          <div class="sparkline-container">
+            <canvas id="market-sparkline" width="100" height="40"></canvas>
+          </div>
+        </div>
+        
+        <div class="dominance-card dominance-main-card">
+          <div class="dominance-card-header">
+            <img class="bitcoin-icon" src="https://btcframe.com/dominance/dominance.png" alt="Bitcoin Dominance" />
+            <h3>Bitcoin Dominance</h3>
+          </div>
+          <div class="dominance-value" id="dominance-value">--</div>
+          <div class="dominance-change" id="dominance-change">--</div>
+          <div class="sparkline-container">
+            <canvas id="dominance-sparkline" width="100" height="40"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Market Cap Comparison Bar -->
+      <div class="market-comparison-section">
+        <h4>Market Cap Comparison</h4>
+        <div class="market-comparison">
+          <div class="bitcoin-bar" id="bitcoin-bar"></div>
+        </div>
+        <div class="comparison-legend">
+          <div class="legend-item">
+            <div class="legend-color bitcoin-color"></div>
+            <span>Bitcoin (<span id="dominance-percentage">--</span>)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color other-color"></div>
+            <span>Other Cryptocurrencies</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Dominance Chart -->
+      <div class="dominance-chart-container">
+        <h4>Bitcoin Dominance History (90 Days)</h4>
+        <div class="dominance-chart-wrapper">
+          <canvas id="dominance-chart"></canvas>
+        </div>
+      </div>
+      
+      <div id="dominance-loading" class="dominance-loading" style="display: none;">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/bitcoin-dominance.js"></script>
+
 </body>
 </html>
