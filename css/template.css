@@ -2875,7 +2875,7 @@ button#next-btn:hover {
 }
 
 #page22 .nodeversions-text {
-  font-size: 32px;
+  font-size: 38px;
   font-weight: bold;
   color: #ffae42
   text-align: center;
@@ -2886,6 +2886,7 @@ button#next-btn:hover {
   top: 50px;
   left: 0;
   right: 0;
+  margin-top: 12px;
 }
 
 #page22 .left-panel {
@@ -3153,10 +3154,10 @@ button#next-btn:hover {
     margin-right: 0;
 }
 
-/* Page 25 - Bitcoin Dominance Styles - Fixed Version */
+/* Page 25 */
 
 #page25 .card {
-    padding: 80px 20px 60px 20px; /* Reduced bottom padding from 100px to 60px */
+    padding: 80px 20px 60px 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -3307,16 +3308,15 @@ button#next-btn:hover {
     background-color: #333;
 }
 
-/* UPDATED: Dynamic chart container with footer spacing */
 .dominance-chart-container {
     width: 100%;
     position: relative;
-    flex: 1; /* This makes it grow to fill remaining space */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px; /* Reduced from 20px */
-    min-height: 250px; /* Reduced minimum height */
-    max-height: calc(100vh - 450px); /* Reduced from 500px to allow more chart space */
+    margin-bottom: 10px;
+    min-height: 250px;
+    max-height: calc(100vh - 450px);
 }
 
 .dominance-chart-container h4 {
@@ -3325,10 +3325,9 @@ button#next-btn:hover {
     text-align: center;
     margin-bottom: 15px;
     font-weight: 500;
-    flex-shrink: 0; /* Don't shrink the title */
+    flex-shrink: 0;
 }
 
-/* NEW: Chart wrapper that grows dynamically */
 .dominance-chart-wrapper {
     flex: 1;
     position: relative;
@@ -3368,7 +3367,7 @@ button#next-btn:hover {
 /* Responsive Design for Page 25 */
 @media (max-width: 768px) {
     #page25 .card {
-        padding: 80px 20px 80px 20px; /* Reduced from 120px to 80px */
+        padding: 80px 20px 80px 20px;
     }
     
     .dominance-cards-row {
@@ -3400,14 +3399,14 @@ button#next-btn:hover {
     
     .dominance-chart-container {
         min-height: 200px;
-        max-height: calc(100vh - 550px); /* Reduced from 600px */
+        max-height: calc(100vh - 550px);
     }
 }
 
 /* For 2K monitors (2560 x 1440) - Page 25 */
 @media screen and (min-width: 2000px) and (max-width: 2600px) {
     #page25 .card {
-        padding: 80px 20px 100px 20px; /* Reduced from 140px to 100px */
+        padding: 80px 20px 100px 20px;
     }
     
     .dominance-cards-row {
@@ -3462,6 +3461,6 @@ button#next-btn:hover {
     
     .dominance-chart-container {
         min-height: 350px;
-        max-height: calc(100vh - 550px); /* Reduced from 600px to allow more chart space */
+        max-height: calc(100vh - 550px);
     }
 }
