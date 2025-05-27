@@ -30,6 +30,7 @@ BTCFrame is an open source and free Bitcoin dashboard to track Bitcoin related m
 - **Top Reachable Node Versions:**  Breakdown of which reachable Bitcoin node versions are live.
 - **Seasonality (Monthly Returns):**  A matrix map showing Bitcoin’s monthly returns from 2013 to the current date.
 - **Big Mac BTC Index:**  Tracks how many sats are needed to buy a Big Mac over time.
+- **Bitcoin Dominance:**  Tracks Bitcoin dominance in terms of market capitalization against the total crypto market cap.
 - **DIY Customization:** Build, assemble, and configure the smart frame yourself.
 
 ---
@@ -229,8 +230,11 @@ Thank you for helping BTC Frame grow and evolve! Together, we can build an incre
 ### Bitcoin Seasonality (Monthly Returns)
 <img width="1792" alt="monthly-returns" src="https://github.com/user-attachments/assets/128ac726-2435-4a78-853a-5062954e723e" />
 
-### Bitcoin Bi Mac Index
+### Bitcoin Big Mac Index
 <img width="1792" alt="bigmac-index" src="https://github.com/user-attachments/assets/ede8c3f3-74e9-4b93-bb16-2f37c884ed66" />
+
+### Bitcoin Dominance
+<img width="1792" alt="bigmac-index" src="https://github.com/user-attachments/assets/65fcd8e6-316e-4718-8b30-3a76349a5608" />
 
 ---
 
