@@ -1,6 +1,6 @@
 async function fetchBitcoinTxData() {
   try {
-    const response = await fetch("https://tx-count.btcframe.com/bitcoin-transactions");
+    const response = await fetch("https://tx.btcframe.com/bitcoin-transactions/");
 
     if (!response.ok) {
       throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
